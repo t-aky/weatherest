@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c211038b98c93d6f236262e4281e9879 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c211038b98c93d6f236262e4281e9879" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c211038b98c93d6f236262e4281e9879 = L.map(
+                "map_c211038b98c93d6f236262e4281e9879",
+                {
+                    center: [35.1584376, 139.1371349],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4e168dd213c1c65166958133d5eb1971 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_1eca466be6c067a7ad5fe267e54e137d = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_4254fe24554094b70b63442ea0a0ee3d = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_45ec873e10e397e2a9ac7bc717470af2 = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_88b33af3bc6e872890f775af634f6cf0 = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var marker_cc4c3266f76351a7e229fbe531d3d643 = L.marker(
+                [35.1546101, 139.1347925],
+                {}
+            ).addTo(feature_group_88b33af3bc6e872890f775af634f6cf0);
+        
+    
+            var icon_a676488e14e2c64810f1a942c70e777d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tint", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_cc4c3266f76351a7e229fbe531d3d643.setIcon(icon_a676488e14e2c64810f1a942c70e777d);
+        
+    
+        var popup_07be9136327c10058d4c333020aa9c9a = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_43e3da92fd4c470f7761f2d2e75cb83e = $(`<div id="html_43e3da92fd4c470f7761f2d2e75cb83e" style="width: 100.0%; height: 100.0%;">神奈川県足柄下郡真鶴町<br>水飲場:1<br>四阿:-<br>トイレ:1<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.1546101,139.1347925" target="_blank">荒井城址公園</a></div>`)[0];
+                popup_07be9136327c10058d4c333020aa9c9a.setContent(html_43e3da92fd4c470f7761f2d2e75cb83e);
+            
+        
+
+        marker_cc4c3266f76351a7e229fbe531d3d643.bindPopup(popup_07be9136327c10058d4c333020aa9c9a)
+        ;
+
+        
+    
+    
+            marker_cc4c3266f76351a7e229fbe531d3d643.bindTooltip(
+                `<div>
+                     荒井城址公園<br>35.1546101<br>139.1347925
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_98a87b66839c61cb8f25efc9894bd86b = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_e55fb0897989db18d0cb1fb5e1a41a8d = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_c01d525b5fe599a365964e3293ace014 = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var feature_group_31a4b21a8171ded50c996b3b9fe0704d = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var marker_db4d8e67a4e10d8a67660e52d00691a5 = L.marker(
+                [35.1546101, 139.1347925],
+                {}
+            ).addTo(feature_group_31a4b21a8171ded50c996b3b9fe0704d);
+        
+    
+            var icon_6c76c22a9fb740924d9999172ab2cf46 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_db4d8e67a4e10d8a67660e52d00691a5.setIcon(icon_6c76c22a9fb740924d9999172ab2cf46);
+        
+    
+        var popup_3579e8bd6e5ff2e1c7726a34ce4b0854 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_7cd583cb232cdcf28c5ba25ffc5079e8 = $(`<div id="html_7cd583cb232cdcf28c5ba25ffc5079e8" style="width: 100.0%; height: 100.0%;">神奈川県足柄下郡真鶴町<br>水飲場:1<br>四阿:-<br>トイレ:1<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.1546101,139.1347925" target="_blank">荒井城址公園</a></div>`)[0];
+                popup_3579e8bd6e5ff2e1c7726a34ce4b0854.setContent(html_7cd583cb232cdcf28c5ba25ffc5079e8);
+            
+        
+
+        marker_db4d8e67a4e10d8a67660e52d00691a5.bindPopup(popup_3579e8bd6e5ff2e1c7726a34ce4b0854)
+        ;
+
+        
+    
+    
+            marker_db4d8e67a4e10d8a67660e52d00691a5.bindTooltip(
+                `<div>
+                     荒井城址公園<br>35.1546101<br>139.1347925
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_db4b47c0fdb633bbd97074485141e853 = L.featureGroup(
+                {}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+        
+    
+            var marker_e01372152446e7a8fb38e82e3163fb67 = L.marker(
+                [35.1546101, 139.1347925],
+                {}
+            ).addTo(feature_group_db4b47c0fdb633bbd97074485141e853);
+        
+    
+            var icon_25557c91034f33f6dd06d3797f63b77e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e01372152446e7a8fb38e82e3163fb67.setIcon(icon_25557c91034f33f6dd06d3797f63b77e);
+        
+    
+        var popup_b6e4bf5965d34f3445c4c475e89022c8 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a1def7411d87a2b9178da921c6ba46a1 = $(`<div id="html_a1def7411d87a2b9178da921c6ba46a1" style="width: 100.0%; height: 100.0%;">神奈川県足柄下郡真鶴町<br>水飲場:1<br>四阿:-<br>トイレ:1<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.1546101,139.1347925" target="_blank">荒井城址公園</a></div>`)[0];
+                popup_b6e4bf5965d34f3445c4c475e89022c8.setContent(html_a1def7411d87a2b9178da921c6ba46a1);
+            
+        
+
+        marker_e01372152446e7a8fb38e82e3163fb67.bindPopup(popup_b6e4bf5965d34f3445c4c475e89022c8)
+        ;
+
+        
+    
+    
+            marker_e01372152446e7a8fb38e82e3163fb67.bindTooltip(
+                `<div>
+                     荒井城址公園<br>35.1546101<br>139.1347925
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_e3a98f12e7edfb1647bfab2eab41a606 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_4e168dd213c1c65166958133d5eb1971,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_1eca466be6c067a7ad5fe267e54e137d,
+                    "\u4f11\u61a9\u6240" : feature_group_4254fe24554094b70b63442ea0a0ee3d,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_45ec873e10e397e2a9ac7bc717470af2,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_88b33af3bc6e872890f775af634f6cf0,
+                    "\u89aa\u6c34" : feature_group_98a87b66839c61cb8f25efc9894bd86b,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_e55fb0897989db18d0cb1fb5e1a41a8d,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_c01d525b5fe599a365964e3293ace014,
+                    "\u30c8\u30a4\u30ec" : feature_group_31a4b21a8171ded50c996b3b9fe0704d,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_db4b47c0fdb633bbd97074485141e853,
+                },
+            };
+            L.control.layers(
+                layer_control_e3a98f12e7edfb1647bfab2eab41a606.base_layers,
+                layer_control_e3a98f12e7edfb1647bfab2eab41a606.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c211038b98c93d6f236262e4281e9879);
+            feature_group_1eca466be6c067a7ad5fe267e54e137d.remove();
+            feature_group_4254fe24554094b70b63442ea0a0ee3d.remove();
+            feature_group_45ec873e10e397e2a9ac7bc717470af2.remove();
+            feature_group_88b33af3bc6e872890f775af634f6cf0.remove();
+            feature_group_98a87b66839c61cb8f25efc9894bd86b.remove();
+            feature_group_e55fb0897989db18d0cb1fb5e1a41a8d.remove();
+            feature_group_c01d525b5fe599a365964e3293ace014.remove();
+            feature_group_31a4b21a8171ded50c996b3b9fe0704d.remove();
+            feature_group_db4b47c0fdb633bbd97074485141e853.remove();
+        
+</script>
+</html>
