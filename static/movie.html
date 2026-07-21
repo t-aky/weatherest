@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4d885b0b2b601c1760410992724eee00 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4d885b0b2b601c1760410992724eee00" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4d885b0b2b601c1760410992724eee00 = L.map(
+                "map_4d885b0b2b601c1760410992724eee00",
+                {
+                    center: [43.1384305, 141.2495115],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a0380d1dc1890e28ee07eb62457fa790 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_4d885b0b2b601c1760410992724eee00);
+        
+    
+            var marker_831cff77fce79258bbf1f19a2d33d60e = L.marker(
+                [43.1384305, 141.2495115],
+                {}
+            ).addTo(map_4d885b0b2b601c1760410992724eee00);
+        
+    
+            var icon_7245ffcf35a39018c9f468c27454db35 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "beige", "prefix": "glyphicon"}
+            );
+            marker_831cff77fce79258bbf1f19a2d33d60e.setIcon(icon_7245ffcf35a39018c9f468c27454db35);
+        
+    
+        var popup_491c71724aa8f9a95433fe15e7a1d62f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f8d186e5dcea8f94fd04ad4fc1f4e5d3 = $(`<div id="html_f8d186e5dcea8f94fd04ad4fc1f4e5d3" style="width: 100.0%; height: 100.0%;">(<folium.map.Popup object at 0x0000019DEAAB4650>,)</div>`)[0];
+                popup_491c71724aa8f9a95433fe15e7a1d62f.setContent(html_f8d186e5dcea8f94fd04ad4fc1f4e5d3);
+            
+        
+
+        marker_831cff77fce79258bbf1f19a2d33d60e.bindPopup(popup_491c71724aa8f9a95433fe15e7a1d62f)
+        ;
+
+        
+    
+    
+            marker_831cff77fce79258bbf1f19a2d33d60e.bindTooltip(
+                `<div>
+                     ('前田緑道<br>27.47℃',)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_d84366946144a647d761959d93db3333 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_a0380d1dc1890e28ee07eb62457fa790,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_d84366946144a647d761959d93db3333.base_layers,
+                layer_control_d84366946144a647d761959d93db3333.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_4d885b0b2b601c1760410992724eee00);
+        
+</script>
+</html>
