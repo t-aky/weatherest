@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d4cd21074ec6cfd2dd075d90918ce8a7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d4cd21074ec6cfd2dd075d90918ce8a7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d4cd21074ec6cfd2dd075d90918ce8a7 = L.map(
+                "map_d4cd21074ec6cfd2dd075d90918ce8a7",
+                {
+                    center: [35.88096400000001, 139.6809281],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2cc0b69acd324d9701ad8b66610341b8 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_558633c5d9ec3c7bc7952b48def3858a = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_af16baedd1fd0d8fba594fe5871d78d1 = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_34ca58e59a6881dd79cc98a593b07202 = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_c5c8e2f4dd1bccc40307a0eaba9c3568 = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_6faf4d5cbb64e1fb5ce36aa45f26a984 = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_74c8090f2399e81eb9f6983307abcc3b = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_b8123f7f44c65fd199e50152b9e2189f = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_ba96fc03194150dbd2430af907908163 = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var feature_group_1fd5383f3e1e645879009fd078ef3c9a = L.featureGroup(
+                {}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+        
+    
+            var marker_6adead30237b91b437002b56fe89e212 = L.marker(
+                [35.897824, 139.664354],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_eec78a4616b6baea36be698041dd9c73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6adead30237b91b437002b56fe89e212.setIcon(icon_eec78a4616b6baea36be698041dd9c73);
+        
+    
+        var popup_2e517e51f5a6d8586b5adfa30a9f2a79 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3ca8abb780738e2a52c5b048aa780640 = $(`<div id="html_3ca8abb780738e2a52c5b048aa780640" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.897824,139.664354" target="_blank">三浦運動公園</a></div>`)[0];
+                popup_2e517e51f5a6d8586b5adfa30a9f2a79.setContent(html_3ca8abb780738e2a52c5b048aa780640);
+            
+        
+
+        marker_6adead30237b91b437002b56fe89e212.bindPopup(popup_2e517e51f5a6d8586b5adfa30a9f2a79)
+        ;
+
+        
+    
+    
+            marker_6adead30237b91b437002b56fe89e212.bindTooltip(
+                `<div>
+                     三浦運動公園<br>35.897824<br>139.664354
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8aaea5b2c0aab40aa589bfc3fd85f6e1 = L.marker(
+                [35.906551, 139.700595],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_4480cf4d84cc895612dca801a3e43a83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8aaea5b2c0aab40aa589bfc3fd85f6e1.setIcon(icon_4480cf4d84cc895612dca801a3e43a83);
+        
+    
+        var popup_3dbaa34448f2216d7c23ab119310458c = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3bab5f864b0d74b6e3bc7dc6b97b6bc0 = $(`<div id="html_3bab5f864b0d74b6e3bc7dc6b97b6bc0" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.906551,139.700595" target="_blank">さぎ山記念公園</a></div>`)[0];
+                popup_3dbaa34448f2216d7c23ab119310458c.setContent(html_3bab5f864b0d74b6e3bc7dc6b97b6bc0);
+            
+        
+
+        marker_8aaea5b2c0aab40aa589bfc3fd85f6e1.bindPopup(popup_3dbaa34448f2216d7c23ab119310458c)
+        ;
+
+        
+    
+    
+            marker_8aaea5b2c0aab40aa589bfc3fd85f6e1.bindTooltip(
+                `<div>
+                     さぎ山記念公園<br>35.906551<br>139.700595
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7e9a00745a9a6ff09c2328558967fed9 = L.marker(
+                [35.906218, 139.694955],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_3f04c1549b72866ae60b8f7ea344cc03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7e9a00745a9a6ff09c2328558967fed9.setIcon(icon_3f04c1549b72866ae60b8f7ea344cc03);
+        
+    
+        var popup_f6205faba6384d437e4bab1195377b86 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5e42b34a38adc8d8ef09c2339b6ea9fb = $(`<div id="html_5e42b34a38adc8d8ef09c2339b6ea9fb" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.906218,139.694955" target="_blank">見沼自然公園</a></div>`)[0];
+                popup_f6205faba6384d437e4bab1195377b86.setContent(html_5e42b34a38adc8d8ef09c2339b6ea9fb);
+            
+        
+
+        marker_7e9a00745a9a6ff09c2328558967fed9.bindPopup(popup_f6205faba6384d437e4bab1195377b86)
+        ;
+
+        
+    
+    
+            marker_7e9a00745a9a6ff09c2328558967fed9.bindTooltip(
+                `<div>
+                     見沼自然公園<br>35.906218<br>139.694955
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7edc5f0bdc19fd741a66e416617c5066 = L.marker(
+                [35.884165, 139.714057],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_1eb4fae7b0ace47ac53dd940ce80fade = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7edc5f0bdc19fd741a66e416617c5066.setIcon(icon_1eb4fae7b0ace47ac53dd940ce80fade);
+        
+    
+        var popup_bf49aab5f3d900f5c338c5845f36e128 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_9f0f033820fc1f3e3a95869b17deccc6 = $(`<div id="html_9f0f033820fc1f3e3a95869b17deccc6" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.884165,139.714057" target="_blank">大崎公園</a></div>`)[0];
+                popup_bf49aab5f3d900f5c338c5845f36e128.setContent(html_9f0f033820fc1f3e3a95869b17deccc6);
+            
+        
+
+        marker_7edc5f0bdc19fd741a66e416617c5066.bindPopup(popup_bf49aab5f3d900f5c338c5845f36e128)
+        ;
+
+        
+    
+    
+            marker_7edc5f0bdc19fd741a66e416617c5066.bindTooltip(
+                `<div>
+                     大崎公園<br>35.884165<br>139.714057
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8168f79791301fe4da82075060a8c2d6 = L.marker(
+                [35.863996, 139.710109],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_70dd846ee8e15914bafefc64fbb91573 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8168f79791301fe4da82075060a8c2d6.setIcon(icon_70dd846ee8e15914bafefc64fbb91573);
+        
+    
+        var popup_cd48f071cd4b5474afed7a5db6a13e37 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_b50c91bd650e4a70d745fbc46cd688bf = $(`<div id="html_b50c91bd650e4a70d745fbc46cd688bf" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.863996,139.710109" target="_blank">大間木公園（見沼通船堀公園）</a></div>`)[0];
+                popup_cd48f071cd4b5474afed7a5db6a13e37.setContent(html_b50c91bd650e4a70d745fbc46cd688bf);
+            
+        
+
+        marker_8168f79791301fe4da82075060a8c2d6.bindPopup(popup_cd48f071cd4b5474afed7a5db6a13e37)
+        ;
+
+        
+    
+    
+            marker_8168f79791301fe4da82075060a8c2d6.bindTooltip(
+                `<div>
+                     大間木公園（見沼通船堀公園）<br>35.863996<br>139.710109
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98436e617e275976c3129a399eb68499 = L.marker(
+                [35.863126, 139.707556],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_b13f6e2758ed9f01d130a3bb5a411080 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_98436e617e275976c3129a399eb68499.setIcon(icon_b13f6e2758ed9f01d130a3bb5a411080);
+        
+    
+        var popup_cd235a2afc5aa8300ae49f92c8bff675 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_df31e913dc9bccaf94372cfe9f8e01e1 = $(`<div id="html_df31e913dc9bccaf94372cfe9f8e01e1" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.863126,139.707556" target="_blank">見沼通船堀公園</a></div>`)[0];
+                popup_cd235a2afc5aa8300ae49f92c8bff675.setContent(html_df31e913dc9bccaf94372cfe9f8e01e1);
+            
+        
+
+        marker_98436e617e275976c3129a399eb68499.bindPopup(popup_cd235a2afc5aa8300ae49f92c8bff675)
+        ;
+
+        
+    
+    
+            marker_98436e617e275976c3129a399eb68499.bindTooltip(
+                `<div>
+                     見沼通船堀公園<br>35.863126<br>139.707556
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e29b4b4b2c5c2a6b2b0dd1a969de4614 = L.marker(
+                [35.897824, 139.664354],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_bf29cfb9b47504c904c2a9cc38a79d0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e29b4b4b2c5c2a6b2b0dd1a969de4614.setIcon(icon_bf29cfb9b47504c904c2a9cc38a79d0e);
+        
+    
+        var popup_fc5c5ed929c13d18d7f94b94d4d03028 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c37f122a47129d1f21da387ed989d83e = $(`<div id="html_c37f122a47129d1f21da387ed989d83e" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.897824,139.664354" target="_blank">三浦運動公園</a></div>`)[0];
+                popup_fc5c5ed929c13d18d7f94b94d4d03028.setContent(html_c37f122a47129d1f21da387ed989d83e);
+            
+        
+
+        marker_e29b4b4b2c5c2a6b2b0dd1a969de4614.bindPopup(popup_fc5c5ed929c13d18d7f94b94d4d03028)
+        ;
+
+        
+    
+    
+            marker_e29b4b4b2c5c2a6b2b0dd1a969de4614.bindTooltip(
+                `<div>
+                     三浦運動公園<br>35.897824<br>139.664354
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af94963cbece56f961745b2af9fc29dc = L.marker(
+                [35.906551, 139.700595],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_bc602427ef8d3ba7346ed4f7f689b7b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_af94963cbece56f961745b2af9fc29dc.setIcon(icon_bc602427ef8d3ba7346ed4f7f689b7b1);
+        
+    
+        var popup_66a9b9db6d763e9f95e13cf50d849e47 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5325036376c98d9a702e31d50ad49b02 = $(`<div id="html_5325036376c98d9a702e31d50ad49b02" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.906551,139.700595" target="_blank">さぎ山記念公園</a></div>`)[0];
+                popup_66a9b9db6d763e9f95e13cf50d849e47.setContent(html_5325036376c98d9a702e31d50ad49b02);
+            
+        
+
+        marker_af94963cbece56f961745b2af9fc29dc.bindPopup(popup_66a9b9db6d763e9f95e13cf50d849e47)
+        ;
+
+        
+    
+    
+            marker_af94963cbece56f961745b2af9fc29dc.bindTooltip(
+                `<div>
+                     さぎ山記念公園<br>35.906551<br>139.700595
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b968ffe5557b172ba146f7008036391a = L.marker(
+                [35.906218, 139.694955],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_11c214d8b3285162012f765c0c50b28b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b968ffe5557b172ba146f7008036391a.setIcon(icon_11c214d8b3285162012f765c0c50b28b);
+        
+    
+        var popup_9be9e9e5555f2cb38c49ca5cac680317 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c9befc911b0c854eff6e0d498f2d5723 = $(`<div id="html_c9befc911b0c854eff6e0d498f2d5723" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.906218,139.694955" target="_blank">見沼自然公園</a></div>`)[0];
+                popup_9be9e9e5555f2cb38c49ca5cac680317.setContent(html_c9befc911b0c854eff6e0d498f2d5723);
+            
+        
+
+        marker_b968ffe5557b172ba146f7008036391a.bindPopup(popup_9be9e9e5555f2cb38c49ca5cac680317)
+        ;
+
+        
+    
+    
+            marker_b968ffe5557b172ba146f7008036391a.bindTooltip(
+                `<div>
+                     見沼自然公園<br>35.906218<br>139.694955
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2089346409612e5353bc994afdf2e5e = L.marker(
+                [35.884165, 139.714057],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_bfd9089ddb02108d9b9b76a9aff9c4e9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d2089346409612e5353bc994afdf2e5e.setIcon(icon_bfd9089ddb02108d9b9b76a9aff9c4e9);
+        
+    
+        var popup_d5f0358c195d8716f4f5a5f5010a7732 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_da80e407157ab19c7993b636cb9cc0da = $(`<div id="html_da80e407157ab19c7993b636cb9cc0da" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.884165,139.714057" target="_blank">大崎公園</a></div>`)[0];
+                popup_d5f0358c195d8716f4f5a5f5010a7732.setContent(html_da80e407157ab19c7993b636cb9cc0da);
+            
+        
+
+        marker_d2089346409612e5353bc994afdf2e5e.bindPopup(popup_d5f0358c195d8716f4f5a5f5010a7732)
+        ;
+
+        
+    
+    
+            marker_d2089346409612e5353bc994afdf2e5e.bindTooltip(
+                `<div>
+                     大崎公園<br>35.884165<br>139.714057
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_87b85632378f16077a3864569a253ece = L.marker(
+                [35.863996, 139.710109],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_70a2f2d4e9a75200c3416301d8eb14bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_87b85632378f16077a3864569a253ece.setIcon(icon_70a2f2d4e9a75200c3416301d8eb14bb);
+        
+    
+        var popup_2aa4d2b7fcc94ff729287248bf6d9a4c = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f438e42181de1f5a2538cf69bc31706a = $(`<div id="html_f438e42181de1f5a2538cf69bc31706a" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.863996,139.710109" target="_blank">大間木公園（見沼通船堀公園）</a></div>`)[0];
+                popup_2aa4d2b7fcc94ff729287248bf6d9a4c.setContent(html_f438e42181de1f5a2538cf69bc31706a);
+            
+        
+
+        marker_87b85632378f16077a3864569a253ece.bindPopup(popup_2aa4d2b7fcc94ff729287248bf6d9a4c)
+        ;
+
+        
+    
+    
+            marker_87b85632378f16077a3864569a253ece.bindTooltip(
+                `<div>
+                     大間木公園（見沼通船堀公園）<br>35.863996<br>139.710109
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a9623989c2a714bde7d51d97f99fa897 = L.marker(
+                [35.863126, 139.707556],
+                {}
+            ).addTo(feature_group_1fd5383f3e1e645879009fd078ef3c9a);
+        
+    
+            var icon_db955ac9b38c27b6f127a89422a6079f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a9623989c2a714bde7d51d97f99fa897.setIcon(icon_db955ac9b38c27b6f127a89422a6079f);
+        
+    
+        var popup_6ce13912e6f9a1512b4d15d9a2001232 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_fad925e3d81ace7cf9ace820a347357c = $(`<div id="html_fad925e3d81ace7cf9ace820a347357c" style="width: 100.0%; height: 100.0%;">さいたま市<br>水飲場:-<br>四阿:-<br>トイレ:-<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=35.863126,139.707556" target="_blank">見沼通船堀公園</a></div>`)[0];
+                popup_6ce13912e6f9a1512b4d15d9a2001232.setContent(html_fad925e3d81ace7cf9ace820a347357c);
+            
+        
+
+        marker_a9623989c2a714bde7d51d97f99fa897.bindPopup(popup_6ce13912e6f9a1512b4d15d9a2001232)
+        ;
+
+        
+    
+    
+            marker_a9623989c2a714bde7d51d97f99fa897.bindTooltip(
+                `<div>
+                     見沼通船堀公園<br>35.863126<br>139.707556
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_36f90c51abe9793b344e4e9447548f73 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_2cc0b69acd324d9701ad8b66610341b8,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_558633c5d9ec3c7bc7952b48def3858a,
+                    "\u4f11\u61a9\u6240" : feature_group_af16baedd1fd0d8fba594fe5871d78d1,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_34ca58e59a6881dd79cc98a593b07202,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_c5c8e2f4dd1bccc40307a0eaba9c3568,
+                    "\u89aa\u6c34" : feature_group_6faf4d5cbb64e1fb5ce36aa45f26a984,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_74c8090f2399e81eb9f6983307abcc3b,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_b8123f7f44c65fd199e50152b9e2189f,
+                    "\u30c8\u30a4\u30ec" : feature_group_ba96fc03194150dbd2430af907908163,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_1fd5383f3e1e645879009fd078ef3c9a,
+                },
+            };
+            L.control.layers(
+                layer_control_36f90c51abe9793b344e4e9447548f73.base_layers,
+                layer_control_36f90c51abe9793b344e4e9447548f73.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_d4cd21074ec6cfd2dd075d90918ce8a7);
+            feature_group_558633c5d9ec3c7bc7952b48def3858a.remove();
+            feature_group_af16baedd1fd0d8fba594fe5871d78d1.remove();
+            feature_group_34ca58e59a6881dd79cc98a593b07202.remove();
+            feature_group_c5c8e2f4dd1bccc40307a0eaba9c3568.remove();
+            feature_group_6faf4d5cbb64e1fb5ce36aa45f26a984.remove();
+            feature_group_74c8090f2399e81eb9f6983307abcc3b.remove();
+            feature_group_b8123f7f44c65fd199e50152b9e2189f.remove();
+            feature_group_ba96fc03194150dbd2430af907908163.remove();
+            feature_group_1fd5383f3e1e645879009fd078ef3c9a.remove();
+        
+</script>
+</html>

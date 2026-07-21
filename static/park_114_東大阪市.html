@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9af007ee414ed961637594b9d9cb1d72 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9af007ee414ed961637594b9d9cb1d72" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9af007ee414ed961637594b9d9cb1d72 = L.map(
+                "map_9af007ee414ed961637594b9d9cb1d72",
+                {
+                    center: [34.6792862, 135.600851],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a816a5777e5c5a5dd56cbf4efa4b3413 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_192099ae5e00deb7d0c879ae2001efe7 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_8bf78bbfad3d4826f105e0e08d5ba776 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_381c6e292eb28515b55d3d97bd3b750b = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_75b383c80be4a3b6bb18e5dfd88d48ee = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_f22b25e0456a9f3af0a01e1206cf492e = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_56acc95f3840a962e09c63d0ae85f3f5 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_9fab54d04e72290074b92751d62ad614 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var feature_group_b7ee46de1adef75497247c124fae3705 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var marker_4b068a51b966c29d52fc8015403f3264 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_57d4ee838a5e0dfef62a3a544687047b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_4b068a51b966c29d52fc8015403f3264.setIcon(icon_57d4ee838a5e0dfef62a3a544687047b);
+        
+    
+        var popup_7d821ef74472316cd8d5f4dcfbdec684 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e2087e3025e24248ff9f7bbf36f026de = $(`<div id="html_e2087e3025e24248ff9f7bbf36f026de" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　枚岡梅林便所</a></div>`)[0];
+                popup_7d821ef74472316cd8d5f4dcfbdec684.setContent(html_e2087e3025e24248ff9f7bbf36f026de);
+            
+        
+
+        marker_4b068a51b966c29d52fc8015403f3264.bindPopup(popup_7d821ef74472316cd8d5f4dcfbdec684)
+        ;
+
+        
+    
+    
+            marker_4b068a51b966c29d52fc8015403f3264.bindTooltip(
+                `<div>
+                     枚岡公園　枚岡梅林便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9eba9ea473675bcc4ae17879fc263fc2 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_46bd60dd78955f78435b355efd5caebd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_9eba9ea473675bcc4ae17879fc263fc2.setIcon(icon_46bd60dd78955f78435b355efd5caebd);
+        
+    
+        var popup_30b6d44f4929c1d216e4104f930f4010 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_4c567258bfb40dc49cbb3a0581a2144b = $(`<div id="html_4c567258bfb40dc49cbb3a0581a2144b" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　管理事務所前便所</a></div>`)[0];
+                popup_30b6d44f4929c1d216e4104f930f4010.setContent(html_4c567258bfb40dc49cbb3a0581a2144b);
+            
+        
+
+        marker_9eba9ea473675bcc4ae17879fc263fc2.bindPopup(popup_30b6d44f4929c1d216e4104f930f4010)
+        ;
+
+        
+    
+    
+            marker_9eba9ea473675bcc4ae17879fc263fc2.bindTooltip(
+                `<div>
+                     枚岡公園　管理事務所前便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9821c3f2d260f2c9057456701712e1d0 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_27f93575012ac060fa3b1927ebdb33db = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_9821c3f2d260f2c9057456701712e1d0.setIcon(icon_27f93575012ac060fa3b1927ebdb33db);
+        
+    
+        var popup_971f0d0f9ceac6ecc0b2dae0cc34c792 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_762c9eb67d0132db94fe141a6bb83714 = $(`<div id="html_762c9eb67d0132db94fe141a6bb83714" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　椋ヶ根橋便所</a></div>`)[0];
+                popup_971f0d0f9ceac6ecc0b2dae0cc34c792.setContent(html_762c9eb67d0132db94fe141a6bb83714);
+            
+        
+
+        marker_9821c3f2d260f2c9057456701712e1d0.bindPopup(popup_971f0d0f9ceac6ecc0b2dae0cc34c792)
+        ;
+
+        
+    
+    
+            marker_9821c3f2d260f2c9057456701712e1d0.bindTooltip(
+                `<div>
+                     枚岡公園　椋ヶ根橋便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2928043737ad9938e96855811e20f133 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_9bf00328fa10901ac9c105bc8d27a0fc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_2928043737ad9938e96855811e20f133.setIcon(icon_9bf00328fa10901ac9c105bc8d27a0fc);
+        
+    
+        var popup_162e49127a20389353aa7e7d9f8ffbc4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_72b025980ef61edb350638feff5b80c0 = $(`<div id="html_72b025980ef61edb350638feff5b80c0" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　森のおもちゃ箱便所</a></div>`)[0];
+                popup_162e49127a20389353aa7e7d9f8ffbc4.setContent(html_72b025980ef61edb350638feff5b80c0);
+            
+        
+
+        marker_2928043737ad9938e96855811e20f133.bindPopup(popup_162e49127a20389353aa7e7d9f8ffbc4)
+        ;
+
+        
+    
+    
+            marker_2928043737ad9938e96855811e20f133.bindTooltip(
+                `<div>
+                     枚岡公園　森のおもちゃ箱便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d78ffd4aad3476b13a9e493c92bb4ca9 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_09a038d3c0136e9f7de0fbddded7cace = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_d78ffd4aad3476b13a9e493c92bb4ca9.setIcon(icon_09a038d3c0136e9f7de0fbddded7cace);
+        
+    
+        var popup_de54680dde536dd804fcd24eebfd0cee = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1ce40604764eec985b5748db6a436000 = $(`<div id="html_1ce40604764eec985b5748db6a436000" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　バイオトイレ</a></div>`)[0];
+                popup_de54680dde536dd804fcd24eebfd0cee.setContent(html_1ce40604764eec985b5748db6a436000);
+            
+        
+
+        marker_d78ffd4aad3476b13a9e493c92bb4ca9.bindPopup(popup_de54680dde536dd804fcd24eebfd0cee)
+        ;
+
+        
+    
+    
+            marker_d78ffd4aad3476b13a9e493c92bb4ca9.bindTooltip(
+                `<div>
+                     枚岡公園　バイオトイレ<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_574e46d81ff79944c091a526ce123fdc = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_b7ee46de1adef75497247c124fae3705);
+        
+    
+            var icon_662f8908cca6b2f9966685b8176554b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_574e46d81ff79944c091a526ce123fdc.setIcon(icon_662f8908cca6b2f9966685b8176554b2);
+        
+    
+        var popup_65efcd9a6f7d441bf8f31a1ef50adccc = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_cd8bb997d5c69d46af8421d950050f90 = $(`<div id="html_cd8bb997d5c69d46af8421d950050f90" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　桜広場便所</a></div>`)[0];
+                popup_65efcd9a6f7d441bf8f31a1ef50adccc.setContent(html_cd8bb997d5c69d46af8421d950050f90);
+            
+        
+
+        marker_574e46d81ff79944c091a526ce123fdc.bindPopup(popup_65efcd9a6f7d441bf8f31a1ef50adccc)
+        ;
+
+        
+    
+    
+            marker_574e46d81ff79944c091a526ce123fdc.bindTooltip(
+                `<div>
+                     枚岡公園　桜広場便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_d24e260ed65e63e7ec775e3d2aca6728 = L.featureGroup(
+                {}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+        
+    
+            var marker_2dece01631e66a69f358933876c843f5 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_7c37308bacffebe057085578c751b948 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2dece01631e66a69f358933876c843f5.setIcon(icon_7c37308bacffebe057085578c751b948);
+        
+    
+        var popup_a19b4bde489e84c334c58b7bc55c364b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e99f61b35342fe0d03e820833e9e2965 = $(`<div id="html_e99f61b35342fe0d03e820833e9e2965" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　枚岡梅林便所</a></div>`)[0];
+                popup_a19b4bde489e84c334c58b7bc55c364b.setContent(html_e99f61b35342fe0d03e820833e9e2965);
+            
+        
+
+        marker_2dece01631e66a69f358933876c843f5.bindPopup(popup_a19b4bde489e84c334c58b7bc55c364b)
+        ;
+
+        
+    
+    
+            marker_2dece01631e66a69f358933876c843f5.bindTooltip(
+                `<div>
+                     枚岡公園　枚岡梅林便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0b607c3e1d6378459283390f399e0cbf = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_9ab3fc9a8065c10fdc486e56a0991b47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0b607c3e1d6378459283390f399e0cbf.setIcon(icon_9ab3fc9a8065c10fdc486e56a0991b47);
+        
+    
+        var popup_bb5982d66a5c7afd92da137a837c280a = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_d0e5b39f4364d869d40f9b6a50d50d54 = $(`<div id="html_d0e5b39f4364d869d40f9b6a50d50d54" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　管理事務所前便所</a></div>`)[0];
+                popup_bb5982d66a5c7afd92da137a837c280a.setContent(html_d0e5b39f4364d869d40f9b6a50d50d54);
+            
+        
+
+        marker_0b607c3e1d6378459283390f399e0cbf.bindPopup(popup_bb5982d66a5c7afd92da137a837c280a)
+        ;
+
+        
+    
+    
+            marker_0b607c3e1d6378459283390f399e0cbf.bindTooltip(
+                `<div>
+                     枚岡公園　管理事務所前便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_518a0eef4560c44ee9706ae59be0041f = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_25444e90558b2a65718a04bc7c3d3fa7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_518a0eef4560c44ee9706ae59be0041f.setIcon(icon_25444e90558b2a65718a04bc7c3d3fa7);
+        
+    
+        var popup_99de3ce64a8b93c04040423245e72032 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1b9451227e4b5f50880599e686fc8a01 = $(`<div id="html_1b9451227e4b5f50880599e686fc8a01" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　椋ヶ根橋便所</a></div>`)[0];
+                popup_99de3ce64a8b93c04040423245e72032.setContent(html_1b9451227e4b5f50880599e686fc8a01);
+            
+        
+
+        marker_518a0eef4560c44ee9706ae59be0041f.bindPopup(popup_99de3ce64a8b93c04040423245e72032)
+        ;
+
+        
+    
+    
+            marker_518a0eef4560c44ee9706ae59be0041f.bindTooltip(
+                `<div>
+                     枚岡公園　椋ヶ根橋便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e9c499bebdbe51140d79f126ff920ae = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_e378b070ccedd596daa8fbf3ef86528c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2e9c499bebdbe51140d79f126ff920ae.setIcon(icon_e378b070ccedd596daa8fbf3ef86528c);
+        
+    
+        var popup_ddb82463639594f0034e71160e254667 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_cf2f94886a4f8b1e81189fccd2f7c8b9 = $(`<div id="html_cf2f94886a4f8b1e81189fccd2f7c8b9" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　森のおもちゃ箱便所</a></div>`)[0];
+                popup_ddb82463639594f0034e71160e254667.setContent(html_cf2f94886a4f8b1e81189fccd2f7c8b9);
+            
+        
+
+        marker_2e9c499bebdbe51140d79f126ff920ae.bindPopup(popup_ddb82463639594f0034e71160e254667)
+        ;
+
+        
+    
+    
+            marker_2e9c499bebdbe51140d79f126ff920ae.bindTooltip(
+                `<div>
+                     枚岡公園　森のおもちゃ箱便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7ded22db156d86600561b1466a5bf326 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_3e471e0f7907ef297ad456b6d72a0bb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7ded22db156d86600561b1466a5bf326.setIcon(icon_3e471e0f7907ef297ad456b6d72a0bb5);
+        
+    
+        var popup_5b97d6dc5cce1343a8ebeb6f3d40d03c = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_7425ff6f6faf35f0964a5741d7dcd2ce = $(`<div id="html_7425ff6f6faf35f0964a5741d7dcd2ce" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　バイオトイレ</a></div>`)[0];
+                popup_5b97d6dc5cce1343a8ebeb6f3d40d03c.setContent(html_7425ff6f6faf35f0964a5741d7dcd2ce);
+            
+        
+
+        marker_7ded22db156d86600561b1466a5bf326.bindPopup(popup_5b97d6dc5cce1343a8ebeb6f3d40d03c)
+        ;
+
+        
+    
+    
+            marker_7ded22db156d86600561b1466a5bf326.bindTooltip(
+                `<div>
+                     枚岡公園　バイオトイレ<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e8807a81f5525eda232b19ca1d2bbc5 = L.marker(
+                [34.6747118, 135.6546674],
+                {}
+            ).addTo(feature_group_d24e260ed65e63e7ec775e3d2aca6728);
+        
+    
+            var icon_11e5be4d162280209685ff1f4e9e3128 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4e8807a81f5525eda232b19ca1d2bbc5.setIcon(icon_11e5be4d162280209685ff1f4e9e3128);
+        
+    
+        var popup_2d6469411127f12d3583989dda886785 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_27ecfb7c2ee914e29971837a92da76fd = $(`<div id="html_27ecfb7c2ee914e29971837a92da76fd" style="width: 100.0%; height: 100.0%;">東大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6747118,135.6546674" target="_blank">枚岡公園　桜広場便所</a></div>`)[0];
+                popup_2d6469411127f12d3583989dda886785.setContent(html_27ecfb7c2ee914e29971837a92da76fd);
+            
+        
+
+        marker_4e8807a81f5525eda232b19ca1d2bbc5.bindPopup(popup_2d6469411127f12d3583989dda886785)
+        ;
+
+        
+    
+    
+            marker_4e8807a81f5525eda232b19ca1d2bbc5.bindTooltip(
+                `<div>
+                     枚岡公園　桜広場便所<br>34.6747118<br>135.6546674
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_2c9caa3f7cf21f67f8a25528a4a184a7 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_a816a5777e5c5a5dd56cbf4efa4b3413,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_192099ae5e00deb7d0c879ae2001efe7,
+                    "\u4f11\u61a9\u6240" : feature_group_8bf78bbfad3d4826f105e0e08d5ba776,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_381c6e292eb28515b55d3d97bd3b750b,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_75b383c80be4a3b6bb18e5dfd88d48ee,
+                    "\u89aa\u6c34" : feature_group_f22b25e0456a9f3af0a01e1206cf492e,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_56acc95f3840a962e09c63d0ae85f3f5,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_9fab54d04e72290074b92751d62ad614,
+                    "\u30c8\u30a4\u30ec" : feature_group_b7ee46de1adef75497247c124fae3705,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_d24e260ed65e63e7ec775e3d2aca6728,
+                },
+            };
+            L.control.layers(
+                layer_control_2c9caa3f7cf21f67f8a25528a4a184a7.base_layers,
+                layer_control_2c9caa3f7cf21f67f8a25528a4a184a7.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_9af007ee414ed961637594b9d9cb1d72);
+            feature_group_192099ae5e00deb7d0c879ae2001efe7.remove();
+            feature_group_8bf78bbfad3d4826f105e0e08d5ba776.remove();
+            feature_group_381c6e292eb28515b55d3d97bd3b750b.remove();
+            feature_group_75b383c80be4a3b6bb18e5dfd88d48ee.remove();
+            feature_group_f22b25e0456a9f3af0a01e1206cf492e.remove();
+            feature_group_56acc95f3840a962e09c63d0ae85f3f5.remove();
+            feature_group_9fab54d04e72290074b92751d62ad614.remove();
+            feature_group_b7ee46de1adef75497247c124fae3705.remove();
+            feature_group_d24e260ed65e63e7ec775e3d2aca6728.remove();
+        
+</script>
+</html>

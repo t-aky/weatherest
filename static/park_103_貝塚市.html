@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6c6583dd188600ddc566b210e906ba31 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6c6583dd188600ddc566b210e906ba31" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6c6583dd188600ddc566b210e906ba31 = L.map(
+                "map_6c6583dd188600ddc566b210e906ba31",
+                {
+                    center: [34.4385213, 135.3585535],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_11cb051f8ee77d2736c124d3785cbc8d = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_a70d08b7f5d10b5d4d4aef5ae6e28231 = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_dcbf9f3c61fc5d533509ae6f54dba23c = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_09aac50fa18daa26a45eb7e68be099c2 = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_9f97851be16406745944dbbb2bce706b = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_8a0b8a42a1b7ad25a6d54b893d0d26f8 = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_ba21b22e197ca681428e7a0617a4f75b = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_e5141cf3c61504fd28323fe8d430526c = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3 = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var marker_c8ed79d5811fe1db5ce83face34c3f41 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_43d5f5858105403ecc47040ea7f85c22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_c8ed79d5811fe1db5ce83face34c3f41.setIcon(icon_43d5f5858105403ecc47040ea7f85c22);
+        
+    
+        var popup_fcec5b2a95622579d0351f2d58b61502 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3bcd84d55b0bd7505067030dffad440a = $(`<div id="html_3bcd84d55b0bd7505067030dffad440a" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　松風広場便所</a></div>`)[0];
+                popup_fcec5b2a95622579d0351f2d58b61502.setContent(html_3bcd84d55b0bd7505067030dffad440a);
+            
+        
+
+        marker_c8ed79d5811fe1db5ce83face34c3f41.bindPopup(popup_fcec5b2a95622579d0351f2d58b61502)
+        ;
+
+        
+    
+    
+            marker_c8ed79d5811fe1db5ce83face34c3f41.bindTooltip(
+                `<div>
+                     二色の浜公園　松風広場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6e4cb246012de49f4d4edcdbfa763913 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_3dba11dfb7973120f31892162c5f6db0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_6e4cb246012de49f4d4edcdbfa763913.setIcon(icon_3dba11dfb7973120f31892162c5f6db0);
+        
+    
+        var popup_5f871c15994760b302b379d7a4d911db = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_553ed1fa91e0ed2d5a602b779be404fe = $(`<div id="html_553ed1fa91e0ed2d5a602b779be404fe" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　中央児童遊戯場便所</a></div>`)[0];
+                popup_5f871c15994760b302b379d7a4d911db.setContent(html_553ed1fa91e0ed2d5a602b779be404fe);
+            
+        
+
+        marker_6e4cb246012de49f4d4edcdbfa763913.bindPopup(popup_5f871c15994760b302b379d7a4d911db)
+        ;
+
+        
+    
+    
+            marker_6e4cb246012de49f4d4edcdbfa763913.bindTooltip(
+                `<div>
+                     二色の浜公園　中央児童遊戯場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_686e600fc26de7f4f1abea60bab51c01 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_7c383f70ef7213fd640f9a308fae0f50 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_686e600fc26de7f4f1abea60bab51c01.setIcon(icon_7c383f70ef7213fd640f9a308fae0f50);
+        
+    
+        var popup_d040ea0ab2a8d65837f192858970dc3e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_03fd6587e69ef38164558c9b5a5f3683 = $(`<div id="html_03fd6587e69ef38164558c9b5a5f3683" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　花見の丘便所</a></div>`)[0];
+                popup_d040ea0ab2a8d65837f192858970dc3e.setContent(html_03fd6587e69ef38164558c9b5a5f3683);
+            
+        
+
+        marker_686e600fc26de7f4f1abea60bab51c01.bindPopup(popup_d040ea0ab2a8d65837f192858970dc3e)
+        ;
+
+        
+    
+    
+            marker_686e600fc26de7f4f1abea60bab51c01.bindTooltip(
+                `<div>
+                     二色の浜公園　花見の丘便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_824ad22ce4533c90a18a8198057b9894 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_cfe530e962492d2ed56cd87030f1b7ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_824ad22ce4533c90a18a8198057b9894.setIcon(icon_cfe530e962492d2ed56cd87030f1b7ad);
+        
+    
+        var popup_c02e866bfbbc752f2a3cf1692563c5a2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3a152737fe58fb3413d9c98a396709fc = $(`<div id="html_3a152737fe58fb3413d9c98a396709fc" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　第３Ｐ横便所</a></div>`)[0];
+                popup_c02e866bfbbc752f2a3cf1692563c5a2.setContent(html_3a152737fe58fb3413d9c98a396709fc);
+            
+        
+
+        marker_824ad22ce4533c90a18a8198057b9894.bindPopup(popup_c02e866bfbbc752f2a3cf1692563c5a2)
+        ;
+
+        
+    
+    
+            marker_824ad22ce4533c90a18a8198057b9894.bindTooltip(
+                `<div>
+                     二色の浜公園　第３Ｐ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dfbd9a845fd7a79e1b94a88bfcd0a731 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_38008c887eecbff6ac9b2b41f9c21df6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_dfbd9a845fd7a79e1b94a88bfcd0a731.setIcon(icon_38008c887eecbff6ac9b2b41f9c21df6);
+        
+    
+        var popup_afd9b7c0a19fb6053cfc6a0dca3e1f25 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_39be9fa41b8b72e5d008363244eec6d6 = $(`<div id="html_39be9fa41b8b72e5d008363244eec6d6" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　ﾚｽﾄﾊｳｽ横便所</a></div>`)[0];
+                popup_afd9b7c0a19fb6053cfc6a0dca3e1f25.setContent(html_39be9fa41b8b72e5d008363244eec6d6);
+            
+        
+
+        marker_dfbd9a845fd7a79e1b94a88bfcd0a731.bindPopup(popup_afd9b7c0a19fb6053cfc6a0dca3e1f25)
+        ;
+
+        
+    
+    
+            marker_dfbd9a845fd7a79e1b94a88bfcd0a731.bindTooltip(
+                `<div>
+                     二色の浜公園　ﾚｽﾄﾊｳｽ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc1ac932d7c2888bcc6f84c9fcd3458d = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_542e7b77d21dccfa6b9b55eb3fa72b6f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_cc1ac932d7c2888bcc6f84c9fcd3458d.setIcon(icon_542e7b77d21dccfa6b9b55eb3fa72b6f);
+        
+    
+        var popup_8f22b83ffc5f049983dbc1b026ea0d1e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_367cd7aabd1d706cc01eef466837c254 = $(`<div id="html_367cd7aabd1d706cc01eef466837c254" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　海浜多目的広場便所</a></div>`)[0];
+                popup_8f22b83ffc5f049983dbc1b026ea0d1e.setContent(html_367cd7aabd1d706cc01eef466837c254);
+            
+        
+
+        marker_cc1ac932d7c2888bcc6f84c9fcd3458d.bindPopup(popup_8f22b83ffc5f049983dbc1b026ea0d1e)
+        ;
+
+        
+    
+    
+            marker_cc1ac932d7c2888bcc6f84c9fcd3458d.bindTooltip(
+                `<div>
+                     二色の浜公園　海浜多目的広場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b8ff84c7fef5650a363fa8d7623a2d5 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_70f666426263df0d901cfb7f7c38fe0f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_1b8ff84c7fef5650a363fa8d7623a2d5.setIcon(icon_70f666426263df0d901cfb7f7c38fe0f);
+        
+    
+        var popup_d14cf8bf87adc1e0bf69c479327d073f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_4bf1b34a35baaabb71ab752e9d734615 = $(`<div id="html_4bf1b34a35baaabb71ab752e9d734615" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　第１Ｐ横便所</a></div>`)[0];
+                popup_d14cf8bf87adc1e0bf69c479327d073f.setContent(html_4bf1b34a35baaabb71ab752e9d734615);
+            
+        
+
+        marker_1b8ff84c7fef5650a363fa8d7623a2d5.bindPopup(popup_d14cf8bf87adc1e0bf69c479327d073f)
+        ;
+
+        
+    
+    
+            marker_1b8ff84c7fef5650a363fa8d7623a2d5.bindTooltip(
+                `<div>
+                     二色の浜公園　第１Ｐ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fe41d2888113bd032dc04553e776fcb0 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3);
+        
+    
+            var icon_ae3391ec3e5013a63d9825b17e38d23b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_fe41d2888113bd032dc04553e776fcb0.setIcon(icon_ae3391ec3e5013a63d9825b17e38d23b);
+        
+    
+        var popup_38a4532e16375ff3a04875e56c3f4bb6 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_188f7e62841d13e49455880d8d576ff0 = $(`<div id="html_188f7e62841d13e49455880d8d576ff0" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　松風児童遊戯場便所</a></div>`)[0];
+                popup_38a4532e16375ff3a04875e56c3f4bb6.setContent(html_188f7e62841d13e49455880d8d576ff0);
+            
+        
+
+        marker_fe41d2888113bd032dc04553e776fcb0.bindPopup(popup_38a4532e16375ff3a04875e56c3f4bb6)
+        ;
+
+        
+    
+    
+            marker_fe41d2888113bd032dc04553e776fcb0.bindTooltip(
+                `<div>
+                     二色の浜公園　松風児童遊戯場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_ad1e217d6cf02015313ad45051a16d63 = L.featureGroup(
+                {}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+        
+    
+            var marker_392406a31589d76f0f80e9af59dc743a = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_4bbc8a76468a9a59ba74d786ed2bdf5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_392406a31589d76f0f80e9af59dc743a.setIcon(icon_4bbc8a76468a9a59ba74d786ed2bdf5e);
+        
+    
+        var popup_83b7bb76e5178a327b86d8a896b83550 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f3bf5cc56417cf99fbbccba8bf44ee32 = $(`<div id="html_f3bf5cc56417cf99fbbccba8bf44ee32" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　松風広場便所</a></div>`)[0];
+                popup_83b7bb76e5178a327b86d8a896b83550.setContent(html_f3bf5cc56417cf99fbbccba8bf44ee32);
+            
+        
+
+        marker_392406a31589d76f0f80e9af59dc743a.bindPopup(popup_83b7bb76e5178a327b86d8a896b83550)
+        ;
+
+        
+    
+    
+            marker_392406a31589d76f0f80e9af59dc743a.bindTooltip(
+                `<div>
+                     二色の浜公園　松風広場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_872637a8278797c18d2fdfeaa0729d83 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_f4df243cf230efa61131ae20d1d8f94f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_872637a8278797c18d2fdfeaa0729d83.setIcon(icon_f4df243cf230efa61131ae20d1d8f94f);
+        
+    
+        var popup_5f3bff974649e3001390eb72fc8318c2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f1dcce4c5124a3933bbd95ba9aa93224 = $(`<div id="html_f1dcce4c5124a3933bbd95ba9aa93224" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　中央児童遊戯場便所</a></div>`)[0];
+                popup_5f3bff974649e3001390eb72fc8318c2.setContent(html_f1dcce4c5124a3933bbd95ba9aa93224);
+            
+        
+
+        marker_872637a8278797c18d2fdfeaa0729d83.bindPopup(popup_5f3bff974649e3001390eb72fc8318c2)
+        ;
+
+        
+    
+    
+            marker_872637a8278797c18d2fdfeaa0729d83.bindTooltip(
+                `<div>
+                     二色の浜公園　中央児童遊戯場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be1441cdb8ddabc8e6e55ee61d683017 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_c07d64f7e7406d9cad9a003dc3aecb7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_be1441cdb8ddabc8e6e55ee61d683017.setIcon(icon_c07d64f7e7406d9cad9a003dc3aecb7d);
+        
+    
+        var popup_b64d5beefb7ca08a93dc9fdff6a73172 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_fdf8d5ffd3498c1d16e2f61a4c4516df = $(`<div id="html_fdf8d5ffd3498c1d16e2f61a4c4516df" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　花見の丘便所</a></div>`)[0];
+                popup_b64d5beefb7ca08a93dc9fdff6a73172.setContent(html_fdf8d5ffd3498c1d16e2f61a4c4516df);
+            
+        
+
+        marker_be1441cdb8ddabc8e6e55ee61d683017.bindPopup(popup_b64d5beefb7ca08a93dc9fdff6a73172)
+        ;
+
+        
+    
+    
+            marker_be1441cdb8ddabc8e6e55ee61d683017.bindTooltip(
+                `<div>
+                     二色の浜公園　花見の丘便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5350530835af0e35291ade2ded106492 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_1ab17dfc1d82157750f0bee42cf80616 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5350530835af0e35291ade2ded106492.setIcon(icon_1ab17dfc1d82157750f0bee42cf80616);
+        
+    
+        var popup_d2c3b2361744308b12e4f337f8710926 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_6ca54dd19d40a88a70acfd0c37368548 = $(`<div id="html_6ca54dd19d40a88a70acfd0c37368548" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　第３Ｐ横便所</a></div>`)[0];
+                popup_d2c3b2361744308b12e4f337f8710926.setContent(html_6ca54dd19d40a88a70acfd0c37368548);
+            
+        
+
+        marker_5350530835af0e35291ade2ded106492.bindPopup(popup_d2c3b2361744308b12e4f337f8710926)
+        ;
+
+        
+    
+    
+            marker_5350530835af0e35291ade2ded106492.bindTooltip(
+                `<div>
+                     二色の浜公園　第３Ｐ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b023e8405a3b0eecb3fd6b8abd42be85 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_9142d017fab9abad909feeda9fb36047 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b023e8405a3b0eecb3fd6b8abd42be85.setIcon(icon_9142d017fab9abad909feeda9fb36047);
+        
+    
+        var popup_988e9a17462fe87a43b53e2ea4bc812e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_67893fa154de6c7a45b6d5ea41b937b8 = $(`<div id="html_67893fa154de6c7a45b6d5ea41b937b8" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　ﾚｽﾄﾊｳｽ横便所</a></div>`)[0];
+                popup_988e9a17462fe87a43b53e2ea4bc812e.setContent(html_67893fa154de6c7a45b6d5ea41b937b8);
+            
+        
+
+        marker_b023e8405a3b0eecb3fd6b8abd42be85.bindPopup(popup_988e9a17462fe87a43b53e2ea4bc812e)
+        ;
+
+        
+    
+    
+            marker_b023e8405a3b0eecb3fd6b8abd42be85.bindTooltip(
+                `<div>
+                     二色の浜公園　ﾚｽﾄﾊｳｽ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3d3c9263a84d08b592fce6388a8d5bd9 = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_46699b516c37c77a4b5e3372bae9a71c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3d3c9263a84d08b592fce6388a8d5bd9.setIcon(icon_46699b516c37c77a4b5e3372bae9a71c);
+        
+    
+        var popup_bcd19d4fc088fc22e4622d6a49b792cf = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1df7b4a22e31fa9e722b5a643c12467c = $(`<div id="html_1df7b4a22e31fa9e722b5a643c12467c" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　海浜多目的広場便所</a></div>`)[0];
+                popup_bcd19d4fc088fc22e4622d6a49b792cf.setContent(html_1df7b4a22e31fa9e722b5a643c12467c);
+            
+        
+
+        marker_3d3c9263a84d08b592fce6388a8d5bd9.bindPopup(popup_bcd19d4fc088fc22e4622d6a49b792cf)
+        ;
+
+        
+    
+    
+            marker_3d3c9263a84d08b592fce6388a8d5bd9.bindTooltip(
+                `<div>
+                     二色の浜公園　海浜多目的広場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cad61703ccdada46163ddbf0fea78cfa = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_7e71b303caddc7c862cb72808dfe3e80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cad61703ccdada46163ddbf0fea78cfa.setIcon(icon_7e71b303caddc7c862cb72808dfe3e80);
+        
+    
+        var popup_fa4b8d68c407126e5e0e3afb79f0ba7a = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_6833ffdc66137bacafedcd02129574ef = $(`<div id="html_6833ffdc66137bacafedcd02129574ef" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　第１Ｐ横便所</a></div>`)[0];
+                popup_fa4b8d68c407126e5e0e3afb79f0ba7a.setContent(html_6833ffdc66137bacafedcd02129574ef);
+            
+        
+
+        marker_cad61703ccdada46163ddbf0fea78cfa.bindPopup(popup_fa4b8d68c407126e5e0e3afb79f0ba7a)
+        ;
+
+        
+    
+    
+            marker_cad61703ccdada46163ddbf0fea78cfa.bindTooltip(
+                `<div>
+                     二色の浜公園　第１Ｐ横便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_14c6593984872556bbf5eb032af43daa = L.marker(
+                [34.4370863, 135.3361934],
+                {}
+            ).addTo(feature_group_ad1e217d6cf02015313ad45051a16d63);
+        
+    
+            var icon_7baf5430f2e30b7b1e50c8eff34d4abe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_14c6593984872556bbf5eb032af43daa.setIcon(icon_7baf5430f2e30b7b1e50c8eff34d4abe);
+        
+    
+        var popup_4c4f242f07e7c4c4bf39c37d5c9b9ff0 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_06d3268eb24476848e729c19c8c1adf7 = $(`<div id="html_06d3268eb24476848e729c19c8c1adf7" style="width: 100.0%; height: 100.0%;">貝塚市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4370863,135.3361934" target="_blank">二色の浜公園　松風児童遊戯場便所</a></div>`)[0];
+                popup_4c4f242f07e7c4c4bf39c37d5c9b9ff0.setContent(html_06d3268eb24476848e729c19c8c1adf7);
+            
+        
+
+        marker_14c6593984872556bbf5eb032af43daa.bindPopup(popup_4c4f242f07e7c4c4bf39c37d5c9b9ff0)
+        ;
+
+        
+    
+    
+            marker_14c6593984872556bbf5eb032af43daa.bindTooltip(
+                `<div>
+                     二色の浜公園　松風児童遊戯場便所<br>34.4370863<br>135.3361934
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_f163d0d13fad367acc89fcc0e1f860a2 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_11cb051f8ee77d2736c124d3785cbc8d,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_a70d08b7f5d10b5d4d4aef5ae6e28231,
+                    "\u4f11\u61a9\u6240" : feature_group_dcbf9f3c61fc5d533509ae6f54dba23c,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_09aac50fa18daa26a45eb7e68be099c2,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_9f97851be16406745944dbbb2bce706b,
+                    "\u89aa\u6c34" : feature_group_8a0b8a42a1b7ad25a6d54b893d0d26f8,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_ba21b22e197ca681428e7a0617a4f75b,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_e5141cf3c61504fd28323fe8d430526c,
+                    "\u30c8\u30a4\u30ec" : feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_ad1e217d6cf02015313ad45051a16d63,
+                },
+            };
+            L.control.layers(
+                layer_control_f163d0d13fad367acc89fcc0e1f860a2.base_layers,
+                layer_control_f163d0d13fad367acc89fcc0e1f860a2.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_6c6583dd188600ddc566b210e906ba31);
+            feature_group_a70d08b7f5d10b5d4d4aef5ae6e28231.remove();
+            feature_group_dcbf9f3c61fc5d533509ae6f54dba23c.remove();
+            feature_group_09aac50fa18daa26a45eb7e68be099c2.remove();
+            feature_group_9f97851be16406745944dbbb2bce706b.remove();
+            feature_group_8a0b8a42a1b7ad25a6d54b893d0d26f8.remove();
+            feature_group_ba21b22e197ca681428e7a0617a4f75b.remove();
+            feature_group_e5141cf3c61504fd28323fe8d430526c.remove();
+            feature_group_86e857af8e4df56c1d6ee1da5b2ce5b3.remove();
+            feature_group_ad1e217d6cf02015313ad45051a16d63.remove();
+        
+</script>
+</html>

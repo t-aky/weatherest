@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9c50714b17603a282f8430c1bc442396 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9c50714b17603a282f8430c1bc442396" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9c50714b17603a282f8430c1bc442396 = L.map(
+                "map_9c50714b17603a282f8430c1bc442396",
+                {
+                    center: [34.8147385, 135.6511362],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4a2f396465ff208d3ee07ddfc4ad45f3 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_ddc44f274a6cf6a40b192f6d634989f6 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_414edeb47551ec75a32f0554e90ebdfb = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_34a3996aa3226bc49a7d5a15a273ee26 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_330e58e786aac3d96ea9561039e53761 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_1d37a287941a12dfb85c5ce017faa794 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_9f099d6d184fb969f2252a98697e94cf = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_6b95e58294ba6baba5d5f8bd0f612cd3 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var feature_group_b877fd90b4c18c089e7c162dff4443d2 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var marker_244b9e766d3302755a20c1e3f5beb770 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_4227505dffd212362a2461d4fb6fd4c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_244b9e766d3302755a20c1e3f5beb770.setIcon(icon_4227505dffd212362a2461d4fb6fd4c5);
+        
+    
+        var popup_dc48ccef137a4159e94e1a77d12f5f67 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1c0071917042e18e57d9056578652657 = $(`<div id="html_1c0071917042e18e57d9056578652657" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　観月堤便所</a></div>`)[0];
+                popup_dc48ccef137a4159e94e1a77d12f5f67.setContent(html_1c0071917042e18e57d9056578652657);
+            
+        
+
+        marker_244b9e766d3302755a20c1e3f5beb770.bindPopup(popup_dc48ccef137a4159e94e1a77d12f5f67)
+        ;
+
+        
+    
+    
+            marker_244b9e766d3302755a20c1e3f5beb770.bindTooltip(
+                `<div>
+                     山田池公園　観月堤便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_65327f8f99801251068e1518a19d966c = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_5013b95242710758db7a3ca3ac7cc8ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_65327f8f99801251068e1518a19d966c.setIcon(icon_5013b95242710758db7a3ca3ac7cc8ed);
+        
+    
+        var popup_681a78e71b42690e943c28328fc564b5 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c7f1b14a4a2814d596cbbe42e1e22530 = $(`<div id="html_c7f1b14a4a2814d596cbbe42e1e22530" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　北口便所</a></div>`)[0];
+                popup_681a78e71b42690e943c28328fc564b5.setContent(html_c7f1b14a4a2814d596cbbe42e1e22530);
+            
+        
+
+        marker_65327f8f99801251068e1518a19d966c.bindPopup(popup_681a78e71b42690e943c28328fc564b5)
+        ;
+
+        
+    
+    
+            marker_65327f8f99801251068e1518a19d966c.bindTooltip(
+                `<div>
+                     山田池公園　北口便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_442dc1aebd1f27cd976f8978b6dd0475 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_646b476f6b452e2e2529d69e600dea70 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_442dc1aebd1f27cd976f8978b6dd0475.setIcon(icon_646b476f6b452e2e2529d69e600dea70);
+        
+    
+        var popup_069e48e09f594980ee09be19bb3d425d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_108a4aa035e815c55723711b73089ca1 = $(`<div id="html_108a4aa035e815c55723711b73089ca1" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　水辺広場便所</a></div>`)[0];
+                popup_069e48e09f594980ee09be19bb3d425d.setContent(html_108a4aa035e815c55723711b73089ca1);
+            
+        
+
+        marker_442dc1aebd1f27cd976f8978b6dd0475.bindPopup(popup_069e48e09f594980ee09be19bb3d425d)
+        ;
+
+        
+    
+    
+            marker_442dc1aebd1f27cd976f8978b6dd0475.bindTooltip(
+                `<div>
+                     山田池公園　水辺広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b450d42aecc24217afc25e63188b1c62 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_4eb42b559c6d9fe91be221551a55a0ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_b450d42aecc24217afc25e63188b1c62.setIcon(icon_4eb42b559c6d9fe91be221551a55a0ae);
+        
+    
+        var popup_4785d1b231d6c26bba4da6886879fd99 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3e5d62ce6c53b4ac3fef4d70cfb8ec9a = $(`<div id="html_3e5d62ce6c53b4ac3fef4d70cfb8ec9a" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　花木園地区便所</a></div>`)[0];
+                popup_4785d1b231d6c26bba4da6886879fd99.setContent(html_3e5d62ce6c53b4ac3fef4d70cfb8ec9a);
+            
+        
+
+        marker_b450d42aecc24217afc25e63188b1c62.bindPopup(popup_4785d1b231d6c26bba4da6886879fd99)
+        ;
+
+        
+    
+    
+            marker_b450d42aecc24217afc25e63188b1c62.bindTooltip(
+                `<div>
+                     山田池公園　花木園地区便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71408896bfdc8fb9f38a3da953de60d0 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_f3e55191d6b6a3b6ed326382091759df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_71408896bfdc8fb9f38a3da953de60d0.setIcon(icon_f3e55191d6b6a3b6ed326382091759df);
+        
+    
+        var popup_772ca00a592181572e1f0e1302bc7ab9 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ee766d341f57373fbbec1ecc122846fc = $(`<div id="html_ee766d341f57373fbbec1ecc122846fc" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区自由広場便所</a></div>`)[0];
+                popup_772ca00a592181572e1f0e1302bc7ab9.setContent(html_ee766d341f57373fbbec1ecc122846fc);
+            
+        
+
+        marker_71408896bfdc8fb9f38a3da953de60d0.bindPopup(popup_772ca00a592181572e1f0e1302bc7ab9)
+        ;
+
+        
+    
+    
+            marker_71408896bfdc8fb9f38a3da953de60d0.bindTooltip(
+                `<div>
+                     山田池公園　南地区自由広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fd26726c04a1d649e1894f82a0689335 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_5eaa1be7aab77a999332d9f6d9454375 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_fd26726c04a1d649e1894f82a0689335.setIcon(icon_5eaa1be7aab77a999332d9f6d9454375);
+        
+    
+        var popup_6eb4b219d5a709a8b9bec0d6e236f449 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1a7134b418b4cc2f6aba2589685ad670 = $(`<div id="html_1a7134b418b4cc2f6aba2589685ad670" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区プロムナード便所</a></div>`)[0];
+                popup_6eb4b219d5a709a8b9bec0d6e236f449.setContent(html_1a7134b418b4cc2f6aba2589685ad670);
+            
+        
+
+        marker_fd26726c04a1d649e1894f82a0689335.bindPopup(popup_6eb4b219d5a709a8b9bec0d6e236f449)
+        ;
+
+        
+    
+    
+            marker_fd26726c04a1d649e1894f82a0689335.bindTooltip(
+                `<div>
+                     山田池公園　南地区プロムナード便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_670d705a23eb8b62bd5f01fdb8ea5867 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_f6065d09c59d0a40c3f379459d976019 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_670d705a23eb8b62bd5f01fdb8ea5867.setIcon(icon_f6065d09c59d0a40c3f379459d976019);
+        
+    
+        var popup_09cedb6cebba5ded33e0852840369ed7 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0e4811f302648056a645f43cc60277bb = $(`<div id="html_0e4811f302648056a645f43cc60277bb" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区多目的広場便所</a></div>`)[0];
+                popup_09cedb6cebba5ded33e0852840369ed7.setContent(html_0e4811f302648056a645f43cc60277bb);
+            
+        
+
+        marker_670d705a23eb8b62bd5f01fdb8ea5867.bindPopup(popup_09cedb6cebba5ded33e0852840369ed7)
+        ;
+
+        
+    
+    
+            marker_670d705a23eb8b62bd5f01fdb8ea5867.bindTooltip(
+                `<div>
+                     山田池公園　南地区多目的広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c27fc3ffd50d15405c845ec482d85366 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_e0e031c8836cebcb744b8700b4d84f58 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_c27fc3ffd50d15405c845ec482d85366.setIcon(icon_e0e031c8836cebcb744b8700b4d84f58);
+        
+    
+        var popup_09cef7abe95623623179c94c95127a5e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_aa09d22c52670568145d3383e19139f9 = $(`<div id="html_aa09d22c52670568145d3383e19139f9" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区駐車場便所</a></div>`)[0];
+                popup_09cef7abe95623623179c94c95127a5e.setContent(html_aa09d22c52670568145d3383e19139f9);
+            
+        
+
+        marker_c27fc3ffd50d15405c845ec482d85366.bindPopup(popup_09cef7abe95623623179c94c95127a5e)
+        ;
+
+        
+    
+    
+            marker_c27fc3ffd50d15405c845ec482d85366.bindTooltip(
+                `<div>
+                     山田池公園　南地区駐車場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26375e7271707ba47b8592f873218685 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_c3763b76f241a5bb5c4875ad8cbe2883 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_26375e7271707ba47b8592f873218685.setIcon(icon_c3763b76f241a5bb5c4875ad8cbe2883);
+        
+    
+        var popup_4bd4f3fdc317a59c84e1252cd6959e39 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c0cd8698d204bdc1d87c0eb64fcf185c = $(`<div id="html_c0cd8698d204bdc1d87c0eb64fcf185c" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　実りの里便所</a></div>`)[0];
+                popup_4bd4f3fdc317a59c84e1252cd6959e39.setContent(html_c0cd8698d204bdc1d87c0eb64fcf185c);
+            
+        
+
+        marker_26375e7271707ba47b8592f873218685.bindPopup(popup_4bd4f3fdc317a59c84e1252cd6959e39)
+        ;
+
+        
+    
+    
+            marker_26375e7271707ba47b8592f873218685.bindTooltip(
+                `<div>
+                     山田池公園　実りの里便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_af142555e8880f64bc35d733d4fe4f12 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_b877fd90b4c18c089e7c162dff4443d2);
+        
+    
+            var icon_61a2b3139ca5c621b729d724ba8b690d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_af142555e8880f64bc35d733d4fe4f12.setIcon(icon_61a2b3139ca5c621b729d724ba8b690d);
+        
+    
+        var popup_15dd30667be683a925fe116b14fabdd4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_829711c107c2e4280c2e4f8aad4f78aa = $(`<div id="html_829711c107c2e4280c2e4f8aad4f78aa" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　展望広場地区便所</a></div>`)[0];
+                popup_15dd30667be683a925fe116b14fabdd4.setContent(html_829711c107c2e4280c2e4f8aad4f78aa);
+            
+        
+
+        marker_af142555e8880f64bc35d733d4fe4f12.bindPopup(popup_15dd30667be683a925fe116b14fabdd4)
+        ;
+
+        
+    
+    
+            marker_af142555e8880f64bc35d733d4fe4f12.bindTooltip(
+                `<div>
+                     山田池公園　展望広場地区便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_7b13bdbb462ec2f2309729c0755c0583 = L.featureGroup(
+                {}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+        
+    
+            var marker_4b6e24ce853b81d407619ada6bc226e4 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_c6b85a17ff058aed6b25a57ad5535918 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4b6e24ce853b81d407619ada6bc226e4.setIcon(icon_c6b85a17ff058aed6b25a57ad5535918);
+        
+    
+        var popup_2ccc6b8977e0a1382b76ad0f2bfcca44 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e2d2c58d33e84ed1770230c59199e140 = $(`<div id="html_e2d2c58d33e84ed1770230c59199e140" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　観月堤便所</a></div>`)[0];
+                popup_2ccc6b8977e0a1382b76ad0f2bfcca44.setContent(html_e2d2c58d33e84ed1770230c59199e140);
+            
+        
+
+        marker_4b6e24ce853b81d407619ada6bc226e4.bindPopup(popup_2ccc6b8977e0a1382b76ad0f2bfcca44)
+        ;
+
+        
+    
+    
+            marker_4b6e24ce853b81d407619ada6bc226e4.bindTooltip(
+                `<div>
+                     山田池公園　観月堤便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b1cd7cd4a1434eb9c4922db10736e282 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_7b474e7e5fe5ca983c5f24e4ad808d46 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b1cd7cd4a1434eb9c4922db10736e282.setIcon(icon_7b474e7e5fe5ca983c5f24e4ad808d46);
+        
+    
+        var popup_5ae5a0054aac99ebd83038d8ad20c08a = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_42f64dee98bec6b7ae881f70237bb303 = $(`<div id="html_42f64dee98bec6b7ae881f70237bb303" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　北口便所</a></div>`)[0];
+                popup_5ae5a0054aac99ebd83038d8ad20c08a.setContent(html_42f64dee98bec6b7ae881f70237bb303);
+            
+        
+
+        marker_b1cd7cd4a1434eb9c4922db10736e282.bindPopup(popup_5ae5a0054aac99ebd83038d8ad20c08a)
+        ;
+
+        
+    
+    
+            marker_b1cd7cd4a1434eb9c4922db10736e282.bindTooltip(
+                `<div>
+                     山田池公園　北口便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f3df905d21b0b7ef36e10332d920dd5d = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_ad7ab0fefda270d58556b0a92af3c8c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f3df905d21b0b7ef36e10332d920dd5d.setIcon(icon_ad7ab0fefda270d58556b0a92af3c8c7);
+        
+    
+        var popup_777c77b5984ad2c476ce95b1510e8e6b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_07b5bb7c63f1d5459cdc1f2757c29a08 = $(`<div id="html_07b5bb7c63f1d5459cdc1f2757c29a08" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　水辺広場便所</a></div>`)[0];
+                popup_777c77b5984ad2c476ce95b1510e8e6b.setContent(html_07b5bb7c63f1d5459cdc1f2757c29a08);
+            
+        
+
+        marker_f3df905d21b0b7ef36e10332d920dd5d.bindPopup(popup_777c77b5984ad2c476ce95b1510e8e6b)
+        ;
+
+        
+    
+    
+            marker_f3df905d21b0b7ef36e10332d920dd5d.bindTooltip(
+                `<div>
+                     山田池公園　水辺広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4ac2b176f33534a548dc771f4b7675fd = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_6dada41dbc6c94d2c09bd5030ead4daa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4ac2b176f33534a548dc771f4b7675fd.setIcon(icon_6dada41dbc6c94d2c09bd5030ead4daa);
+        
+    
+        var popup_a36d8589d49d1a6d5318baff1e05c9f0 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_12d03128e23596036e70fcb2dfbaaf6f = $(`<div id="html_12d03128e23596036e70fcb2dfbaaf6f" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　花木園地区便所</a></div>`)[0];
+                popup_a36d8589d49d1a6d5318baff1e05c9f0.setContent(html_12d03128e23596036e70fcb2dfbaaf6f);
+            
+        
+
+        marker_4ac2b176f33534a548dc771f4b7675fd.bindPopup(popup_a36d8589d49d1a6d5318baff1e05c9f0)
+        ;
+
+        
+    
+    
+            marker_4ac2b176f33534a548dc771f4b7675fd.bindTooltip(
+                `<div>
+                     山田池公園　花木園地区便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a91a176a65e47ad8cb8ecf8321eba09a = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_f2d119f2f16faa037b594f278beabe9b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a91a176a65e47ad8cb8ecf8321eba09a.setIcon(icon_f2d119f2f16faa037b594f278beabe9b);
+        
+    
+        var popup_591d81827dd12a014df455ed42c8b4bc = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ec118a276e699073df1cc5f91abdfeca = $(`<div id="html_ec118a276e699073df1cc5f91abdfeca" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区自由広場便所</a></div>`)[0];
+                popup_591d81827dd12a014df455ed42c8b4bc.setContent(html_ec118a276e699073df1cc5f91abdfeca);
+            
+        
+
+        marker_a91a176a65e47ad8cb8ecf8321eba09a.bindPopup(popup_591d81827dd12a014df455ed42c8b4bc)
+        ;
+
+        
+    
+    
+            marker_a91a176a65e47ad8cb8ecf8321eba09a.bindTooltip(
+                `<div>
+                     山田池公園　南地区自由広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0f271767c7d6e08629cd9c4684e0771 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_ecff5cf982bfeab5623317e9499e6145 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f0f271767c7d6e08629cd9c4684e0771.setIcon(icon_ecff5cf982bfeab5623317e9499e6145);
+        
+    
+        var popup_2b872384b99d9cfa6b3c320d69fc0b0f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_83a3469ac4e8d204371526d96a220db6 = $(`<div id="html_83a3469ac4e8d204371526d96a220db6" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区プロムナード便所</a></div>`)[0];
+                popup_2b872384b99d9cfa6b3c320d69fc0b0f.setContent(html_83a3469ac4e8d204371526d96a220db6);
+            
+        
+
+        marker_f0f271767c7d6e08629cd9c4684e0771.bindPopup(popup_2b872384b99d9cfa6b3c320d69fc0b0f)
+        ;
+
+        
+    
+    
+            marker_f0f271767c7d6e08629cd9c4684e0771.bindTooltip(
+                `<div>
+                     山田池公園　南地区プロムナード便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_460a2a403825f749f3901584de2e166b = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_cc70643b7db4aa2b744d55a613207627 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_460a2a403825f749f3901584de2e166b.setIcon(icon_cc70643b7db4aa2b744d55a613207627);
+        
+    
+        var popup_e5fe39ffb8eb3a99a8ae1668a93c7d01 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_96cd66dbc31e73b4cd4a3acd0308dc8a = $(`<div id="html_96cd66dbc31e73b4cd4a3acd0308dc8a" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区多目的広場便所</a></div>`)[0];
+                popup_e5fe39ffb8eb3a99a8ae1668a93c7d01.setContent(html_96cd66dbc31e73b4cd4a3acd0308dc8a);
+            
+        
+
+        marker_460a2a403825f749f3901584de2e166b.bindPopup(popup_e5fe39ffb8eb3a99a8ae1668a93c7d01)
+        ;
+
+        
+    
+    
+            marker_460a2a403825f749f3901584de2e166b.bindTooltip(
+                `<div>
+                     山田池公園　南地区多目的広場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b23fce27e31b94cb2b24c22a9872203 = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_f2b16864e1c293a6e11e4f1969959267 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5b23fce27e31b94cb2b24c22a9872203.setIcon(icon_f2b16864e1c293a6e11e4f1969959267);
+        
+    
+        var popup_cc4d9b1a323b4c3b6bdd0f31238fb251 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1a71818d4e4511b559ebae13c570482b = $(`<div id="html_1a71818d4e4511b559ebae13c570482b" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　南地区駐車場便所</a></div>`)[0];
+                popup_cc4d9b1a323b4c3b6bdd0f31238fb251.setContent(html_1a71818d4e4511b559ebae13c570482b);
+            
+        
+
+        marker_5b23fce27e31b94cb2b24c22a9872203.bindPopup(popup_cc4d9b1a323b4c3b6bdd0f31238fb251)
+        ;
+
+        
+    
+    
+            marker_5b23fce27e31b94cb2b24c22a9872203.bindTooltip(
+                `<div>
+                     山田池公園　南地区駐車場便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c79f032d024cc29528bee73770fc174e = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_a7408f3c244071182d6293f066fa2042 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c79f032d024cc29528bee73770fc174e.setIcon(icon_a7408f3c244071182d6293f066fa2042);
+        
+    
+        var popup_1140c68f1546df1099ba10aab71dbaca = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a34a3f99ab31ac5c45e307d55d69f428 = $(`<div id="html_a34a3f99ab31ac5c45e307d55d69f428" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　実りの里便所</a></div>`)[0];
+                popup_1140c68f1546df1099ba10aab71dbaca.setContent(html_a34a3f99ab31ac5c45e307d55d69f428);
+            
+        
+
+        marker_c79f032d024cc29528bee73770fc174e.bindPopup(popup_1140c68f1546df1099ba10aab71dbaca)
+        ;
+
+        
+    
+    
+            marker_c79f032d024cc29528bee73770fc174e.bindTooltip(
+                `<div>
+                     山田池公園　実りの里便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_173110ae168787df79c9b1f8af56c73c = L.marker(
+                [34.8228215, 135.6887272],
+                {}
+            ).addTo(feature_group_7b13bdbb462ec2f2309729c0755c0583);
+        
+    
+            var icon_0f72967477c1a542b873de6867e6209d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_173110ae168787df79c9b1f8af56c73c.setIcon(icon_0f72967477c1a542b873de6867e6209d);
+        
+    
+        var popup_06265978767ef13ba2fe9ef76e0d8d23 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ac3084fafee11548a20dabee93a5d4fb = $(`<div id="html_ac3084fafee11548a20dabee93a5d4fb" style="width: 100.0%; height: 100.0%;">枚方市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8228215,135.6887272" target="_blank">山田池公園　展望広場地区便所</a></div>`)[0];
+                popup_06265978767ef13ba2fe9ef76e0d8d23.setContent(html_ac3084fafee11548a20dabee93a5d4fb);
+            
+        
+
+        marker_173110ae168787df79c9b1f8af56c73c.bindPopup(popup_06265978767ef13ba2fe9ef76e0d8d23)
+        ;
+
+        
+    
+    
+            marker_173110ae168787df79c9b1f8af56c73c.bindTooltip(
+                `<div>
+                     山田池公園　展望広場地区便所<br>34.8228215<br>135.6887272
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_72211f60daab14d04fe307349e2842b7 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_4a2f396465ff208d3ee07ddfc4ad45f3,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_ddc44f274a6cf6a40b192f6d634989f6,
+                    "\u4f11\u61a9\u6240" : feature_group_414edeb47551ec75a32f0554e90ebdfb,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_34a3996aa3226bc49a7d5a15a273ee26,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_330e58e786aac3d96ea9561039e53761,
+                    "\u89aa\u6c34" : feature_group_1d37a287941a12dfb85c5ce017faa794,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_9f099d6d184fb969f2252a98697e94cf,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_6b95e58294ba6baba5d5f8bd0f612cd3,
+                    "\u30c8\u30a4\u30ec" : feature_group_b877fd90b4c18c089e7c162dff4443d2,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_7b13bdbb462ec2f2309729c0755c0583,
+                },
+            };
+            L.control.layers(
+                layer_control_72211f60daab14d04fe307349e2842b7.base_layers,
+                layer_control_72211f60daab14d04fe307349e2842b7.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_9c50714b17603a282f8430c1bc442396);
+            feature_group_ddc44f274a6cf6a40b192f6d634989f6.remove();
+            feature_group_414edeb47551ec75a32f0554e90ebdfb.remove();
+            feature_group_34a3996aa3226bc49a7d5a15a273ee26.remove();
+            feature_group_330e58e786aac3d96ea9561039e53761.remove();
+            feature_group_1d37a287941a12dfb85c5ce017faa794.remove();
+            feature_group_9f099d6d184fb969f2252a98697e94cf.remove();
+            feature_group_6b95e58294ba6baba5d5f8bd0f612cd3.remove();
+            feature_group_b877fd90b4c18c089e7c162dff4443d2.remove();
+            feature_group_7b13bdbb462ec2f2309729c0755c0583.remove();
+        
+</script>
+</html>

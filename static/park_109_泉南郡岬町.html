@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3637e0d365e4c17221496d38797b360a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_3637e0d365e4c17221496d38797b360a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3637e0d365e4c17221496d38797b360a = L.map(
+                "map_3637e0d365e4c17221496d38797b360a",
+                {
+                    center: [34.3173248, 135.142186],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_25b48ecad22e4e654c357d31ec7e7bdb = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_77430d3e373f333108cb954244592526 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_34b8df6329ef44e0b277879ec488e955 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_310d3a60e08d8c75a4b6120767668bfc = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_6dc610c21d6ab702333ec285ceed9fc7 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_476a3433baaf138d8044164597501f68 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_c5374a8f4179d897032bb28c16739470 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_152250708d3e055249b07193b9dc0011 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var feature_group_deeef155a25fc019681937d24ccc5f73 = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var marker_cbedb9605a3011ebb5ed14e242220792 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_cd14a347feea9543e76d8bf5a7039f8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_cbedb9605a3011ebb5ed14e242220792.setIcon(icon_cd14a347feea9543e76d8bf5a7039f8c);
+        
+    
+        var popup_ed0fb599d09f6e58620c460a8fa08dfb = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_156bff62daaf279181796b806fe187a6 = $(`<div id="html_156bff62daaf279181796b806fe187a6" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　多目的広場阪南１　便所</a></div>`)[0];
+                popup_ed0fb599d09f6e58620c460a8fa08dfb.setContent(html_156bff62daaf279181796b806fe187a6);
+            
+        
+
+        marker_cbedb9605a3011ebb5ed14e242220792.bindPopup(popup_ed0fb599d09f6e58620c460a8fa08dfb)
+        ;
+
+        
+    
+    
+            marker_cbedb9605a3011ebb5ed14e242220792.bindTooltip(
+                `<div>
+                     せんなん里海公園　多目的広場阪南１　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_022eb0b731d0ffbc88b99ff3b683cb6e = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_5c62d733fc6a13e4e963d1c5db115612 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_022eb0b731d0ffbc88b99ff3b683cb6e.setIcon(icon_5c62d733fc6a13e4e963d1c5db115612);
+        
+    
+        var popup_b819bb865b04ccd1bd2d1926dfd15a8c = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0e896c4f4ab50cbe02d840c6b6ff65aa = $(`<div id="html_0e896c4f4ab50cbe02d840c6b6ff65aa" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　多目的広場阪南２　便所</a></div>`)[0];
+                popup_b819bb865b04ccd1bd2d1926dfd15a8c.setContent(html_0e896c4f4ab50cbe02d840c6b6ff65aa);
+            
+        
+
+        marker_022eb0b731d0ffbc88b99ff3b683cb6e.bindPopup(popup_b819bb865b04ccd1bd2d1926dfd15a8c)
+        ;
+
+        
+    
+    
+            marker_022eb0b731d0ffbc88b99ff3b683cb6e.bindTooltip(
+                `<div>
+                     せんなん里海公園　多目的広場阪南２　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_950a47c53391d66d85327fe273432386 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_6b4dab36ca1d9f83e414d2cc0a5e574d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_950a47c53391d66d85327fe273432386.setIcon(icon_6b4dab36ca1d9f83e414d2cc0a5e574d);
+        
+    
+        var popup_f51a8247baaa3b690c3345a699d2f968 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a8bce10868a86b04f6ad72879c8a9a4e = $(`<div id="html_a8bce10868a86b04f6ad72879c8a9a4e" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　タコ遊園阪南３　便所</a></div>`)[0];
+                popup_f51a8247baaa3b690c3345a699d2f968.setContent(html_a8bce10868a86b04f6ad72879c8a9a4e);
+            
+        
+
+        marker_950a47c53391d66d85327fe273432386.bindPopup(popup_f51a8247baaa3b690c3345a699d2f968)
+        ;
+
+        
+    
+    
+            marker_950a47c53391d66d85327fe273432386.bindTooltip(
+                `<div>
+                     せんなん里海公園　タコ遊園阪南３　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4248ffdf4d3dcee75d6c12aa8ae55612 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_8d6e0058dba776da2ea4f19c17043641 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_4248ffdf4d3dcee75d6c12aa8ae55612.setIcon(icon_8d6e0058dba776da2ea4f19c17043641);
+        
+    
+        var popup_8b6dbd11266a1deb0c0f06f04a2f6e52 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c368fcfac836edf6a7798e1c712baa28 = $(`<div id="html_c368fcfac836edf6a7798e1c712baa28" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　イルカ遊園阪南４　便所</a></div>`)[0];
+                popup_8b6dbd11266a1deb0c0f06f04a2f6e52.setContent(html_c368fcfac836edf6a7798e1c712baa28);
+            
+        
+
+        marker_4248ffdf4d3dcee75d6c12aa8ae55612.bindPopup(popup_8b6dbd11266a1deb0c0f06f04a2f6e52)
+        ;
+
+        
+    
+    
+            marker_4248ffdf4d3dcee75d6c12aa8ae55612.bindTooltip(
+                `<div>
+                     せんなん里海公園　イルカ遊園阪南４　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3925c8ff01635e706d71328df7046fc0 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_595ab8dae3a8421bf8afe75bc945e4af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_3925c8ff01635e706d71328df7046fc0.setIcon(icon_595ab8dae3a8421bf8afe75bc945e4af);
+        
+    
+        var popup_0b88b74e28586bb0671da270fa233ad1 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_233936d152d839af546b6f6de813a172 = $(`<div id="html_233936d152d839af546b6f6de813a172" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　海辺の広場阪南５　便所</a></div>`)[0];
+                popup_0b88b74e28586bb0671da270fa233ad1.setContent(html_233936d152d839af546b6f6de813a172);
+            
+        
+
+        marker_3925c8ff01635e706d71328df7046fc0.bindPopup(popup_0b88b74e28586bb0671da270fa233ad1)
+        ;
+
+        
+    
+    
+            marker_3925c8ff01635e706d71328df7046fc0.bindTooltip(
+                `<div>
+                     せんなん里海公園　海辺の広場阪南５　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c7cd400f9adc4732878233ffe6343aa2 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_d9323c2ae162a4b9385e1a4996a9ee6c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_c7cd400f9adc4732878233ffe6343aa2.setIcon(icon_d9323c2ae162a4b9385e1a4996a9ee6c);
+        
+    
+        var popup_4fa0d1c4a40cb8eacb958d052d7f0753 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_32041448bd52bfed2382b4416085be90 = $(`<div id="html_32041448bd52bfed2382b4416085be90" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　岬１便所（西側）</a></div>`)[0];
+                popup_4fa0d1c4a40cb8eacb958d052d7f0753.setContent(html_32041448bd52bfed2382b4416085be90);
+            
+        
+
+        marker_c7cd400f9adc4732878233ffe6343aa2.bindPopup(popup_4fa0d1c4a40cb8eacb958d052d7f0753)
+        ;
+
+        
+    
+    
+            marker_c7cd400f9adc4732878233ffe6343aa2.bindTooltip(
+                `<div>
+                     せんなん里海公園　岬１便所（西側）<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8b64ab135ec23f4ca31501270bf56ddd = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_deeef155a25fc019681937d24ccc5f73);
+        
+    
+            var icon_57361e33e1aab97279e70a58502f7c7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_8b64ab135ec23f4ca31501270bf56ddd.setIcon(icon_57361e33e1aab97279e70a58502f7c7e);
+        
+    
+        var popup_5d200e31569f7450970fca280709e605 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_fec4bab18dddca983b03b08b29993259 = $(`<div id="html_fec4bab18dddca983b03b08b29993259" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　岬２便所（東側）</a></div>`)[0];
+                popup_5d200e31569f7450970fca280709e605.setContent(html_fec4bab18dddca983b03b08b29993259);
+            
+        
+
+        marker_8b64ab135ec23f4ca31501270bf56ddd.bindPopup(popup_5d200e31569f7450970fca280709e605)
+        ;
+
+        
+    
+    
+            marker_8b64ab135ec23f4ca31501270bf56ddd.bindTooltip(
+                `<div>
+                     せんなん里海公園　岬２便所（東側）<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_5860469017516be2e0a4c34ca2b1542d = L.featureGroup(
+                {}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+        
+    
+            var marker_d421b25ef06b568108103b2327e87861 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_9b4d4c35355721d316139fa21ac78cfb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d421b25ef06b568108103b2327e87861.setIcon(icon_9b4d4c35355721d316139fa21ac78cfb);
+        
+    
+        var popup_06ee4c77a3bdd07790ad9d8c70edc5d2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_fe5fd2f07c7d7fc54e247165d3902f0a = $(`<div id="html_fe5fd2f07c7d7fc54e247165d3902f0a" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　多目的広場阪南１　便所</a></div>`)[0];
+                popup_06ee4c77a3bdd07790ad9d8c70edc5d2.setContent(html_fe5fd2f07c7d7fc54e247165d3902f0a);
+            
+        
+
+        marker_d421b25ef06b568108103b2327e87861.bindPopup(popup_06ee4c77a3bdd07790ad9d8c70edc5d2)
+        ;
+
+        
+    
+    
+            marker_d421b25ef06b568108103b2327e87861.bindTooltip(
+                `<div>
+                     せんなん里海公園　多目的広場阪南１　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_da5d211ca4f109d558bb1b8cd59ee7d6 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_10bc9f41847ef9e57e7c0bb0295b281d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_da5d211ca4f109d558bb1b8cd59ee7d6.setIcon(icon_10bc9f41847ef9e57e7c0bb0295b281d);
+        
+    
+        var popup_3592d2251a581491f23e3a2ea681b2dc = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e5c9ad86d4ad8ce1e831bb83cb4fb43d = $(`<div id="html_e5c9ad86d4ad8ce1e831bb83cb4fb43d" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　多目的広場阪南２　便所</a></div>`)[0];
+                popup_3592d2251a581491f23e3a2ea681b2dc.setContent(html_e5c9ad86d4ad8ce1e831bb83cb4fb43d);
+            
+        
+
+        marker_da5d211ca4f109d558bb1b8cd59ee7d6.bindPopup(popup_3592d2251a581491f23e3a2ea681b2dc)
+        ;
+
+        
+    
+    
+            marker_da5d211ca4f109d558bb1b8cd59ee7d6.bindTooltip(
+                `<div>
+                     せんなん里海公園　多目的広場阪南２　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1895b41ff1d0f928723b11577f571e24 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_a1ef27fc7ff8f64651aaa1e29b2eae4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1895b41ff1d0f928723b11577f571e24.setIcon(icon_a1ef27fc7ff8f64651aaa1e29b2eae4e);
+        
+    
+        var popup_f548105390718a8fd98a870e23e5bd00 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f760e1fe759a78556b4023b0846e0a38 = $(`<div id="html_f760e1fe759a78556b4023b0846e0a38" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　タコ遊園阪南３　便所</a></div>`)[0];
+                popup_f548105390718a8fd98a870e23e5bd00.setContent(html_f760e1fe759a78556b4023b0846e0a38);
+            
+        
+
+        marker_1895b41ff1d0f928723b11577f571e24.bindPopup(popup_f548105390718a8fd98a870e23e5bd00)
+        ;
+
+        
+    
+    
+            marker_1895b41ff1d0f928723b11577f571e24.bindTooltip(
+                `<div>
+                     せんなん里海公園　タコ遊園阪南３　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d0183f480d56bda397e4158b0159d1b4 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_53c27a7581b63ec1cf2b7be93141833f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d0183f480d56bda397e4158b0159d1b4.setIcon(icon_53c27a7581b63ec1cf2b7be93141833f);
+        
+    
+        var popup_dc4dc7435fe3e668e94525c695ed4b0e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c92007bc2a96921ce76e35f3c21a113d = $(`<div id="html_c92007bc2a96921ce76e35f3c21a113d" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　イルカ遊園阪南４　便所</a></div>`)[0];
+                popup_dc4dc7435fe3e668e94525c695ed4b0e.setContent(html_c92007bc2a96921ce76e35f3c21a113d);
+            
+        
+
+        marker_d0183f480d56bda397e4158b0159d1b4.bindPopup(popup_dc4dc7435fe3e668e94525c695ed4b0e)
+        ;
+
+        
+    
+    
+            marker_d0183f480d56bda397e4158b0159d1b4.bindTooltip(
+                `<div>
+                     せんなん里海公園　イルカ遊園阪南４　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cc8e3f0a539f7df2c40127967aea1621 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_b352841328366075268d7b7d9f1f566f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cc8e3f0a539f7df2c40127967aea1621.setIcon(icon_b352841328366075268d7b7d9f1f566f);
+        
+    
+        var popup_15928ac9ff09477caf213135c67b2920 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f6dc546e2e4d259afaa926e8bac3c668 = $(`<div id="html_f6dc546e2e4d259afaa926e8bac3c668" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　海辺の広場阪南５　便所</a></div>`)[0];
+                popup_15928ac9ff09477caf213135c67b2920.setContent(html_f6dc546e2e4d259afaa926e8bac3c668);
+            
+        
+
+        marker_cc8e3f0a539f7df2c40127967aea1621.bindPopup(popup_15928ac9ff09477caf213135c67b2920)
+        ;
+
+        
+    
+    
+            marker_cc8e3f0a539f7df2c40127967aea1621.bindTooltip(
+                `<div>
+                     せんなん里海公園　海辺の広場阪南５　便所<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d75d8550a34c5981454d57139d86160 = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_fdb81fb875318b3869fd53392a573f57 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6d75d8550a34c5981454d57139d86160.setIcon(icon_fdb81fb875318b3869fd53392a573f57);
+        
+    
+        var popup_5b099d540a16105cf4735db4a1a28b43 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1cde48ea7c543973d510e95814cf18a5 = $(`<div id="html_1cde48ea7c543973d510e95814cf18a5" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　岬１便所（西側）</a></div>`)[0];
+                popup_5b099d540a16105cf4735db4a1a28b43.setContent(html_1cde48ea7c543973d510e95814cf18a5);
+            
+        
+
+        marker_6d75d8550a34c5981454d57139d86160.bindPopup(popup_5b099d540a16105cf4735db4a1a28b43)
+        ;
+
+        
+    
+    
+            marker_6d75d8550a34c5981454d57139d86160.bindTooltip(
+                `<div>
+                     せんなん里海公園　岬１便所（西側）<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2c66db9f26c051c81854940db5038a9b = L.marker(
+                [34.3362112, 135.1907296],
+                {}
+            ).addTo(feature_group_5860469017516be2e0a4c34ca2b1542d);
+        
+    
+            var icon_7b5bc5cea7de11a4a9654e6dd5b14b62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2c66db9f26c051c81854940db5038a9b.setIcon(icon_7b5bc5cea7de11a4a9654e6dd5b14b62);
+        
+    
+        var popup_f7f2c907bc282a3414f53516884810d0 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_59eb3b96a167a26741ca8fe4cc6f3895 = $(`<div id="html_59eb3b96a167a26741ca8fe4cc6f3895" style="width: 100.0%; height: 100.0%;">泉南郡岬町<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.3362112,135.1907296" target="_blank">せんなん里海公園　岬２便所（東側）</a></div>`)[0];
+                popup_f7f2c907bc282a3414f53516884810d0.setContent(html_59eb3b96a167a26741ca8fe4cc6f3895);
+            
+        
+
+        marker_2c66db9f26c051c81854940db5038a9b.bindPopup(popup_f7f2c907bc282a3414f53516884810d0)
+        ;
+
+        
+    
+    
+            marker_2c66db9f26c051c81854940db5038a9b.bindTooltip(
+                `<div>
+                     せんなん里海公園　岬２便所（東側）<br>34.3362112<br>135.1907296
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_5a73cb573587332bcec47d280808c39a = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_25b48ecad22e4e654c357d31ec7e7bdb,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_77430d3e373f333108cb954244592526,
+                    "\u4f11\u61a9\u6240" : feature_group_34b8df6329ef44e0b277879ec488e955,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_310d3a60e08d8c75a4b6120767668bfc,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_6dc610c21d6ab702333ec285ceed9fc7,
+                    "\u89aa\u6c34" : feature_group_476a3433baaf138d8044164597501f68,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_c5374a8f4179d897032bb28c16739470,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_152250708d3e055249b07193b9dc0011,
+                    "\u30c8\u30a4\u30ec" : feature_group_deeef155a25fc019681937d24ccc5f73,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_5860469017516be2e0a4c34ca2b1542d,
+                },
+            };
+            L.control.layers(
+                layer_control_5a73cb573587332bcec47d280808c39a.base_layers,
+                layer_control_5a73cb573587332bcec47d280808c39a.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_3637e0d365e4c17221496d38797b360a);
+            feature_group_77430d3e373f333108cb954244592526.remove();
+            feature_group_34b8df6329ef44e0b277879ec488e955.remove();
+            feature_group_310d3a60e08d8c75a4b6120767668bfc.remove();
+            feature_group_6dc610c21d6ab702333ec285ceed9fc7.remove();
+            feature_group_476a3433baaf138d8044164597501f68.remove();
+            feature_group_c5374a8f4179d897032bb28c16739470.remove();
+            feature_group_152250708d3e055249b07193b9dc0011.remove();
+            feature_group_deeef155a25fc019681937d24ccc5f73.remove();
+            feature_group_5860469017516be2e0a4c34ca2b1542d.remove();
+        
+</script>
+</html>

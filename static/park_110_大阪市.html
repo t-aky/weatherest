@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5b98db5e3538120805dac0146ff4bb14 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5b98db5e3538120805dac0146ff4bb14" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5b98db5e3538120805dac0146ff4bb14 = L.map(
+                "map_5b98db5e3538120805dac0146ff4bb14",
+                {
+                    center: [34.6937249, 135.5022535],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_62323b3827040d3f8ffef68ebab1cb8e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_a16cbce7e96cf55bbe1ef6c2d302dcc4 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_dfef1e5ff685817ac8631b130d726454 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_2b0513a2115e55d08a91e40494c18995 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_193ac43facf7b3ee2fb803e9a0d56599 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_fd109a94fe87955766b5ef5c13e92263 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_b9f5b7793a2dfbc3f28086fa26827d97 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_88a63a8a479ca6b6af04b6172e3b0cd7 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1 = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var marker_b0f54549993493930a72e254b824ede9 = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_96927541bacc826fad33e8e2bce7c040 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_b0f54549993493930a72e254b824ede9.setIcon(icon_96927541bacc826fad33e8e2bce7c040);
+        
+    
+        var popup_78903d7928ac5d46b72ba473a7e32524 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0a3231bf446556e2d6ccb90b02ddd67e = $(`<div id="html_0a3231bf446556e2d6ccb90b02ddd67e" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　児童遊戯場便所</a></div>`)[0];
+                popup_78903d7928ac5d46b72ba473a7e32524.setContent(html_0a3231bf446556e2d6ccb90b02ddd67e);
+            
+        
+
+        marker_b0f54549993493930a72e254b824ede9.bindPopup(popup_78903d7928ac5d46b72ba473a7e32524)
+        ;
+
+        
+    
+    
+            marker_b0f54549993493930a72e254b824ede9.bindTooltip(
+                `<div>
+                     住之江公園　児童遊戯場便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13258da5dae6c89ed7fbe78d7bb09619 = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_d03a4895ba1d38eb49733996f52a8185 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_13258da5dae6c89ed7fbe78d7bb09619.setIcon(icon_d03a4895ba1d38eb49733996f52a8185);
+        
+    
+        var popup_09f547fd8f4f232fa2c1b05367014263 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_33acd3f591846b0e9ba0de726d10a818 = $(`<div id="html_33acd3f591846b0e9ba0de726d10a818" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　公園管理事務所横便所</a></div>`)[0];
+                popup_09f547fd8f4f232fa2c1b05367014263.setContent(html_33acd3f591846b0e9ba0de726d10a818);
+            
+        
+
+        marker_13258da5dae6c89ed7fbe78d7bb09619.bindPopup(popup_09f547fd8f4f232fa2c1b05367014263)
+        ;
+
+        
+    
+    
+            marker_13258da5dae6c89ed7fbe78d7bb09619.bindTooltip(
+                `<div>
+                     住之江公園　公園管理事務所横便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6528f82aefc0c33da82aff136d173709 = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_161e7b44246bab8bc7315682278f325b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_6528f82aefc0c33da82aff136d173709.setIcon(icon_161e7b44246bab8bc7315682278f325b);
+        
+    
+        var popup_ad1f4181c418fdb04af7fd5ff2ca80a8 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a6177f0784563863409f4357917298d0 = $(`<div id="html_a6177f0784563863409f4357917298d0" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　球技広場東便所</a></div>`)[0];
+                popup_ad1f4181c418fdb04af7fd5ff2ca80a8.setContent(html_a6177f0784563863409f4357917298d0);
+            
+        
+
+        marker_6528f82aefc0c33da82aff136d173709.bindPopup(popup_ad1f4181c418fdb04af7fd5ff2ca80a8)
+        ;
+
+        
+    
+    
+            marker_6528f82aefc0c33da82aff136d173709.bindTooltip(
+                `<div>
+                     住之江公園　球技広場東便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e0627e21bc2e6146281c01a12d1b68fb = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_30ceb2f9b86864d8aac414e42e853c2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_e0627e21bc2e6146281c01a12d1b68fb.setIcon(icon_30ceb2f9b86864d8aac414e42e853c2f);
+        
+    
+        var popup_1e2b570aad55545faf3732b92c38d7bb = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_d4e5d75c5ccf64cdb1f0474619555d94 = $(`<div id="html_d4e5d75c5ccf64cdb1f0474619555d94" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　野球場前便所</a></div>`)[0];
+                popup_1e2b570aad55545faf3732b92c38d7bb.setContent(html_d4e5d75c5ccf64cdb1f0474619555d94);
+            
+        
+
+        marker_e0627e21bc2e6146281c01a12d1b68fb.bindPopup(popup_1e2b570aad55545faf3732b92c38d7bb)
+        ;
+
+        
+    
+    
+            marker_e0627e21bc2e6146281c01a12d1b68fb.bindTooltip(
+                `<div>
+                     住之江公園　野球場前便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2dbdd946aa1300def55cb2b96ff730c = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_cac4e18a68c20bc7e58604e48b7a57ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_f2dbdd946aa1300def55cb2b96ff730c.setIcon(icon_cac4e18a68c20bc7e58604e48b7a57ac);
+        
+    
+        var popup_7cc308025848e7dd1213b47e40bc9a5d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_b01b11058276d9b528759546d136e36d = $(`<div id="html_b01b11058276d9b528759546d136e36d" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　?児童遊戯場便所</a></div>`)[0];
+                popup_7cc308025848e7dd1213b47e40bc9a5d.setContent(html_b01b11058276d9b528759546d136e36d);
+            
+        
+
+        marker_f2dbdd946aa1300def55cb2b96ff730c.bindPopup(popup_7cc308025848e7dd1213b47e40bc9a5d)
+        ;
+
+        
+    
+    
+            marker_f2dbdd946aa1300def55cb2b96ff730c.bindTooltip(
+                `<div>
+                     住吉公園　?児童遊戯場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_567b593d5ee5f36678fc12ad7b531dcd = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_ceab50cf454fcfa919852f008ea1124e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_567b593d5ee5f36678fc12ad7b531dcd.setIcon(icon_ceab50cf454fcfa919852f008ea1124e);
+        
+    
+        var popup_688a8b9245ba2bece7b793620e671918 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_d7a2213e21edf9fbb4b4d521821be743 = $(`<div id="html_d7a2213e21edf9fbb4b4d521821be743" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　②花水の広場便所</a></div>`)[0];
+                popup_688a8b9245ba2bece7b793620e671918.setContent(html_d7a2213e21edf9fbb4b4d521821be743);
+            
+        
+
+        marker_567b593d5ee5f36678fc12ad7b531dcd.bindPopup(popup_688a8b9245ba2bece7b793620e671918)
+        ;
+
+        
+    
+    
+            marker_567b593d5ee5f36678fc12ad7b531dcd.bindTooltip(
+                `<div>
+                     住吉公園　②花水の広場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b53408a905ed3d3247918de1cd29abd = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_9b94fb7e6f762f55396223b756298f15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_4b53408a905ed3d3247918de1cd29abd.setIcon(icon_9b94fb7e6f762f55396223b756298f15);
+        
+    
+        var popup_9650062704e22259e9337b2f6515ee44 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_29091e9d2ebec53418d7d94ed207c351 = $(`<div id="html_29091e9d2ebec53418d7d94ed207c351" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　③野球場前便所</a></div>`)[0];
+                popup_9650062704e22259e9337b2f6515ee44.setContent(html_29091e9d2ebec53418d7d94ed207c351);
+            
+        
+
+        marker_4b53408a905ed3d3247918de1cd29abd.bindPopup(popup_9650062704e22259e9337b2f6515ee44)
+        ;
+
+        
+    
+    
+            marker_4b53408a905ed3d3247918de1cd29abd.bindTooltip(
+                `<div>
+                     住吉公園　③野球場前便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e8c69d86350dafc8700d185df535bd7 = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_6b96a9c92541e24c54658edf86e30bc6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_4e8c69d86350dafc8700d185df535bd7.setIcon(icon_6b96a9c92541e24c54658edf86e30bc6);
+        
+    
+        var popup_4b2755dff428a773018cc9cf27d72c91 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_bd05e523b749d9f413aec0b99bf66f70 = $(`<div id="html_bd05e523b749d9f413aec0b99bf66f70" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　④運動場便所</a></div>`)[0];
+                popup_4b2755dff428a773018cc9cf27d72c91.setContent(html_bd05e523b749d9f413aec0b99bf66f70);
+            
+        
+
+        marker_4e8c69d86350dafc8700d185df535bd7.bindPopup(popup_4b2755dff428a773018cc9cf27d72c91)
+        ;
+
+        
+    
+    
+            marker_4e8c69d86350dafc8700d185df535bd7.bindTooltip(
+                `<div>
+                     住吉公園　④運動場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3cfe6679c70426f3ddcd51e2cdeceed = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1);
+        
+    
+            var icon_5478a1e0fac1935506af42e05754886e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_c3cfe6679c70426f3ddcd51e2cdeceed.setIcon(icon_5478a1e0fac1935506af42e05754886e);
+        
+    
+        var popup_635175f8d9218f350dee154424d8ab71 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_516f1b4c1c40910bdad537c8cc0d218e = $(`<div id="html_516f1b4c1c40910bdad537c8cc0d218e" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　⑤江川橋便所</a></div>`)[0];
+                popup_635175f8d9218f350dee154424d8ab71.setContent(html_516f1b4c1c40910bdad537c8cc0d218e);
+            
+        
+
+        marker_c3cfe6679c70426f3ddcd51e2cdeceed.bindPopup(popup_635175f8d9218f350dee154424d8ab71)
+        ;
+
+        
+    
+    
+            marker_c3cfe6679c70426f3ddcd51e2cdeceed.bindTooltip(
+                `<div>
+                     住吉公園　⑤江川橋便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_354c133f263371928639136a3e922e2a = L.featureGroup(
+                {}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+        
+    
+            var marker_5bfc192ac7e923963b1ca15f33733b5d = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_d1ed9dfa22ad3ff70a88700302b8ea78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5bfc192ac7e923963b1ca15f33733b5d.setIcon(icon_d1ed9dfa22ad3ff70a88700302b8ea78);
+        
+    
+        var popup_ea621307cb3e5d3698691bee3d8d3c2b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_454d12d4bdebbc7cd449e0457adce9b4 = $(`<div id="html_454d12d4bdebbc7cd449e0457adce9b4" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　児童遊戯場便所</a></div>`)[0];
+                popup_ea621307cb3e5d3698691bee3d8d3c2b.setContent(html_454d12d4bdebbc7cd449e0457adce9b4);
+            
+        
+
+        marker_5bfc192ac7e923963b1ca15f33733b5d.bindPopup(popup_ea621307cb3e5d3698691bee3d8d3c2b)
+        ;
+
+        
+    
+    
+            marker_5bfc192ac7e923963b1ca15f33733b5d.bindTooltip(
+                `<div>
+                     住之江公園　児童遊戯場便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f057338167f7a6723326a3f590f6d7b4 = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_7682922bafbc86f69879010e7f726665 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f057338167f7a6723326a3f590f6d7b4.setIcon(icon_7682922bafbc86f69879010e7f726665);
+        
+    
+        var popup_ec3ad38f944059ecc4b3f983f26f8605 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ce10be941b891615573ebe66c4c14b7b = $(`<div id="html_ce10be941b891615573ebe66c4c14b7b" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　公園管理事務所横便所</a></div>`)[0];
+                popup_ec3ad38f944059ecc4b3f983f26f8605.setContent(html_ce10be941b891615573ebe66c4c14b7b);
+            
+        
+
+        marker_f057338167f7a6723326a3f590f6d7b4.bindPopup(popup_ec3ad38f944059ecc4b3f983f26f8605)
+        ;
+
+        
+    
+    
+            marker_f057338167f7a6723326a3f590f6d7b4.bindTooltip(
+                `<div>
+                     住之江公園　公園管理事務所横便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8eef9917574027001e2e4c681e6ff6c9 = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_7002b43494b7951418047c99a7a8fd30 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8eef9917574027001e2e4c681e6ff6c9.setIcon(icon_7002b43494b7951418047c99a7a8fd30);
+        
+    
+        var popup_8375198609b4aaf6f426b23de80f2f41 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_6e3258b116f0a813e1ea5985936084e5 = $(`<div id="html_6e3258b116f0a813e1ea5985936084e5" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　球技広場東便所</a></div>`)[0];
+                popup_8375198609b4aaf6f426b23de80f2f41.setContent(html_6e3258b116f0a813e1ea5985936084e5);
+            
+        
+
+        marker_8eef9917574027001e2e4c681e6ff6c9.bindPopup(popup_8375198609b4aaf6f426b23de80f2f41)
+        ;
+
+        
+    
+    
+            marker_8eef9917574027001e2e4c681e6ff6c9.bindTooltip(
+                `<div>
+                     住之江公園　球技広場東便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2963183bced642b3cae5943f11626d3f = L.marker(
+                [34.6122895, 135.4739315],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_cc3e36f1585e542581591715bd0983e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_2963183bced642b3cae5943f11626d3f.setIcon(icon_cc3e36f1585e542581591715bd0983e5);
+        
+    
+        var popup_2ed97c32a5ce7779b341fe131a8c11bd = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_9fd06eacee0b28fe9c91b6529156f1d6 = $(`<div id="html_9fd06eacee0b28fe9c91b6529156f1d6" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6122895,135.4739315" target="_blank">住之江公園　野球場前便所</a></div>`)[0];
+                popup_2ed97c32a5ce7779b341fe131a8c11bd.setContent(html_9fd06eacee0b28fe9c91b6529156f1d6);
+            
+        
+
+        marker_2963183bced642b3cae5943f11626d3f.bindPopup(popup_2ed97c32a5ce7779b341fe131a8c11bd)
+        ;
+
+        
+    
+    
+            marker_2963183bced642b3cae5943f11626d3f.bindTooltip(
+                `<div>
+                     住之江公園　野球場前便所<br>34.6122895<br>135.4739315
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3d375d8e09d0f69978ad19bc776a4637 = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_999273d4595027c6b1e60b875beb35d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3d375d8e09d0f69978ad19bc776a4637.setIcon(icon_999273d4595027c6b1e60b875beb35d3);
+        
+    
+        var popup_7a0176a535923f541f32b281fb49aad8 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_72acc52bad1c09483e057c771b9a7eb3 = $(`<div id="html_72acc52bad1c09483e057c771b9a7eb3" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　?児童遊戯場便所</a></div>`)[0];
+                popup_7a0176a535923f541f32b281fb49aad8.setContent(html_72acc52bad1c09483e057c771b9a7eb3);
+            
+        
+
+        marker_3d375d8e09d0f69978ad19bc776a4637.bindPopup(popup_7a0176a535923f541f32b281fb49aad8)
+        ;
+
+        
+    
+    
+            marker_3d375d8e09d0f69978ad19bc776a4637.bindTooltip(
+                `<div>
+                     住吉公園　?児童遊戯場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b99f0b4dc92746cfd9b4e261fea84dcd = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_f1f80719250ebf4f0679516699b0ea65 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b99f0b4dc92746cfd9b4e261fea84dcd.setIcon(icon_f1f80719250ebf4f0679516699b0ea65);
+        
+    
+        var popup_30dfc49a4f207f98e69a199d552a43b1 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c9833e85749a26da0ad065558c2ddb90 = $(`<div id="html_c9833e85749a26da0ad065558c2ddb90" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　②花水の広場便所</a></div>`)[0];
+                popup_30dfc49a4f207f98e69a199d552a43b1.setContent(html_c9833e85749a26da0ad065558c2ddb90);
+            
+        
+
+        marker_b99f0b4dc92746cfd9b4e261fea84dcd.bindPopup(popup_30dfc49a4f207f98e69a199d552a43b1)
+        ;
+
+        
+    
+    
+            marker_b99f0b4dc92746cfd9b4e261fea84dcd.bindTooltip(
+                `<div>
+                     住吉公園　②花水の広場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_72c38126cd90abb1ce03acfaf9f0bfee = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_55e6f4eb1bf5165028fdc3a7d5ebd104 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_72c38126cd90abb1ce03acfaf9f0bfee.setIcon(icon_55e6f4eb1bf5165028fdc3a7d5ebd104);
+        
+    
+        var popup_88882430882eae461682ca715c6f4bab = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_580588fa3ca4966071d29abad7fb2c4c = $(`<div id="html_580588fa3ca4966071d29abad7fb2c4c" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　③野球場前便所</a></div>`)[0];
+                popup_88882430882eae461682ca715c6f4bab.setContent(html_580588fa3ca4966071d29abad7fb2c4c);
+            
+        
+
+        marker_72c38126cd90abb1ce03acfaf9f0bfee.bindPopup(popup_88882430882eae461682ca715c6f4bab)
+        ;
+
+        
+    
+    
+            marker_72c38126cd90abb1ce03acfaf9f0bfee.bindTooltip(
+                `<div>
+                     住吉公園　③野球場前便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0701867f518dc1f4f74dcdd1be0671fd = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_46e04e0b8d963907114fd0747fbc0b49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0701867f518dc1f4f74dcdd1be0671fd.setIcon(icon_46e04e0b8d963907114fd0747fbc0b49);
+        
+    
+        var popup_476e87006c67648aa0ac77bb4c4d4bce = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_2943d6e42c85c20dc6a3e727bef119c9 = $(`<div id="html_2943d6e42c85c20dc6a3e727bef119c9" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　④運動場便所</a></div>`)[0];
+                popup_476e87006c67648aa0ac77bb4c4d4bce.setContent(html_2943d6e42c85c20dc6a3e727bef119c9);
+            
+        
+
+        marker_0701867f518dc1f4f74dcdd1be0671fd.bindPopup(popup_476e87006c67648aa0ac77bb4c4d4bce)
+        ;
+
+        
+    
+    
+            marker_0701867f518dc1f4f74dcdd1be0671fd.bindTooltip(
+                `<div>
+                     住吉公園　④運動場便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_94ebbcbc23357a77e094ece26503331e = L.marker(
+                [34.6126268, 135.490045],
+                {}
+            ).addTo(feature_group_354c133f263371928639136a3e922e2a);
+        
+    
+            var icon_3b3c39345a9191dc4cb97d909b8bb042 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_94ebbcbc23357a77e094ece26503331e.setIcon(icon_3b3c39345a9191dc4cb97d909b8bb042);
+        
+    
+        var popup_c8dd24fd14b42f0632662d2e73abda33 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e29e3aeb63bccbfa11103de576bdfcd5 = $(`<div id="html_e29e3aeb63bccbfa11103de576bdfcd5" style="width: 100.0%; height: 100.0%;">大阪市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.6126268,135.490045" target="_blank">住吉公園　⑤江川橋便所</a></div>`)[0];
+                popup_c8dd24fd14b42f0632662d2e73abda33.setContent(html_e29e3aeb63bccbfa11103de576bdfcd5);
+            
+        
+
+        marker_94ebbcbc23357a77e094ece26503331e.bindPopup(popup_c8dd24fd14b42f0632662d2e73abda33)
+        ;
+
+        
+    
+    
+            marker_94ebbcbc23357a77e094ece26503331e.bindTooltip(
+                `<div>
+                     住吉公園　⑤江川橋便所<br>34.6126268<br>135.490045
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_074f60e3e5c08d3fdce3afd6b3b16d3c = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_62323b3827040d3f8ffef68ebab1cb8e,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_a16cbce7e96cf55bbe1ef6c2d302dcc4,
+                    "\u4f11\u61a9\u6240" : feature_group_dfef1e5ff685817ac8631b130d726454,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_2b0513a2115e55d08a91e40494c18995,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_193ac43facf7b3ee2fb803e9a0d56599,
+                    "\u89aa\u6c34" : feature_group_fd109a94fe87955766b5ef5c13e92263,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_b9f5b7793a2dfbc3f28086fa26827d97,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_88a63a8a479ca6b6af04b6172e3b0cd7,
+                    "\u30c8\u30a4\u30ec" : feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_354c133f263371928639136a3e922e2a,
+                },
+            };
+            L.control.layers(
+                layer_control_074f60e3e5c08d3fdce3afd6b3b16d3c.base_layers,
+                layer_control_074f60e3e5c08d3fdce3afd6b3b16d3c.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_5b98db5e3538120805dac0146ff4bb14);
+            feature_group_a16cbce7e96cf55bbe1ef6c2d302dcc4.remove();
+            feature_group_dfef1e5ff685817ac8631b130d726454.remove();
+            feature_group_2b0513a2115e55d08a91e40494c18995.remove();
+            feature_group_193ac43facf7b3ee2fb803e9a0d56599.remove();
+            feature_group_fd109a94fe87955766b5ef5c13e92263.remove();
+            feature_group_b9f5b7793a2dfbc3f28086fa26827d97.remove();
+            feature_group_88a63a8a479ca6b6af04b6172e3b0cd7.remove();
+            feature_group_0f0679fb98ed4a2a36a1d62e7959cfe1.remove();
+            feature_group_354c133f263371928639136a3e922e2a.remove();
+        
+</script>
+</html>

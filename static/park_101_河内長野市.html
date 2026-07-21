@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e35caff484ec8b447f77e9c98c84dc52 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e35caff484ec8b447f77e9c98c84dc52" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e35caff484ec8b447f77e9c98c84dc52 = L.map(
+                "map_e35caff484ec8b447f77e9c98c84dc52",
+                {
+                    center: [34.45774050000001, 135.5639385],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_877dd8b131da96edbc47a43f1e0f3912 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_421f5b295cfc397acb986c5b9f6a18be = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_d8e3425b516af9f7125b0259968df511 = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_7ab6caae5a7c642b27cc1b0cb4eef9d0 = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_39e0efa957c7ad6350f8788dc53d110d = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_64cbcd455fd1649b98c91d5108f4b4db = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_b428580605f8f2cd4db4c2c2ded9a44b = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_ac0f098bc39e2bfa5e096a841f463e48 = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var feature_group_d8b17c2c9945cc3996f6d0dc85998511 = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var marker_5c67aef33cbdb3029cc0655512d8d74f = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_d8b17c2c9945cc3996f6d0dc85998511);
+        
+    
+            var icon_9fd9c80c854389b9cc7828156744c96f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_5c67aef33cbdb3029cc0655512d8d74f.setIcon(icon_9fd9c80c854389b9cc7828156744c96f);
+        
+    
+        var popup_abc737da2c4a74a6bf86e7acce005759 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_04e1f30ed86e6a88540c2f61a45d6669 = $(`<div id="html_04e1f30ed86e6a88540c2f61a45d6669" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　長野地区便所</a></div>`)[0];
+                popup_abc737da2c4a74a6bf86e7acce005759.setContent(html_04e1f30ed86e6a88540c2f61a45d6669);
+            
+        
+
+        marker_5c67aef33cbdb3029cc0655512d8d74f.bindPopup(popup_abc737da2c4a74a6bf86e7acce005759)
+        ;
+
+        
+    
+    
+            marker_5c67aef33cbdb3029cc0655512d8d74f.bindTooltip(
+                `<div>
+                     長野公園　長野地区便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8b18eb22a023ae2b10f7dab257c421ac = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_d8b17c2c9945cc3996f6d0dc85998511);
+        
+    
+            var icon_9147a2d77b7c4c78ebbbf4bd68c76cb1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_8b18eb22a023ae2b10f7dab257c421ac.setIcon(icon_9147a2d77b7c4c78ebbbf4bd68c76cb1);
+        
+    
+        var popup_abd7e0c0d639f58aa585e2f7ad13a8f5 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_75e4116bda927b127f7b8d1dea0ee611 = $(`<div id="html_75e4116bda927b127f7b8d1dea0ee611" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　河合寺便所</a></div>`)[0];
+                popup_abd7e0c0d639f58aa585e2f7ad13a8f5.setContent(html_75e4116bda927b127f7b8d1dea0ee611);
+            
+        
+
+        marker_8b18eb22a023ae2b10f7dab257c421ac.bindPopup(popup_abd7e0c0d639f58aa585e2f7ad13a8f5)
+        ;
+
+        
+    
+    
+            marker_8b18eb22a023ae2b10f7dab257c421ac.bindTooltip(
+                `<div>
+                     長野公園　河合寺便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a7ed7a42bf0fe12104d1241ce66c1223 = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_d8b17c2c9945cc3996f6d0dc85998511);
+        
+    
+            var icon_4fc71c7478c61d791ab4b3a4de0b9d96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_a7ed7a42bf0fe12104d1241ce66c1223.setIcon(icon_4fc71c7478c61d791ab4b3a4de0b9d96);
+        
+    
+        var popup_7af9986ee6ac5def0b9e5a927c641e64 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ee8b0aa8ee1ae5a80a4674e625856a6a = $(`<div id="html_ee8b0aa8ee1ae5a80a4674e625856a6a" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　延命寺便所</a></div>`)[0];
+                popup_7af9986ee6ac5def0b9e5a927c641e64.setContent(html_ee8b0aa8ee1ae5a80a4674e625856a6a);
+            
+        
+
+        marker_a7ed7a42bf0fe12104d1241ce66c1223.bindPopup(popup_7af9986ee6ac5def0b9e5a927c641e64)
+        ;
+
+        
+    
+    
+            marker_a7ed7a42bf0fe12104d1241ce66c1223.bindTooltip(
+                `<div>
+                     長野公園　延命寺便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09c30dcab369738328b57925e0905d81 = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_d8b17c2c9945cc3996f6d0dc85998511);
+        
+    
+            var icon_3f463e881d1c41fcc665354a791864ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_09c30dcab369738328b57925e0905d81.setIcon(icon_3f463e881d1c41fcc665354a791864ee);
+        
+    
+        var popup_c8826b87b190d5d3155b31ac93fa945a = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_d09124a8feaa3e13584ba37ebc257945 = $(`<div id="html_d09124a8feaa3e13584ba37ebc257945" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　長野公園キャンプ場便所</a></div>`)[0];
+                popup_c8826b87b190d5d3155b31ac93fa945a.setContent(html_d09124a8feaa3e13584ba37ebc257945);
+            
+        
+
+        marker_09c30dcab369738328b57925e0905d81.bindPopup(popup_c8826b87b190d5d3155b31ac93fa945a)
+        ;
+
+        
+    
+    
+            marker_09c30dcab369738328b57925e0905d81.bindTooltip(
+                `<div>
+                     長野公園　長野公園キャンプ場便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_509eeac6b3d730fb3851bebc2b08186d = L.featureGroup(
+                {}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+        
+    
+            var marker_9ed0ae579b9038851eb5e7c7cb38d30b = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_509eeac6b3d730fb3851bebc2b08186d);
+        
+    
+            var icon_81108b8fd08b3dc823522b67916bc473 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9ed0ae579b9038851eb5e7c7cb38d30b.setIcon(icon_81108b8fd08b3dc823522b67916bc473);
+        
+    
+        var popup_77203250c74d896ed8282f10e8a380b0 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0cc7640fe095bd3076a752a580aeaca9 = $(`<div id="html_0cc7640fe095bd3076a752a580aeaca9" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　長野地区便所</a></div>`)[0];
+                popup_77203250c74d896ed8282f10e8a380b0.setContent(html_0cc7640fe095bd3076a752a580aeaca9);
+            
+        
+
+        marker_9ed0ae579b9038851eb5e7c7cb38d30b.bindPopup(popup_77203250c74d896ed8282f10e8a380b0)
+        ;
+
+        
+    
+    
+            marker_9ed0ae579b9038851eb5e7c7cb38d30b.bindTooltip(
+                `<div>
+                     長野公園　長野地区便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eb244d6052ba2422575d931ec6f5554a = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_509eeac6b3d730fb3851bebc2b08186d);
+        
+    
+            var icon_4269aa13bb64ba0713ffacc2a83e6509 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_eb244d6052ba2422575d931ec6f5554a.setIcon(icon_4269aa13bb64ba0713ffacc2a83e6509);
+        
+    
+        var popup_e9a90608b8b747eacfbe7a9fd45dd398 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_b417f603d52e0dc2bd6c85163aaa2d9d = $(`<div id="html_b417f603d52e0dc2bd6c85163aaa2d9d" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　河合寺便所</a></div>`)[0];
+                popup_e9a90608b8b747eacfbe7a9fd45dd398.setContent(html_b417f603d52e0dc2bd6c85163aaa2d9d);
+            
+        
+
+        marker_eb244d6052ba2422575d931ec6f5554a.bindPopup(popup_e9a90608b8b747eacfbe7a9fd45dd398)
+        ;
+
+        
+    
+    
+            marker_eb244d6052ba2422575d931ec6f5554a.bindTooltip(
+                `<div>
+                     長野公園　河合寺便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_93a17ccc688ab87576d1f60b2ed4569d = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_509eeac6b3d730fb3851bebc2b08186d);
+        
+    
+            var icon_6aded5158b6f6d13c53b96e93715f496 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_93a17ccc688ab87576d1f60b2ed4569d.setIcon(icon_6aded5158b6f6d13c53b96e93715f496);
+        
+    
+        var popup_5159d6c8434d6129614419198ef2d16e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c3b9f4011ec52c27cee59b0b24f118da = $(`<div id="html_c3b9f4011ec52c27cee59b0b24f118da" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　延命寺便所</a></div>`)[0];
+                popup_5159d6c8434d6129614419198ef2d16e.setContent(html_c3b9f4011ec52c27cee59b0b24f118da);
+            
+        
+
+        marker_93a17ccc688ab87576d1f60b2ed4569d.bindPopup(popup_5159d6c8434d6129614419198ef2d16e)
+        ;
+
+        
+    
+    
+            marker_93a17ccc688ab87576d1f60b2ed4569d.bindTooltip(
+                `<div>
+                     長野公園　延命寺便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3185a24b9ef0ac53ebeef6a115cda2c5 = L.marker(
+                [34.4508219, 135.5812312],
+                {}
+            ).addTo(feature_group_509eeac6b3d730fb3851bebc2b08186d);
+        
+    
+            var icon_daa0b245cc039fcf530bb21a54a77896 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3185a24b9ef0ac53ebeef6a115cda2c5.setIcon(icon_daa0b245cc039fcf530bb21a54a77896);
+        
+    
+        var popup_5bb755f530997670d0dbf641abff2b4c = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_00c9b99fc68dc965ab079320f8f6072b = $(`<div id="html_00c9b99fc68dc965ab079320f8f6072b" style="width: 100.0%; height: 100.0%;">河内長野市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.4508219,135.5812312" target="_blank">長野公園　長野公園キャンプ場便所</a></div>`)[0];
+                popup_5bb755f530997670d0dbf641abff2b4c.setContent(html_00c9b99fc68dc965ab079320f8f6072b);
+            
+        
+
+        marker_3185a24b9ef0ac53ebeef6a115cda2c5.bindPopup(popup_5bb755f530997670d0dbf641abff2b4c)
+        ;
+
+        
+    
+    
+            marker_3185a24b9ef0ac53ebeef6a115cda2c5.bindTooltip(
+                `<div>
+                     長野公園　長野公園キャンプ場便所<br>34.4508219<br>135.5812312
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_97a128195ef91b4275ed65148fc4192c = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_877dd8b131da96edbc47a43f1e0f3912,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_421f5b295cfc397acb986c5b9f6a18be,
+                    "\u4f11\u61a9\u6240" : feature_group_d8e3425b516af9f7125b0259968df511,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_7ab6caae5a7c642b27cc1b0cb4eef9d0,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_39e0efa957c7ad6350f8788dc53d110d,
+                    "\u89aa\u6c34" : feature_group_64cbcd455fd1649b98c91d5108f4b4db,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_b428580605f8f2cd4db4c2c2ded9a44b,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_ac0f098bc39e2bfa5e096a841f463e48,
+                    "\u30c8\u30a4\u30ec" : feature_group_d8b17c2c9945cc3996f6d0dc85998511,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_509eeac6b3d730fb3851bebc2b08186d,
+                },
+            };
+            L.control.layers(
+                layer_control_97a128195ef91b4275ed65148fc4192c.base_layers,
+                layer_control_97a128195ef91b4275ed65148fc4192c.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_e35caff484ec8b447f77e9c98c84dc52);
+            feature_group_421f5b295cfc397acb986c5b9f6a18be.remove();
+            feature_group_d8e3425b516af9f7125b0259968df511.remove();
+            feature_group_7ab6caae5a7c642b27cc1b0cb4eef9d0.remove();
+            feature_group_39e0efa957c7ad6350f8788dc53d110d.remove();
+            feature_group_64cbcd455fd1649b98c91d5108f4b4db.remove();
+            feature_group_b428580605f8f2cd4db4c2c2ded9a44b.remove();
+            feature_group_ac0f098bc39e2bfa5e096a841f463e48.remove();
+            feature_group_d8b17c2c9945cc3996f6d0dc85998511.remove();
+            feature_group_509eeac6b3d730fb3851bebc2b08186d.remove();
+        
+</script>
+</html>

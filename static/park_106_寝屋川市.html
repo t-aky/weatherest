@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_892ff5d2f9ac91d19130c96beb2b0b86 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_892ff5d2f9ac91d19130c96beb2b0b86" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_892ff5d2f9ac91d19130c96beb2b0b86 = L.map(
+                "map_892ff5d2f9ac91d19130c96beb2b0b86",
+                {
+                    center: [34.7662504, 135.6280175],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_76e7afacfcc5cb784213b87e1ab8e80f = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_0c32739b97bf601c1d35771b709e5bec = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_54cf220232949373cd1fc067a7cd17cb = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_72559247ba8a8b81c5687fb95e2f179d = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_fde191f94b19c572bd0ddd43e9e14360 = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_f12f2e53740c531d83f213e9300a05c8 = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_99be0c0c2ac0adfd5d697c72762a8c96 = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_96849021587e597ebafb9ad1b5d2f484 = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var feature_group_d8f711e294b8eddae45774c0e0f75b0e = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var marker_ee826da7a95c36803c16ccd10673c4e3 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_744d5053ea96ce5a4c6f86eba5f941d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_ee826da7a95c36803c16ccd10673c4e3.setIcon(icon_744d5053ea96ce5a4c6f86eba5f941d6);
+        
+    
+        var popup_d7bcaa0d654bc21a21a156cc12014750 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c401d8263567b7902c5d82ecf0544d1b = $(`<div id="html_c401d8263567b7902c5d82ecf0544d1b" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　ソフトボール広場便所</a></div>`)[0];
+                popup_d7bcaa0d654bc21a21a156cc12014750.setContent(html_c401d8263567b7902c5d82ecf0544d1b);
+            
+        
+
+        marker_ee826da7a95c36803c16ccd10673c4e3.bindPopup(popup_d7bcaa0d654bc21a21a156cc12014750)
+        ;
+
+        
+    
+    
+            marker_ee826da7a95c36803c16ccd10673c4e3.bindTooltip(
+                `<div>
+                     寝屋川公園　ソフトボール広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_054458f4f0ffaa827fa31bca8da6a92a = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_c21e188c7fe51b87ece195f434b1b74a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_054458f4f0ffaa827fa31bca8da6a92a.setIcon(icon_c21e188c7fe51b87ece195f434b1b74a);
+        
+    
+        var popup_982de848c8849d649690e0c1c134a718 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_d3dee6a86b9f6b104386324cd4d8c9bd = $(`<div id="html_d3dee6a86b9f6b104386324cd4d8c9bd" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　やすらぎ広場便所</a></div>`)[0];
+                popup_982de848c8849d649690e0c1c134a718.setContent(html_d3dee6a86b9f6b104386324cd4d8c9bd);
+            
+        
+
+        marker_054458f4f0ffaa827fa31bca8da6a92a.bindPopup(popup_982de848c8849d649690e0c1c134a718)
+        ;
+
+        
+    
+    
+            marker_054458f4f0ffaa827fa31bca8da6a92a.bindTooltip(
+                `<div>
+                     寝屋川公園　やすらぎ広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f48d303329c3540ca0d95a11e1cc543d = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_f93e199bc031ab69363969b90f87b27c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_f48d303329c3540ca0d95a11e1cc543d.setIcon(icon_f93e199bc031ab69363969b90f87b27c);
+        
+    
+        var popup_951a5db69b438e65110e45f60c788439 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0e7ee9987afc2fbe96c862e537be4c7e = $(`<div id="html_0e7ee9987afc2fbe96c862e537be4c7e" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　陸上競技場便所</a></div>`)[0];
+                popup_951a5db69b438e65110e45f60c788439.setContent(html_0e7ee9987afc2fbe96c862e537be4c7e);
+            
+        
+
+        marker_f48d303329c3540ca0d95a11e1cc543d.bindPopup(popup_951a5db69b438e65110e45f60c788439)
+        ;
+
+        
+    
+    
+            marker_f48d303329c3540ca0d95a11e1cc543d.bindTooltip(
+                `<div>
+                     寝屋川公園　陸上競技場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_db9686f452d94442e23c877c6320b8ca = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_a606975b77fbedd728685157dfcf4778 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_db9686f452d94442e23c877c6320b8ca.setIcon(icon_a606975b77fbedd728685157dfcf4778);
+        
+    
+        var popup_d25d0d0641779836deb2e125634a3201 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_10db0eec0f7b429384d457a1acb2679a = $(`<div id="html_10db0eec0f7b429384d457a1acb2679a" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第１駐車場便所</a></div>`)[0];
+                popup_d25d0d0641779836deb2e125634a3201.setContent(html_10db0eec0f7b429384d457a1acb2679a);
+            
+        
+
+        marker_db9686f452d94442e23c877c6320b8ca.bindPopup(popup_d25d0d0641779836deb2e125634a3201)
+        ;
+
+        
+    
+    
+            marker_db9686f452d94442e23c877c6320b8ca.bindTooltip(
+                `<div>
+                     寝屋川公園　第１駐車場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_370659a02596f1fdcc212671230794bd = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_ec277128dde740fbfa88aa7bf46e2d4c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_370659a02596f1fdcc212671230794bd.setIcon(icon_ec277128dde740fbfa88aa7bf46e2d4c);
+        
+    
+        var popup_59508af17b04dd4ed1352086b1972cb9 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e408f8bd25fdbae3adba6dfcaecfcbd1 = $(`<div id="html_e408f8bd25fdbae3adba6dfcaecfcbd1" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　ふれあいの丘便所</a></div>`)[0];
+                popup_59508af17b04dd4ed1352086b1972cb9.setContent(html_e408f8bd25fdbae3adba6dfcaecfcbd1);
+            
+        
+
+        marker_370659a02596f1fdcc212671230794bd.bindPopup(popup_59508af17b04dd4ed1352086b1972cb9)
+        ;
+
+        
+    
+    
+            marker_370659a02596f1fdcc212671230794bd.bindTooltip(
+                `<div>
+                     寝屋川公園　ふれあいの丘便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc63fccd8b8410b15461537f8e586fdf = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_16426b6c1ab2092110f7233f6270c068 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_fc63fccd8b8410b15461537f8e586fdf.setIcon(icon_16426b6c1ab2092110f7233f6270c068);
+        
+    
+        var popup_bc4195fc43f81c96e669540f5f6a5fbf = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_2c1f346eda70cb1a3a5ffa1936d4c8cb = $(`<div id="html_2c1f346eda70cb1a3a5ffa1936d4c8cb" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第２野球場便所</a></div>`)[0];
+                popup_bc4195fc43f81c96e669540f5f6a5fbf.setContent(html_2c1f346eda70cb1a3a5ffa1936d4c8cb);
+            
+        
+
+        marker_fc63fccd8b8410b15461537f8e586fdf.bindPopup(popup_bc4195fc43f81c96e669540f5f6a5fbf)
+        ;
+
+        
+    
+    
+            marker_fc63fccd8b8410b15461537f8e586fdf.bindTooltip(
+                `<div>
+                     寝屋川公園　第２野球場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ccd0b01f36fd1ebe92bab958ba0af241 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_312ad1227fed7b21f3a443c35ea190b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_ccd0b01f36fd1ebe92bab958ba0af241.setIcon(icon_312ad1227fed7b21f3a443c35ea190b8);
+        
+    
+        var popup_68abfdc44278f0f0b110d9440a1a0a4d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ca8d50d484097ab4b71d83565a4b60dd = $(`<div id="html_ca8d50d484097ab4b71d83565a4b60dd" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第２駐車場便所</a></div>`)[0];
+                popup_68abfdc44278f0f0b110d9440a1a0a4d.setContent(html_ca8d50d484097ab4b71d83565a4b60dd);
+            
+        
+
+        marker_ccd0b01f36fd1ebe92bab958ba0af241.bindPopup(popup_68abfdc44278f0f0b110d9440a1a0a4d)
+        ;
+
+        
+    
+    
+            marker_ccd0b01f36fd1ebe92bab958ba0af241.bindTooltip(
+                `<div>
+                     寝屋川公園　第２駐車場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_faddbaed9c86f282c379422741231be0 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_927b6941f3bb48c19323f65241af64c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_faddbaed9c86f282c379422741231be0.setIcon(icon_927b6941f3bb48c19323f65241af64c1);
+        
+    
+        var popup_269dca30d1cc0d45e95fba6644f8e9a5 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_7a2d8142e47085896ff62e44177d2a5c = $(`<div id="html_7a2d8142e47085896ff62e44177d2a5c" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　芝生広場便所</a></div>`)[0];
+                popup_269dca30d1cc0d45e95fba6644f8e9a5.setContent(html_7a2d8142e47085896ff62e44177d2a5c);
+            
+        
+
+        marker_faddbaed9c86f282c379422741231be0.bindPopup(popup_269dca30d1cc0d45e95fba6644f8e9a5)
+        ;
+
+        
+    
+    
+            marker_faddbaed9c86f282c379422741231be0.bindTooltip(
+                `<div>
+                     寝屋川公園　芝生広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f43d53b86df26e77339a3aeb8ee3eaba = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_d8f711e294b8eddae45774c0e0f75b0e);
+        
+    
+            var icon_e4342355152a98ef44e46ef70eac35eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_f43d53b86df26e77339a3aeb8ee3eaba.setIcon(icon_e4342355152a98ef44e46ef70eac35eb);
+        
+    
+        var popup_a608827868f4ebc478b2757dc70747f2 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f65441172e62a4e7316e82dd9d881330 = $(`<div id="html_f65441172e62a4e7316e82dd9d881330" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　草の広場便所</a></div>`)[0];
+                popup_a608827868f4ebc478b2757dc70747f2.setContent(html_f65441172e62a4e7316e82dd9d881330);
+            
+        
+
+        marker_f43d53b86df26e77339a3aeb8ee3eaba.bindPopup(popup_a608827868f4ebc478b2757dc70747f2)
+        ;
+
+        
+    
+    
+            marker_f43d53b86df26e77339a3aeb8ee3eaba.bindTooltip(
+                `<div>
+                     寝屋川公園　草の広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_10a996ae943b29523f812bc93131266b = L.featureGroup(
+                {}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+        
+    
+            var marker_60a95221ec573a430d5709d26d0097ee = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_7ede82ac1ceb59f0af78c0edb5574373 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_60a95221ec573a430d5709d26d0097ee.setIcon(icon_7ede82ac1ceb59f0af78c0edb5574373);
+        
+    
+        var popup_b28811aa37e72901c0ae2f92a1a0707f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a1ba723c32507892ad55d098e5dc2ce1 = $(`<div id="html_a1ba723c32507892ad55d098e5dc2ce1" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　ソフトボール広場便所</a></div>`)[0];
+                popup_b28811aa37e72901c0ae2f92a1a0707f.setContent(html_a1ba723c32507892ad55d098e5dc2ce1);
+            
+        
+
+        marker_60a95221ec573a430d5709d26d0097ee.bindPopup(popup_b28811aa37e72901c0ae2f92a1a0707f)
+        ;
+
+        
+    
+    
+            marker_60a95221ec573a430d5709d26d0097ee.bindTooltip(
+                `<div>
+                     寝屋川公園　ソフトボール広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1cab87fa998c662d667f8d9769a23da8 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_9a559656d78eb29cbdad3973facfec02 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1cab87fa998c662d667f8d9769a23da8.setIcon(icon_9a559656d78eb29cbdad3973facfec02);
+        
+    
+        var popup_07a5b48b0a0a43203f18ddc216163906 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_19786bf71b80eee1ceda88ef8020c946 = $(`<div id="html_19786bf71b80eee1ceda88ef8020c946" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　やすらぎ広場便所</a></div>`)[0];
+                popup_07a5b48b0a0a43203f18ddc216163906.setContent(html_19786bf71b80eee1ceda88ef8020c946);
+            
+        
+
+        marker_1cab87fa998c662d667f8d9769a23da8.bindPopup(popup_07a5b48b0a0a43203f18ddc216163906)
+        ;
+
+        
+    
+    
+            marker_1cab87fa998c662d667f8d9769a23da8.bindTooltip(
+                `<div>
+                     寝屋川公園　やすらぎ広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc71f449a0f9428ae693f7360be853e4 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_8cffe1360cc3428cf7e10c6bbb69fe7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_bc71f449a0f9428ae693f7360be853e4.setIcon(icon_8cffe1360cc3428cf7e10c6bbb69fe7d);
+        
+    
+        var popup_06c8f88639fef9b3b300079bd4bd40cd = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_35701ccbff034b9aac9012668db770f7 = $(`<div id="html_35701ccbff034b9aac9012668db770f7" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　陸上競技場便所</a></div>`)[0];
+                popup_06c8f88639fef9b3b300079bd4bd40cd.setContent(html_35701ccbff034b9aac9012668db770f7);
+            
+        
+
+        marker_bc71f449a0f9428ae693f7360be853e4.bindPopup(popup_06c8f88639fef9b3b300079bd4bd40cd)
+        ;
+
+        
+    
+    
+            marker_bc71f449a0f9428ae693f7360be853e4.bindTooltip(
+                `<div>
+                     寝屋川公園　陸上競技場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16e6a4eb9e599d8b48f8c1c0a71a718d = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_b5c4aa33b73afa337db67bfb4c4d3809 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_16e6a4eb9e599d8b48f8c1c0a71a718d.setIcon(icon_b5c4aa33b73afa337db67bfb4c4d3809);
+        
+    
+        var popup_634e934bf89b72f208090484fbea5d25 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_b8e9c24b4605f2ddcc5be1c18ff4cff9 = $(`<div id="html_b8e9c24b4605f2ddcc5be1c18ff4cff9" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第１駐車場便所</a></div>`)[0];
+                popup_634e934bf89b72f208090484fbea5d25.setContent(html_b8e9c24b4605f2ddcc5be1c18ff4cff9);
+            
+        
+
+        marker_16e6a4eb9e599d8b48f8c1c0a71a718d.bindPopup(popup_634e934bf89b72f208090484fbea5d25)
+        ;
+
+        
+    
+    
+            marker_16e6a4eb9e599d8b48f8c1c0a71a718d.bindTooltip(
+                `<div>
+                     寝屋川公園　第１駐車場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_327f6049ebd9323b5b5f0354dfd353cf = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_06e970e535aca36a60cd41dcfd66b68e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_327f6049ebd9323b5b5f0354dfd353cf.setIcon(icon_06e970e535aca36a60cd41dcfd66b68e);
+        
+    
+        var popup_822563e515570be63cfacc640d1e0a4b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5f158c758f27ba01521148aa5ea29f0f = $(`<div id="html_5f158c758f27ba01521148aa5ea29f0f" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　ふれあいの丘便所</a></div>`)[0];
+                popup_822563e515570be63cfacc640d1e0a4b.setContent(html_5f158c758f27ba01521148aa5ea29f0f);
+            
+        
+
+        marker_327f6049ebd9323b5b5f0354dfd353cf.bindPopup(popup_822563e515570be63cfacc640d1e0a4b)
+        ;
+
+        
+    
+    
+            marker_327f6049ebd9323b5b5f0354dfd353cf.bindTooltip(
+                `<div>
+                     寝屋川公園　ふれあいの丘便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f4654cfddb4b5d7fba41337aa0b69bb4 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_42421b695889e196c8798bdc050d9e8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f4654cfddb4b5d7fba41337aa0b69bb4.setIcon(icon_42421b695889e196c8798bdc050d9e8d);
+        
+    
+        var popup_7d798592bf1cdb1fa27d726eb34dfb3e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_67ebfcc0d78609ecaeae5270622ec737 = $(`<div id="html_67ebfcc0d78609ecaeae5270622ec737" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第２野球場便所</a></div>`)[0];
+                popup_7d798592bf1cdb1fa27d726eb34dfb3e.setContent(html_67ebfcc0d78609ecaeae5270622ec737);
+            
+        
+
+        marker_f4654cfddb4b5d7fba41337aa0b69bb4.bindPopup(popup_7d798592bf1cdb1fa27d726eb34dfb3e)
+        ;
+
+        
+    
+    
+            marker_f4654cfddb4b5d7fba41337aa0b69bb4.bindTooltip(
+                `<div>
+                     寝屋川公園　第２野球場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a4d3ba2f85c6aa0f07acb3ac49852b4 = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_b49accd88b224d6a832b22490da769bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6a4d3ba2f85c6aa0f07acb3ac49852b4.setIcon(icon_b49accd88b224d6a832b22490da769bc);
+        
+    
+        var popup_1a786d9f6d945fd60d3ac63a05520475 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_37ad236eb5d767e0fb3be91521601a79 = $(`<div id="html_37ad236eb5d767e0fb3be91521601a79" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　第２駐車場便所</a></div>`)[0];
+                popup_1a786d9f6d945fd60d3ac63a05520475.setContent(html_37ad236eb5d767e0fb3be91521601a79);
+            
+        
+
+        marker_6a4d3ba2f85c6aa0f07acb3ac49852b4.bindPopup(popup_1a786d9f6d945fd60d3ac63a05520475)
+        ;
+
+        
+    
+    
+            marker_6a4d3ba2f85c6aa0f07acb3ac49852b4.bindTooltip(
+                `<div>
+                     寝屋川公園　第２駐車場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b540f7f974437dd15172578ec2d29a7a = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_d9cd772d13e692ab52969460d2ffa645 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b540f7f974437dd15172578ec2d29a7a.setIcon(icon_d9cd772d13e692ab52969460d2ffa645);
+        
+    
+        var popup_613d38cb85cdf15ad5de7bcf8d5d61ca = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_6cfe23426cdf9a499c5628f35f1cbef3 = $(`<div id="html_6cfe23426cdf9a499c5628f35f1cbef3" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　芝生広場便所</a></div>`)[0];
+                popup_613d38cb85cdf15ad5de7bcf8d5d61ca.setContent(html_6cfe23426cdf9a499c5628f35f1cbef3);
+            
+        
+
+        marker_b540f7f974437dd15172578ec2d29a7a.bindPopup(popup_613d38cb85cdf15ad5de7bcf8d5d61ca)
+        ;
+
+        
+    
+    
+            marker_b540f7f974437dd15172578ec2d29a7a.bindTooltip(
+                `<div>
+                     寝屋川公園　芝生広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ab758627904f31a5463b927ef01d28e = L.marker(
+                [34.759921, 135.6536559],
+                {}
+            ).addTo(feature_group_10a996ae943b29523f812bc93131266b);
+        
+    
+            var icon_7fef8c5c4ec6a1c5c3de2a248dc7fc22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8ab758627904f31a5463b927ef01d28e.setIcon(icon_7fef8c5c4ec6a1c5c3de2a248dc7fc22);
+        
+    
+        var popup_b03d09d31c527ce5ab317f7b82d3d515 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_2fc718ac0a54e6acea3b865cf42a49d2 = $(`<div id="html_2fc718ac0a54e6acea3b865cf42a49d2" style="width: 100.0%; height: 100.0%;">寝屋川市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.759921,135.6536559" target="_blank">寝屋川公園　草の広場便所</a></div>`)[0];
+                popup_b03d09d31c527ce5ab317f7b82d3d515.setContent(html_2fc718ac0a54e6acea3b865cf42a49d2);
+            
+        
+
+        marker_8ab758627904f31a5463b927ef01d28e.bindPopup(popup_b03d09d31c527ce5ab317f7b82d3d515)
+        ;
+
+        
+    
+    
+            marker_8ab758627904f31a5463b927ef01d28e.bindTooltip(
+                `<div>
+                     寝屋川公園　草の広場便所<br>34.759921<br>135.6536559
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_397fdb35176603f4aa11eb80a0bcd524 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_76e7afacfcc5cb784213b87e1ab8e80f,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_0c32739b97bf601c1d35771b709e5bec,
+                    "\u4f11\u61a9\u6240" : feature_group_54cf220232949373cd1fc067a7cd17cb,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_72559247ba8a8b81c5687fb95e2f179d,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_fde191f94b19c572bd0ddd43e9e14360,
+                    "\u89aa\u6c34" : feature_group_f12f2e53740c531d83f213e9300a05c8,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_99be0c0c2ac0adfd5d697c72762a8c96,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_96849021587e597ebafb9ad1b5d2f484,
+                    "\u30c8\u30a4\u30ec" : feature_group_d8f711e294b8eddae45774c0e0f75b0e,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_10a996ae943b29523f812bc93131266b,
+                },
+            };
+            L.control.layers(
+                layer_control_397fdb35176603f4aa11eb80a0bcd524.base_layers,
+                layer_control_397fdb35176603f4aa11eb80a0bcd524.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_892ff5d2f9ac91d19130c96beb2b0b86);
+            feature_group_0c32739b97bf601c1d35771b709e5bec.remove();
+            feature_group_54cf220232949373cd1fc067a7cd17cb.remove();
+            feature_group_72559247ba8a8b81c5687fb95e2f179d.remove();
+            feature_group_fde191f94b19c572bd0ddd43e9e14360.remove();
+            feature_group_f12f2e53740c531d83f213e9300a05c8.remove();
+            feature_group_99be0c0c2ac0adfd5d697c72762a8c96.remove();
+            feature_group_96849021587e597ebafb9ad1b5d2f484.remove();
+            feature_group_d8f711e294b8eddae45774c0e0f75b0e.remove();
+            feature_group_10a996ae943b29523f812bc93131266b.remove();
+        
+</script>
+</html>

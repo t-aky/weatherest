@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_40d8bfcacac5ed934e459d6f3eaa71ce {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_40d8bfcacac5ed934e459d6f3eaa71ce" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_40d8bfcacac5ed934e459d6f3eaa71ce = L.map(
+                "map_40d8bfcacac5ed934e459d6f3eaa71ce",
+                {
+                    center: [34.8269299, 135.4704565],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_415bb8032d7542f5382650e5b49cb2d0 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_6b28037f53f5281f589e5181f87e567c = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_9ae7b0f16d70ced0d93af568aaacf91b = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_fafe3b0aa073cc357228cee0d1230633 = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_2f345e1342300fa525f8d2035ed9acde = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_fd6dfb63d582a3074c8e8b1679bfba73 = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_f2269c9ca433518bb8c53f05ebd6b2b9 = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_4f65f79c85a454438645706d4f1ed5b5 = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var feature_group_941f029b63c3902210b715b79fd9cbb1 = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var marker_b75f63c07872a8889bb8f20be9d056f5 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_82cb01297d6ec1eefe3ed73b914e50e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_b75f63c07872a8889bb8f20be9d056f5.setIcon(icon_82cb01297d6ec1eefe3ed73b914e50e6);
+        
+    
+        var popup_12b58b278c410f13db9685e67158f294 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a57452efc41e99ab5337b0e0c5dc21e3 = $(`<div id="html_a57452efc41e99ab5337b0e0c5dc21e3" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　大門橋横便所</a></div>`)[0];
+                popup_12b58b278c410f13db9685e67158f294.setContent(html_a57452efc41e99ab5337b0e0c5dc21e3);
+            
+        
+
+        marker_b75f63c07872a8889bb8f20be9d056f5.bindPopup(popup_12b58b278c410f13db9685e67158f294)
+        ;
+
+        
+    
+    
+            marker_b75f63c07872a8889bb8f20be9d056f5.bindTooltip(
+                `<div>
+                     箕面公園　大門橋横便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8aed0245b4ad21bb1597f51b86d7f06c = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_31c220c13a7765a558dbb22ce1063f14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_8aed0245b4ad21bb1597f51b86d7f06c.setIcon(icon_31c220c13a7765a558dbb22ce1063f14);
+        
+    
+        var popup_0141acebf2f925b732bfd704232965b6 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5570585256e1389b697b2d2e301fe788 = $(`<div id="html_5570585256e1389b697b2d2e301fe788" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　琴ノ家前便所</a></div>`)[0];
+                popup_0141acebf2f925b732bfd704232965b6.setContent(html_5570585256e1389b697b2d2e301fe788);
+            
+        
+
+        marker_8aed0245b4ad21bb1597f51b86d7f06c.bindPopup(popup_0141acebf2f925b732bfd704232965b6)
+        ;
+
+        
+    
+    
+            marker_8aed0245b4ad21bb1597f51b86d7f06c.bindTooltip(
+                `<div>
+                     箕面公園　琴ノ家前便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_385053e66b186a9e5fc489bdf9e54cd8 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_ce272a0ed542af1abd3f115607fa8630 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_385053e66b186a9e5fc489bdf9e54cd8.setIcon(icon_ce272a0ed542af1abd3f115607fa8630);
+        
+    
+        var popup_6b5a7c058d8fd768774108ed81a0b6b4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_32f27815c4ddf41c268b916d08803623 = $(`<div id="html_32f27815c4ddf41c268b916d08803623" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　鶴島横便所</a></div>`)[0];
+                popup_6b5a7c058d8fd768774108ed81a0b6b4.setContent(html_32f27815c4ddf41c268b916d08803623);
+            
+        
+
+        marker_385053e66b186a9e5fc489bdf9e54cd8.bindPopup(popup_6b5a7c058d8fd768774108ed81a0b6b4)
+        ;
+
+        
+    
+    
+            marker_385053e66b186a9e5fc489bdf9e54cd8.bindTooltip(
+                `<div>
+                     箕面公園　鶴島横便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e83d9500ae66fcaabc25bb4db6ea6f76 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_8a35312de6c37e7199d0bc3973ab939b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_e83d9500ae66fcaabc25bb4db6ea6f76.setIcon(icon_8a35312de6c37e7199d0bc3973ab939b);
+        
+    
+        var popup_a1fd3fd89e2296415b5b3aa2069a09c5 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_0d37810b238a5fe83af7d645c884a68f = $(`<div id="html_0d37810b238a5fe83af7d645c884a68f" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　風呂が谷便所</a></div>`)[0];
+                popup_a1fd3fd89e2296415b5b3aa2069a09c5.setContent(html_0d37810b238a5fe83af7d645c884a68f);
+            
+        
+
+        marker_e83d9500ae66fcaabc25bb4db6ea6f76.bindPopup(popup_a1fd3fd89e2296415b5b3aa2069a09c5)
+        ;
+
+        
+    
+    
+            marker_e83d9500ae66fcaabc25bb4db6ea6f76.bindTooltip(
+                `<div>
+                     箕面公園　風呂が谷便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30d624c87f0dec95237df82158d6e10c = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_57aa4b3e5eecc6def6c4661a9f0018b9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_30d624c87f0dec95237df82158d6e10c.setIcon(icon_57aa4b3e5eecc6def6c4661a9f0018b9);
+        
+    
+        var popup_65a5f4ab76d9b4ab69e34188252eeae9 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_a3ebdb60c169cbd1cbfccd3a96075f9b = $(`<div id="html_a3ebdb60c169cbd1cbfccd3a96075f9b" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　小枝下便所</a></div>`)[0];
+                popup_65a5f4ab76d9b4ab69e34188252eeae9.setContent(html_a3ebdb60c169cbd1cbfccd3a96075f9b);
+            
+        
+
+        marker_30d624c87f0dec95237df82158d6e10c.bindPopup(popup_65a5f4ab76d9b4ab69e34188252eeae9)
+        ;
+
+        
+    
+    
+            marker_30d624c87f0dec95237df82158d6e10c.bindTooltip(
+                `<div>
+                     箕面公園　小枝下便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21e7320b0d8d5089262e5f41ccc419e0 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_25e0d7ad89d0e05ef4a228325c16992e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_21e7320b0d8d5089262e5f41ccc419e0.setIcon(icon_25e0d7ad89d0e05ef4a228325c16992e);
+        
+    
+        var popup_a6d7be2349fa414a6430f0c74284d235 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3dd8ff2e2cbc5d623fb8da66c1e3facd = $(`<div id="html_3dd8ff2e2cbc5d623fb8da66c1e3facd" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　滝前西便所</a></div>`)[0];
+                popup_a6d7be2349fa414a6430f0c74284d235.setContent(html_3dd8ff2e2cbc5d623fb8da66c1e3facd);
+            
+        
+
+        marker_21e7320b0d8d5089262e5f41ccc419e0.bindPopup(popup_a6d7be2349fa414a6430f0c74284d235)
+        ;
+
+        
+    
+    
+            marker_21e7320b0d8d5089262e5f41ccc419e0.bindTooltip(
+                `<div>
+                     箕面公園　滝前西便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_abde859cb8553e36bcbfaa600f0a910c = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_90fc356a2e740a652675eefea74f4496 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_abde859cb8553e36bcbfaa600f0a910c.setIcon(icon_90fc356a2e740a652675eefea74f4496);
+        
+    
+        var popup_4ccf8692fc8a258ddbb914d468b17e81 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_706646e4af3e9b28166522796da759dd = $(`<div id="html_706646e4af3e9b28166522796da759dd" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　滝前便所</a></div>`)[0];
+                popup_4ccf8692fc8a258ddbb914d468b17e81.setContent(html_706646e4af3e9b28166522796da759dd);
+            
+        
+
+        marker_abde859cb8553e36bcbfaa600f0a910c.bindPopup(popup_4ccf8692fc8a258ddbb914d468b17e81)
+        ;
+
+        
+    
+    
+            marker_abde859cb8553e36bcbfaa600f0a910c.bindTooltip(
+                `<div>
+                     箕面公園　滝前便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ce6cd19cf288c9763b21c6fe184861ae = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_0a51f667681d46369ac2fc837c481525 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_ce6cd19cf288c9763b21c6fe184861ae.setIcon(icon_0a51f667681d46369ac2fc837c481525);
+        
+    
+        var popup_9975ceca68f56b1509ec5f0a4238de16 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f43dcee0db75c7254a18b83590c80b13 = $(`<div id="html_f43dcee0db75c7254a18b83590c80b13" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　瀧安寺前広場便所</a></div>`)[0];
+                popup_9975ceca68f56b1509ec5f0a4238de16.setContent(html_f43dcee0db75c7254a18b83590c80b13);
+            
+        
+
+        marker_ce6cd19cf288c9763b21c6fe184861ae.bindPopup(popup_9975ceca68f56b1509ec5f0a4238de16)
+        ;
+
+        
+    
+    
+            marker_ce6cd19cf288c9763b21c6fe184861ae.bindTooltip(
+                `<div>
+                     箕面公園　瀧安寺前広場便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_317a508f863261c7bbdd991730c8d33b = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_941f029b63c3902210b715b79fd9cbb1);
+        
+    
+            var icon_2df881ea43ffe2f29d20aa247e1fc01d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_317a508f863261c7bbdd991730c8d33b.setIcon(icon_2df881ea43ffe2f29d20aa247e1fc01d);
+        
+    
+        var popup_d4bfdceb9d50ba20b90f081f35f9ac0b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_dbdd1940bc24f8166d194cc03c78bf3d = $(`<div id="html_dbdd1940bc24f8166d194cc03c78bf3d" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　夫婦橋便所</a></div>`)[0];
+                popup_d4bfdceb9d50ba20b90f081f35f9ac0b.setContent(html_dbdd1940bc24f8166d194cc03c78bf3d);
+            
+        
+
+        marker_317a508f863261c7bbdd991730c8d33b.bindPopup(popup_d4bfdceb9d50ba20b90f081f35f9ac0b)
+        ;
+
+        
+    
+    
+            marker_317a508f863261c7bbdd991730c8d33b.bindTooltip(
+                `<div>
+                     箕面公園　夫婦橋便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_da8b56a57efb65fa3d075f9737ed2f6a = L.featureGroup(
+                {}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+        
+    
+            var marker_93178dfc668937f0f0cee81d2146f27e = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_56a66c4e99a42ec47841033771f2530d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_93178dfc668937f0f0cee81d2146f27e.setIcon(icon_56a66c4e99a42ec47841033771f2530d);
+        
+    
+        var popup_b84b68f411467b2c497f81dfcad76b4d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_295f561567427c90405280b0b3d7508b = $(`<div id="html_295f561567427c90405280b0b3d7508b" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　大門橋横便所</a></div>`)[0];
+                popup_b84b68f411467b2c497f81dfcad76b4d.setContent(html_295f561567427c90405280b0b3d7508b);
+            
+        
+
+        marker_93178dfc668937f0f0cee81d2146f27e.bindPopup(popup_b84b68f411467b2c497f81dfcad76b4d)
+        ;
+
+        
+    
+    
+            marker_93178dfc668937f0f0cee81d2146f27e.bindTooltip(
+                `<div>
+                     箕面公園　大門橋横便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_046ba68c55d4a31671c050755deb4421 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_007690360ea013b5f9e5bc41314f813b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_046ba68c55d4a31671c050755deb4421.setIcon(icon_007690360ea013b5f9e5bc41314f813b);
+        
+    
+        var popup_2e147266130ed9ee55280f272809f52b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_834205d13467cc0aa1fe24be72414c78 = $(`<div id="html_834205d13467cc0aa1fe24be72414c78" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　琴ノ家前便所</a></div>`)[0];
+                popup_2e147266130ed9ee55280f272809f52b.setContent(html_834205d13467cc0aa1fe24be72414c78);
+            
+        
+
+        marker_046ba68c55d4a31671c050755deb4421.bindPopup(popup_2e147266130ed9ee55280f272809f52b)
+        ;
+
+        
+    
+    
+            marker_046ba68c55d4a31671c050755deb4421.bindTooltip(
+                `<div>
+                     箕面公園　琴ノ家前便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f1bc422b361605a1269b9abdd6ecde4 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_55f5ae4fe118d3c1967300a6c7d57e72 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7f1bc422b361605a1269b9abdd6ecde4.setIcon(icon_55f5ae4fe118d3c1967300a6c7d57e72);
+        
+    
+        var popup_0d4d247d09e457bbb78d6779a197fe06 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_2a4c46b04ebcdd2be41db77ec21d02d7 = $(`<div id="html_2a4c46b04ebcdd2be41db77ec21d02d7" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　鶴島横便所</a></div>`)[0];
+                popup_0d4d247d09e457bbb78d6779a197fe06.setContent(html_2a4c46b04ebcdd2be41db77ec21d02d7);
+            
+        
+
+        marker_7f1bc422b361605a1269b9abdd6ecde4.bindPopup(popup_0d4d247d09e457bbb78d6779a197fe06)
+        ;
+
+        
+    
+    
+            marker_7f1bc422b361605a1269b9abdd6ecde4.bindTooltip(
+                `<div>
+                     箕面公園　鶴島横便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_205a40372948f6806c1659c497dbeaab = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_adbb78d1a40833e72ca2166c479016fa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_205a40372948f6806c1659c497dbeaab.setIcon(icon_adbb78d1a40833e72ca2166c479016fa);
+        
+    
+        var popup_894da153d4a4e685d8ea138e2135cb16 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_6545409cba963d33aa15403ca9bf11da = $(`<div id="html_6545409cba963d33aa15403ca9bf11da" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　風呂が谷便所</a></div>`)[0];
+                popup_894da153d4a4e685d8ea138e2135cb16.setContent(html_6545409cba963d33aa15403ca9bf11da);
+            
+        
+
+        marker_205a40372948f6806c1659c497dbeaab.bindPopup(popup_894da153d4a4e685d8ea138e2135cb16)
+        ;
+
+        
+    
+    
+            marker_205a40372948f6806c1659c497dbeaab.bindTooltip(
+                `<div>
+                     箕面公園　風呂が谷便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c626b785818b1d29dcb2865b9324017c = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_24355e56b1fe5c3ac79bb3742142663b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c626b785818b1d29dcb2865b9324017c.setIcon(icon_24355e56b1fe5c3ac79bb3742142663b);
+        
+    
+        var popup_3ffa9fba41ffdfbc1739f58e838cec61 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_4f1e184d53b19e3a1818a80cd0e903ab = $(`<div id="html_4f1e184d53b19e3a1818a80cd0e903ab" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　小枝下便所</a></div>`)[0];
+                popup_3ffa9fba41ffdfbc1739f58e838cec61.setContent(html_4f1e184d53b19e3a1818a80cd0e903ab);
+            
+        
+
+        marker_c626b785818b1d29dcb2865b9324017c.bindPopup(popup_3ffa9fba41ffdfbc1739f58e838cec61)
+        ;
+
+        
+    
+    
+            marker_c626b785818b1d29dcb2865b9324017c.bindTooltip(
+                `<div>
+                     箕面公園　小枝下便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f96cd458c47beb630811767e91449dbb = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_ca826aafbf06ed43db491fbbf014ee58 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f96cd458c47beb630811767e91449dbb.setIcon(icon_ca826aafbf06ed43db491fbbf014ee58);
+        
+    
+        var popup_7e7e0d1adf9a4005aef2b72355cc7f32 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_f7e40238768a21a5165aa09b4b8f0e21 = $(`<div id="html_f7e40238768a21a5165aa09b4b8f0e21" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　滝前西便所</a></div>`)[0];
+                popup_7e7e0d1adf9a4005aef2b72355cc7f32.setContent(html_f7e40238768a21a5165aa09b4b8f0e21);
+            
+        
+
+        marker_f96cd458c47beb630811767e91449dbb.bindPopup(popup_7e7e0d1adf9a4005aef2b72355cc7f32)
+        ;
+
+        
+    
+    
+            marker_f96cd458c47beb630811767e91449dbb.bindTooltip(
+                `<div>
+                     箕面公園　滝前西便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4e1a99de538575d8b4f469acd751fa4a = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_bee587a4205fa0832ee8a4d63e550900 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4e1a99de538575d8b4f469acd751fa4a.setIcon(icon_bee587a4205fa0832ee8a4d63e550900);
+        
+    
+        var popup_c1febbd4c79ad137d23f46e4b1c92fe9 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_e3c84d08dd5ff69f2ed5230065d8efba = $(`<div id="html_e3c84d08dd5ff69f2ed5230065d8efba" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　滝前便所</a></div>`)[0];
+                popup_c1febbd4c79ad137d23f46e4b1c92fe9.setContent(html_e3c84d08dd5ff69f2ed5230065d8efba);
+            
+        
+
+        marker_4e1a99de538575d8b4f469acd751fa4a.bindPopup(popup_c1febbd4c79ad137d23f46e4b1c92fe9)
+        ;
+
+        
+    
+    
+            marker_4e1a99de538575d8b4f469acd751fa4a.bindTooltip(
+                `<div>
+                     箕面公園　滝前便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b3eaf3577de737edee8b94d3f3f54731 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_56fdcd4cada750fa7b3f74d6553b575c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b3eaf3577de737edee8b94d3f3f54731.setIcon(icon_56fdcd4cada750fa7b3f74d6553b575c);
+        
+    
+        var popup_752260ece3134afdfb6582aca5cd4bab = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_053e19a99912cb760b7eaa06a970862b = $(`<div id="html_053e19a99912cb760b7eaa06a970862b" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　瀧安寺前広場便所</a></div>`)[0];
+                popup_752260ece3134afdfb6582aca5cd4bab.setContent(html_053e19a99912cb760b7eaa06a970862b);
+            
+        
+
+        marker_b3eaf3577de737edee8b94d3f3f54731.bindPopup(popup_752260ece3134afdfb6582aca5cd4bab)
+        ;
+
+        
+    
+    
+            marker_b3eaf3577de737edee8b94d3f3f54731.bindTooltip(
+                `<div>
+                     箕面公園　瀧安寺前広場便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9871c564a65421d62765cda6b4e2a3a2 = L.marker(
+                [34.8411526, 135.4714766],
+                {}
+            ).addTo(feature_group_da8b56a57efb65fa3d075f9737ed2f6a);
+        
+    
+            var icon_3e0319097e58638797d79e03d447df7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9871c564a65421d62765cda6b4e2a3a2.setIcon(icon_3e0319097e58638797d79e03d447df7d);
+        
+    
+        var popup_e2d530c4a6167dd3599ee42abae99723 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_ed6d3db934ae16bde9ecafbb9e8349f4 = $(`<div id="html_ed6d3db934ae16bde9ecafbb9e8349f4" style="width: 100.0%; height: 100.0%;">箕面市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.8411526,135.4714766" target="_blank">箕面公園　夫婦橋便所</a></div>`)[0];
+                popup_e2d530c4a6167dd3599ee42abae99723.setContent(html_ed6d3db934ae16bde9ecafbb9e8349f4);
+            
+        
+
+        marker_9871c564a65421d62765cda6b4e2a3a2.bindPopup(popup_e2d530c4a6167dd3599ee42abae99723)
+        ;
+
+        
+    
+    
+            marker_9871c564a65421d62765cda6b4e2a3a2.bindTooltip(
+                `<div>
+                     箕面公園　夫婦橋便所<br>34.8411526<br>135.4714766
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_b5bdee9073ca65863f58d6691a9f98f2 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_415bb8032d7542f5382650e5b49cb2d0,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_6b28037f53f5281f589e5181f87e567c,
+                    "\u4f11\u61a9\u6240" : feature_group_9ae7b0f16d70ced0d93af568aaacf91b,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_fafe3b0aa073cc357228cee0d1230633,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_2f345e1342300fa525f8d2035ed9acde,
+                    "\u89aa\u6c34" : feature_group_fd6dfb63d582a3074c8e8b1679bfba73,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_f2269c9ca433518bb8c53f05ebd6b2b9,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_4f65f79c85a454438645706d4f1ed5b5,
+                    "\u30c8\u30a4\u30ec" : feature_group_941f029b63c3902210b715b79fd9cbb1,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_da8b56a57efb65fa3d075f9737ed2f6a,
+                },
+            };
+            L.control.layers(
+                layer_control_b5bdee9073ca65863f58d6691a9f98f2.base_layers,
+                layer_control_b5bdee9073ca65863f58d6691a9f98f2.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_40d8bfcacac5ed934e459d6f3eaa71ce);
+            feature_group_6b28037f53f5281f589e5181f87e567c.remove();
+            feature_group_9ae7b0f16d70ced0d93af568aaacf91b.remove();
+            feature_group_fafe3b0aa073cc357228cee0d1230633.remove();
+            feature_group_2f345e1342300fa525f8d2035ed9acde.remove();
+            feature_group_fd6dfb63d582a3074c8e8b1679bfba73.remove();
+            feature_group_f2269c9ca433518bb8c53f05ebd6b2b9.remove();
+            feature_group_4f65f79c85a454438645706d4f1ed5b5.remove();
+            feature_group_941f029b63c3902210b715b79fd9cbb1.remove();
+            feature_group_da8b56a57efb65fa3d075f9737ed2f6a.remove();
+        
+</script>
+</html>

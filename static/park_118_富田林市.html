@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a0f948966b2f61b64c97d44c98d647a7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a0f948966b2f61b64c97d44c98d647a7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a0f948966b2f61b64c97d44c98d647a7 = L.map(
+                "map_a0f948966b2f61b64c97d44c98d647a7",
+                {
+                    center: [34.4996203, 135.5973146],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_30291e63f7a30e8ee876b36b134825ae = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_222234aee49672e79d81bbe6afcef220 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_ad58643f7a135febb62f85ce8103fae7 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_b9c6c7ae100a5970f6f93917fe5f95fa = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_9f08ca235efe7f101d74523ad59cccbe = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_9225a810da8b6f1afa5dee5fa166625c = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_bcb6c50380c530f3e3ec56b9dd03fe98 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_5959cd902622b9f6343f8016263f7936 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var feature_group_760826840873fe8e306c1ac2ab974316 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var marker_28e52ee22bb7a0637b85c52c77d36721 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_565d9c4e425978e246b3184aba791036 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_28e52ee22bb7a0637b85c52c77d36721.setIcon(icon_565d9c4e425978e246b3184aba791036);
+        
+    
+        var popup_588e008fae7b8fa7c0dea9ef6be2e4b8 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_78a7e4d323cf952dc948a6d959071a61 = $(`<div id="html_78a7e4d323cf952dc948a6d959071a61" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　パークセンター便所</a></div>`)[0];
+                popup_588e008fae7b8fa7c0dea9ef6be2e4b8.setContent(html_78a7e4d323cf952dc948a6d959071a61);
+            
+        
+
+        marker_28e52ee22bb7a0637b85c52c77d36721.bindPopup(popup_588e008fae7b8fa7c0dea9ef6be2e4b8)
+        ;
+
+        
+    
+    
+            marker_28e52ee22bb7a0637b85c52c77d36721.bindTooltip(
+                `<div>
+                     錦織公園　パークセンター便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c22150bdfb35cf508f3aa86648d1be6a = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_267ce19bb5c79c4f7d233c5df5367b06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_c22150bdfb35cf508f3aa86648d1be6a.setIcon(icon_267ce19bb5c79c4f7d233c5df5367b06);
+        
+    
+        var popup_7d5f5e78ab47827e46b6c8ec082eb5e9 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5db1109cf7bd42d784929f5856b969ad = $(`<div id="html_5db1109cf7bd42d784929f5856b969ad" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　錦織公園西広場便所（やんちゃの里）</a></div>`)[0];
+                popup_7d5f5e78ab47827e46b6c8ec082eb5e9.setContent(html_5db1109cf7bd42d784929f5856b969ad);
+            
+        
+
+        marker_c22150bdfb35cf508f3aa86648d1be6a.bindPopup(popup_7d5f5e78ab47827e46b6c8ec082eb5e9)
+        ;
+
+        
+    
+    
+            marker_c22150bdfb35cf508f3aa86648d1be6a.bindTooltip(
+                `<div>
+                     錦織公園　錦織公園西広場便所（やんちゃの里）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b98ee43eb370165b352491d8db905b8e = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_f3eddec9d249a7553c7c93f71ed1b0cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_b98ee43eb370165b352491d8db905b8e.setIcon(icon_f3eddec9d249a7553c7c93f71ed1b0cf);
+        
+    
+        var popup_741bf8e5896731a2444957825b98bf27 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_87a6483c5f93678db0c2001142caf76a = $(`<div id="html_87a6483c5f93678db0c2001142caf76a" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　河内の里便所</a></div>`)[0];
+                popup_741bf8e5896731a2444957825b98bf27.setContent(html_87a6483c5f93678db0c2001142caf76a);
+            
+        
+
+        marker_b98ee43eb370165b352491d8db905b8e.bindPopup(popup_741bf8e5896731a2444957825b98bf27)
+        ;
+
+        
+    
+    
+            marker_b98ee43eb370165b352491d8db905b8e.bindTooltip(
+                `<div>
+                     錦織公園　河内の里便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_508143f2cbcf44a2015dd4c31aceac14 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_02b9aa5c4291206b15aa8216f999027d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_508143f2cbcf44a2015dd4c31aceac14.setIcon(icon_02b9aa5c4291206b15aa8216f999027d);
+        
+    
+        var popup_0f7e7b444552e8258df7489fda6abf6b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_2c7ea77477f16f852fea7945dae6ba6f = $(`<div id="html_2c7ea77477f16f852fea7945dae6ba6f" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　一の谷便所</a></div>`)[0];
+                popup_0f7e7b444552e8258df7489fda6abf6b.setContent(html_2c7ea77477f16f852fea7945dae6ba6f);
+            
+        
+
+        marker_508143f2cbcf44a2015dd4c31aceac14.bindPopup(popup_0f7e7b444552e8258df7489fda6abf6b)
+        ;
+
+        
+    
+    
+            marker_508143f2cbcf44a2015dd4c31aceac14.bindTooltip(
+                `<div>
+                     錦織公園　一の谷便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1f48dd339eef5661bb30e403a6d7558a = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_aafa91f859f93640656deb8ed85288e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_1f48dd339eef5661bb30e403a6d7558a.setIcon(icon_aafa91f859f93640656deb8ed85288e8);
+        
+    
+        var popup_2ece7e70bff3be7e2fe87ce904ae89e3 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_bff8a07406433b1c8d75c9cbbd6fdaf7 = $(`<div id="html_bff8a07406433b1c8d75c9cbbd6fdaf7" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　多目的広場便所 （北多目的広場）</a></div>`)[0];
+                popup_2ece7e70bff3be7e2fe87ce904ae89e3.setContent(html_bff8a07406433b1c8d75c9cbbd6fdaf7);
+            
+        
+
+        marker_1f48dd339eef5661bb30e403a6d7558a.bindPopup(popup_2ece7e70bff3be7e2fe87ce904ae89e3)
+        ;
+
+        
+    
+    
+            marker_1f48dd339eef5661bb30e403a6d7558a.bindTooltip(
+                `<div>
+                     錦織公園　多目的広場便所 （北多目的広場）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_66519f2d7c380df2f01be889855140e3 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_307dce77ee8169c1e5f7efc043e3402a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_66519f2d7c380df2f01be889855140e3.setIcon(icon_307dce77ee8169c1e5f7efc043e3402a);
+        
+    
+        var popup_813aca0e3765ed110b5373b4b34c9847 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_3e8269c3b47b076a0f8ea51b03a03a01 = $(`<div id="html_3e8269c3b47b076a0f8ea51b03a03a01" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　水辺の里　便所</a></div>`)[0];
+                popup_813aca0e3765ed110b5373b4b34c9847.setContent(html_3e8269c3b47b076a0f8ea51b03a03a01);
+            
+        
+
+        marker_66519f2d7c380df2f01be889855140e3.bindPopup(popup_813aca0e3765ed110b5373b4b34c9847)
+        ;
+
+        
+    
+    
+            marker_66519f2d7c380df2f01be889855140e3.bindTooltip(
+                `<div>
+                     錦織公園　水辺の里　便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f922f84e6f26cd1a72f896ecbb4020d = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_3b4fde78071a32788eccf5d2ecb76960 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_0f922f84e6f26cd1a72f896ecbb4020d.setIcon(icon_3b4fde78071a32788eccf5d2ecb76960);
+        
+    
+        var popup_3fd8ef97e49b47a2e9018d81a17dad17 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1bc537e4207ea721d037181b33c50a7d = $(`<div id="html_1bc537e4207ea721d037181b33c50a7d" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　西広場　多目的便所（やんちゃの里）</a></div>`)[0];
+                popup_3fd8ef97e49b47a2e9018d81a17dad17.setContent(html_1bc537e4207ea721d037181b33c50a7d);
+            
+        
+
+        marker_0f922f84e6f26cd1a72f896ecbb4020d.bindPopup(popup_3fd8ef97e49b47a2e9018d81a17dad17)
+        ;
+
+        
+    
+    
+            marker_0f922f84e6f26cd1a72f896ecbb4020d.bindTooltip(
+                `<div>
+                     錦織公園　西広場　多目的便所（やんちゃの里）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b0643c033ea19cc50d677abfbfe3015 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_3cd1603ab699ab4de729085c513fe84d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_9b0643c033ea19cc50d677abfbfe3015.setIcon(icon_3cd1603ab699ab4de729085c513fe84d);
+        
+    
+        var popup_5b56b7b10a339ad0bb5832aeb6f89079 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_8bd9501ba9a29883432d4df92c669c5e = $(`<div id="html_8bd9501ba9a29883432d4df92c669c5e" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　桜木の里多目的便所</a></div>`)[0];
+                popup_5b56b7b10a339ad0bb5832aeb6f89079.setContent(html_8bd9501ba9a29883432d4df92c669c5e);
+            
+        
+
+        marker_9b0643c033ea19cc50d677abfbfe3015.bindPopup(popup_5b56b7b10a339ad0bb5832aeb6f89079)
+        ;
+
+        
+    
+    
+            marker_9b0643c033ea19cc50d677abfbfe3015.bindTooltip(
+                `<div>
+                     錦織公園　桜木の里多目的便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d18bbd34015bd5189d6800e3e19ae34 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_0c5423d510df56e429a23bdd15f3368f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_6d18bbd34015bd5189d6800e3e19ae34.setIcon(icon_0c5423d510df56e429a23bdd15f3368f);
+        
+    
+        var popup_72dadabec6796caf7b27a312b734e41d = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_43f6977b8dbafe94dfe119c5d747bb64 = $(`<div id="html_43f6977b8dbafe94dfe119c5d747bb64" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　ドレミの小橋便所</a></div>`)[0];
+                popup_72dadabec6796caf7b27a312b734e41d.setContent(html_43f6977b8dbafe94dfe119c5d747bb64);
+            
+        
+
+        marker_6d18bbd34015bd5189d6800e3e19ae34.bindPopup(popup_72dadabec6796caf7b27a312b734e41d)
+        ;
+
+        
+    
+    
+            marker_6d18bbd34015bd5189d6800e3e19ae34.bindTooltip(
+                `<div>
+                     錦織公園　ドレミの小橋便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8165f1bef4135668f260bcd6cc765aaa = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_760826840873fe8e306c1ac2ab974316);
+        
+    
+            var icon_ea5fa294ff2e028978a18674bc9d7eac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "toilet", "iconColor": "white", "markerColor": "beige", "prefix": "fa"}
+            );
+            marker_8165f1bef4135668f260bcd6cc765aaa.setIcon(icon_ea5fa294ff2e028978a18674bc9d7eac);
+        
+    
+        var popup_8b6d8c74a934f3991f348d2408c029df = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_32148e743dde6435adef45fe1f73ac4a = $(`<div id="html_32148e743dde6435adef45fe1f73ac4a" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　桜木の里便所（汲み取り式を改修　水洗）</a></div>`)[0];
+                popup_8b6d8c74a934f3991f348d2408c029df.setContent(html_32148e743dde6435adef45fe1f73ac4a);
+            
+        
+
+        marker_8165f1bef4135668f260bcd6cc765aaa.bindPopup(popup_8b6d8c74a934f3991f348d2408c029df)
+        ;
+
+        
+    
+    
+            marker_8165f1bef4135668f260bcd6cc765aaa.bindTooltip(
+                `<div>
+                     錦織公園　桜木の里便所（汲み取り式を改修　水洗）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_0aeba0ef0ca089b7a29a0c7a61102f38 = L.featureGroup(
+                {}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+        
+    
+            var marker_3e6082294fd837e828018aa24347e452 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_3cb10b04c4dd272fb34c2dba5e78a96f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3e6082294fd837e828018aa24347e452.setIcon(icon_3cb10b04c4dd272fb34c2dba5e78a96f);
+        
+    
+        var popup_f52915fd3f0ddd9fbc69528743337528 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_5e188048d566e276de289e0ed9b776e5 = $(`<div id="html_5e188048d566e276de289e0ed9b776e5" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　パークセンター便所</a></div>`)[0];
+                popup_f52915fd3f0ddd9fbc69528743337528.setContent(html_5e188048d566e276de289e0ed9b776e5);
+            
+        
+
+        marker_3e6082294fd837e828018aa24347e452.bindPopup(popup_f52915fd3f0ddd9fbc69528743337528)
+        ;
+
+        
+    
+    
+            marker_3e6082294fd837e828018aa24347e452.bindTooltip(
+                `<div>
+                     錦織公園　パークセンター便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea164874deef4547406afe22daf4e60a = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_a15999b68a56df18a7fb66e61f2e46e8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ea164874deef4547406afe22daf4e60a.setIcon(icon_a15999b68a56df18a7fb66e61f2e46e8);
+        
+    
+        var popup_4b6ae76ea4e675aca7b1e2d52acd474e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_4dc0d3a570ae9b13826a3ecbc07a744e = $(`<div id="html_4dc0d3a570ae9b13826a3ecbc07a744e" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　錦織公園西広場便所（やんちゃの里）</a></div>`)[0];
+                popup_4b6ae76ea4e675aca7b1e2d52acd474e.setContent(html_4dc0d3a570ae9b13826a3ecbc07a744e);
+            
+        
+
+        marker_ea164874deef4547406afe22daf4e60a.bindPopup(popup_4b6ae76ea4e675aca7b1e2d52acd474e)
+        ;
+
+        
+    
+    
+            marker_ea164874deef4547406afe22daf4e60a.bindTooltip(
+                `<div>
+                     錦織公園　錦織公園西広場便所（やんちゃの里）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_701f9194f60a4a2293cd2d949ce247f6 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_d4e7da7c44c323762ca7b3a1207cf79c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_701f9194f60a4a2293cd2d949ce247f6.setIcon(icon_d4e7da7c44c323762ca7b3a1207cf79c);
+        
+    
+        var popup_cabd8f4c6f07db88cbdb758906072e8f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1b98fb4ac6650cc0512a4e6c1821a0d9 = $(`<div id="html_1b98fb4ac6650cc0512a4e6c1821a0d9" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　河内の里便所</a></div>`)[0];
+                popup_cabd8f4c6f07db88cbdb758906072e8f.setContent(html_1b98fb4ac6650cc0512a4e6c1821a0d9);
+            
+        
+
+        marker_701f9194f60a4a2293cd2d949ce247f6.bindPopup(popup_cabd8f4c6f07db88cbdb758906072e8f)
+        ;
+
+        
+    
+    
+            marker_701f9194f60a4a2293cd2d949ce247f6.bindTooltip(
+                `<div>
+                     錦織公園　河内の里便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5edab6da67a338b6f71bf9917bbd2ec1 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_55ec882586474b0f04f612ef84fae0a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5edab6da67a338b6f71bf9917bbd2ec1.setIcon(icon_55ec882586474b0f04f612ef84fae0a4);
+        
+    
+        var popup_2ccf7ff73b4ab30268a703499f3da847 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_c121d175e741d5d5872e77054138633a = $(`<div id="html_c121d175e741d5d5872e77054138633a" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　一の谷便所</a></div>`)[0];
+                popup_2ccf7ff73b4ab30268a703499f3da847.setContent(html_c121d175e741d5d5872e77054138633a);
+            
+        
+
+        marker_5edab6da67a338b6f71bf9917bbd2ec1.bindPopup(popup_2ccf7ff73b4ab30268a703499f3da847)
+        ;
+
+        
+    
+    
+            marker_5edab6da67a338b6f71bf9917bbd2ec1.bindTooltip(
+                `<div>
+                     錦織公園　一の谷便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6a3f8615ac724347ab98ba11f9bcaca = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_c63d8b859fee9ad331e20a699a157420 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c6a3f8615ac724347ab98ba11f9bcaca.setIcon(icon_c63d8b859fee9ad331e20a699a157420);
+        
+    
+        var popup_2dea0a45dbaed991e11755926b2158de = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_527fd614274f3d63d0e55f4833744ab1 = $(`<div id="html_527fd614274f3d63d0e55f4833744ab1" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　多目的広場便所 （北多目的広場）</a></div>`)[0];
+                popup_2dea0a45dbaed991e11755926b2158de.setContent(html_527fd614274f3d63d0e55f4833744ab1);
+            
+        
+
+        marker_c6a3f8615ac724347ab98ba11f9bcaca.bindPopup(popup_2dea0a45dbaed991e11755926b2158de)
+        ;
+
+        
+    
+    
+            marker_c6a3f8615ac724347ab98ba11f9bcaca.bindTooltip(
+                `<div>
+                     錦織公園　多目的広場便所 （北多目的広場）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1a8094678f77efd3caaedffbe4709818 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_6a615d3a9f388253e41d3bcab66a1f37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1a8094678f77efd3caaedffbe4709818.setIcon(icon_6a615d3a9f388253e41d3bcab66a1f37);
+        
+    
+        var popup_9cc61feb83d78f10e0d79fe8d558763f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_b9b0e7793871bc4697382b13386a2c24 = $(`<div id="html_b9b0e7793871bc4697382b13386a2c24" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　水辺の里　便所</a></div>`)[0];
+                popup_9cc61feb83d78f10e0d79fe8d558763f.setContent(html_b9b0e7793871bc4697382b13386a2c24);
+            
+        
+
+        marker_1a8094678f77efd3caaedffbe4709818.bindPopup(popup_9cc61feb83d78f10e0d79fe8d558763f)
+        ;
+
+        
+    
+    
+            marker_1a8094678f77efd3caaedffbe4709818.bindTooltip(
+                `<div>
+                     錦織公園　水辺の里　便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_64d724400451b750612987854cd00597 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_1c72c70d66c5cb91584c4b52849ffacc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_64d724400451b750612987854cd00597.setIcon(icon_1c72c70d66c5cb91584c4b52849ffacc);
+        
+    
+        var popup_8f68bc489863bcf45fb9b4b44ddf6f1e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_1e990803018a2e97642b84f53366fc00 = $(`<div id="html_1e990803018a2e97642b84f53366fc00" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　西広場　多目的便所（やんちゃの里）</a></div>`)[0];
+                popup_8f68bc489863bcf45fb9b4b44ddf6f1e.setContent(html_1e990803018a2e97642b84f53366fc00);
+            
+        
+
+        marker_64d724400451b750612987854cd00597.bindPopup(popup_8f68bc489863bcf45fb9b4b44ddf6f1e)
+        ;
+
+        
+    
+    
+            marker_64d724400451b750612987854cd00597.bindTooltip(
+                `<div>
+                     錦織公園　西広場　多目的便所（やんちゃの里）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_69965ffd905021a89c85e2e66da39aee = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_cc4ba671cde5846037cfaf7fc7530602 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_69965ffd905021a89c85e2e66da39aee.setIcon(icon_cc4ba671cde5846037cfaf7fc7530602);
+        
+    
+        var popup_3118b91cbb8db309055fa2d3ac5739ad = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_651cb296c81f526ec5756fe444ce24ac = $(`<div id="html_651cb296c81f526ec5756fe444ce24ac" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　桜木の里多目的便所</a></div>`)[0];
+                popup_3118b91cbb8db309055fa2d3ac5739ad.setContent(html_651cb296c81f526ec5756fe444ce24ac);
+            
+        
+
+        marker_69965ffd905021a89c85e2e66da39aee.bindPopup(popup_3118b91cbb8db309055fa2d3ac5739ad)
+        ;
+
+        
+    
+    
+            marker_69965ffd905021a89c85e2e66da39aee.bindTooltip(
+                `<div>
+                     錦織公園　桜木の里多目的便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71c6b06f3d821c152ef996753bc59dc8 = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_f988900b4d1849d53dc55e5e39f25e7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_71c6b06f3d821c152ef996753bc59dc8.setIcon(icon_f988900b4d1849d53dc55e5e39f25e7a);
+        
+    
+        var popup_07c2c64a10726a10fb70ad8b52123c86 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_7e0522bddc1d64929b4e3d40e18374bd = $(`<div id="html_7e0522bddc1d64929b4e3d40e18374bd" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　ドレミの小橋便所</a></div>`)[0];
+                popup_07c2c64a10726a10fb70ad8b52123c86.setContent(html_7e0522bddc1d64929b4e3d40e18374bd);
+            
+        
+
+        marker_71c6b06f3d821c152ef996753bc59dc8.bindPopup(popup_07c2c64a10726a10fb70ad8b52123c86)
+        ;
+
+        
+    
+    
+            marker_71c6b06f3d821c152ef996753bc59dc8.bindTooltip(
+                `<div>
+                     錦織公園　ドレミの小橋便所<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8591cc142abb938e2c3b1c87a52fe49b = L.marker(
+                [34.482802, 135.5728921],
+                {}
+            ).addTo(feature_group_0aeba0ef0ca089b7a29a0c7a61102f38);
+        
+    
+            var icon_4930af2d6a24fa8c758a934373feca95 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8591cc142abb938e2c3b1c87a52fe49b.setIcon(icon_4930af2d6a24fa8c758a934373feca95);
+        
+    
+        var popup_2a489a9ad7f98cd7cb1148b4de346fa4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            
+                var html_965d373d7e5924462b5882e081a46d6e = $(`<div id="html_965d373d7e5924462b5882e081a46d6e" style="width: 100.0%; height: 100.0%;">富田林市<br>水飲場:-<br>四阿:-<br>トイレ:〇<br>親水:-<br>休憩所:-<br /><a href = "https://www.google.com/maps/search/?api=1&query=34.482802,135.5728921" target="_blank">錦織公園　桜木の里便所（汲み取り式を改修　水洗）</a></div>`)[0];
+                popup_2a489a9ad7f98cd7cb1148b4de346fa4.setContent(html_965d373d7e5924462b5882e081a46d6e);
+            
+        
+
+        marker_8591cc142abb938e2c3b1c87a52fe49b.bindPopup(popup_2a489a9ad7f98cd7cb1148b4de346fa4)
+        ;
+
+        
+    
+    
+            marker_8591cc142abb938e2c3b1c87a52fe49b.bindTooltip(
+                `<div>
+                     錦織公園　桜木の里便所（汲み取り式を改修　水洗）<br>34.482802<br>135.5728921
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_beff4ce0ddafa77f2d9419fc8972e87b = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_30291e63f7a30e8ee876b36b134825ae,
+                },
+                overlays :  {
+                    "\u30d9\u30f3\u30c1" : feature_group_222234aee49672e79d81bbe6afcef220,
+                    "\u4f11\u61a9\u6240" : feature_group_ad58643f7a135febb62f85ce8103fae7,
+                    "\u5c4b\u6839\u4ed8\u304d\u30d9\u30f3\u30c1\u003cbr\u003e\u3000\u4f11\u61a9\u6240(\u56db\u963f)" : feature_group_b9c6c7ae100a5970f6f93917fe5f95fa,
+                    "\u6c34\u98f2\u307f\u5834\u3001\u58f2\u5e97\u003cbr\u003e\u3000\u30ab\u30d5\u30a7\u30fb\u98f2\u98df\u65bd\u8a2d\u003cbr\u003e\u3000\u81ea\u52d5\u8ca9\u58f2\u6a5f" : feature_group_9f08ca235efe7f101d74523ad59cccbe,
+                    "\u89aa\u6c34" : feature_group_9225a810da8b6f1afa5dee5fa166625c,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u6c34\u98f2\u307f\u5834" : feature_group_bcb6c50380c530f3e3ec56b9dd03fe98,
+                    "\u5c4b\u6839\u4ed8\u304d\u4f11\u61a9\u6240\u003cbr\u003e\u3000\u89aa\u6c34" : feature_group_5959cd902622b9f6343f8016263f7936,
+                    "\u30c8\u30a4\u30ec" : feature_group_760826840873fe8e306c1ac2ab974316,
+                    "\u516c\u5712\u30fb\u7dd1\u5730" : feature_group_0aeba0ef0ca089b7a29a0c7a61102f38,
+                },
+            };
+            L.control.layers(
+                layer_control_beff4ce0ddafa77f2d9419fc8972e87b.base_layers,
+                layer_control_beff4ce0ddafa77f2d9419fc8972e87b.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_a0f948966b2f61b64c97d44c98d647a7);
+            feature_group_222234aee49672e79d81bbe6afcef220.remove();
+            feature_group_ad58643f7a135febb62f85ce8103fae7.remove();
+            feature_group_b9c6c7ae100a5970f6f93917fe5f95fa.remove();
+            feature_group_9f08ca235efe7f101d74523ad59cccbe.remove();
+            feature_group_9225a810da8b6f1afa5dee5fa166625c.remove();
+            feature_group_bcb6c50380c530f3e3ec56b9dd03fe98.remove();
+            feature_group_5959cd902622b9f6343f8016263f7936.remove();
+            feature_group_760826840873fe8e306c1ac2ab974316.remove();
+            feature_group_0aeba0ef0ca089b7a29a0c7a61102f38.remove();
+        
+</script>
+</html>
