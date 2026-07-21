@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}定期プラン購入画面{% endblock %}
+{% block body %}
+    <h1>サブスク手続き画面です</h1>
+    <hr>
+    <div>
+        <h2>月100円のお支払いで、以下の機能がご利用できます！</h2>
+        
+        <ol>
+            <!--<li style="color: rgb(233, 11, 55)"><b>googleカレンダーとの連携</b></li>
+            <ul>
+                <li><b style="color: rgb(233, 11, 55)">出発準備時刻</b>をgoogleカレンダーに登録→自動通知</li>
+                <li><b style="color: rgb(233, 11, 55)">いつも乗る便を登録</b>して繰り返し(毎週月曜日など)イベントとして登録</li>
+            </ul>-->
+            <li style="color: rgb(11, 89, 233)"><b>ナビを保存して、マイページからワンクリックでいつでも過去のナビを表示できます！</b></li>
+            <ul>
+                <li><b style="color: rgb(11, 89, 233)">仕事やプライベート用、優先度など</b>自由に登録</li>
+            </ul>
+            <li style="color: rgba(63, 233, 11, 0.911)"><b>お気に入りのナビをタイマー付きで保存すれば設定した外出準備時刻にアラームで通知！</b></li>
+            <li style="color: rgba(233, 11, 66, 0.911)"><b>お気に入りのトイレやお気に入りポイント(駅に近いなど)を保存<br>👉初めて来た町で検索するときに、お気に入りに似たトイレを表示します！</b></li>
+            <ul>
+            <li style="color: rgba(233, 11, 66, 0.911)"><b>アラームが鳴ると、自動的に案内画面に切り替わり、自分の位置とルートを確認しながら到着できます！</b></li>
+            </ul>
+            <button type="button" onclick="history.back()">戻る</button>
+        </ol>
+
+        
+    </div>
+    
+    <hr>
+    <form name="amount">
+        <article>
+            <label>100円/月</label>
+            <br>
+            <select id="month" name="contract_month">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <label>ヶ月</label>
+        </article>
+    </form>
+    <input type="button" value="確定" onclick="a()" required/>
+    <br>
+    <form id="fincode-form" name="subscribe" action="/subscribe" method="post">
+        <p><input type="text" class="amount" id="amount" name="amount">
+        円のお支払いで<br>以下より入力されたカードより決済します</p>
+        <div id="fincode">
+        </div>
+        <button id="submit" >
+            <span>お支払い</span>
+        </button>
+    </form>
+    
+    
+    <script>
+        const api_key='m_test_OWU0MWNmMzUtMTUzZS00MTkyLTk0ZjctZmJkMGQwYjNlMDU1MzBlZGIzNjEtNzZkMy00ZGU0LWIxZDYtNjRlMjY5MWY0OTcwc18yMzAzMjc0MTc0NA';
+        const fincode = Fincode(api_key)
+        const appearance = {
+            layout: "vertical",
+            hideLabel: false,
+            hideHolderName: false,
+            hidePayTimes: true,
+            labelCardNo: "カード番号",
+            labelExpire: "有効期限",
+            labelCvc: "セキュリティコード",
+            labelHolderName: "カード名義人",
+            cardNo: "1234 5678 9012 3456",
+            expireMonth: "01",
+            expireYear: "25",
+            cvc: "001",
+            holderName: "TARO YAMADA",
+            colorBackground: "fff",
+            colorBackgroundInput: "f5f5f5",
+            colorText: "0f0f0f",
+            colorPlaceHolder: "grey",
+            colorLabelText: "6e6e6e",
+            colorBorder: "e6e6e6",
+            colorError: "c12424",
+            colorCheck: "000054",
+        }
+        const ui = fincode.ui(appearance)
+        ui.create("payments", appearance)
+        amount=document.getElementById("amount").value;
+        console.log(amount);
+        ui.mount("fincode",amount);
+
+    </script>
+    
+    <script type="text/javascript">
+        // document.getElementByIdで値を変更
+        function a(){
+            let amount = document.getElementById('amount');
+            let contract_month = document.getElementById('month').value;
+            console.log(contract_month);
+            amount.value = 100*contract_month;
+
+        }
+    </script>
+{% endblock %}

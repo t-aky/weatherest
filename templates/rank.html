@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}気温ランキング-{% endblock %}
+{% block body %}
+
+<main>
+  <input type="button" value="公園付近の明日の気温ランキング検索画面へ" onClick="location.href='/#tomorrow_rank_details';">
+  <br>
+  <input type="button" value="Homeへ" onClick="location.href='/';">
+  <!--<p>※お詫び・・・地図の表示速度向上のために、地図上の公園の詳細表示を一時取りやめます。ご迷惑をおかけしますがご理解の程よろしくお願いいたします。</p>-->
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=web10e-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0057UDEYM&linkId=42eb1d15ecfbc9241371a1ccdf145aac"></iframe>
+  <iframe src="{{url_for('static',filename='rank_map.html')}}" width="90%" height="300"></iframe>
+  <img src="{{url_for('static',filename='気温ランク.png')}}" width="100"></img>
+</main>
+
+
+{% endblock %}

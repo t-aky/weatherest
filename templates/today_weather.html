@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}明日の日中の天気と最寄り休憩所-{% endblock %}
+{% block body %}
+
+<main>
+  <input type="button" value="今日の日中の天気と最寄り休憩所検索画面へ" onClick="location.href='/#today_weather_detail';">
+
+  <!--<p>※お詫び・・・地図の表示速度向上のために、地図上の公園の詳細表示を一時取りやめます。ご迷惑をおかけしますがご理解の程よろしくお願いいたします。</p>-->
+  <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=web10e-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0057UDEYM&linkId=42eb1d15ecfbc9241371a1ccdf145aac"></iframe>
+
+  <div id="current" style="display: block">
+    {% if muni %}
+      <p><font color="red">現在地({{pref}},{{city}})の{{day}}の日中の天気と県内の休憩所地図はこちらです。</font></p>
+      {% for m in municipality_map %}
+        <a href="{{url_for('static', filename='{h1}'.format(h1=m[1]))}}">{{m[0]}}</a>
+      {% endfor %}
+    {% else %}
+      <p>現在地({{pref}},{{city}})の県内の休憩所地図はございません。データを頂き次第、整備していきます。</p>
+    {% endif %}
+    現在地({{pref}},{{city}})の日中の天気はこちらです。
+    {% if weather %}
+      <p>{{datetime_hour0}}時の天気は{{weather0}}、温度は{{temperature0}}℃、湿度は{{humidity0}}%</p>
+      <p>{{datetime_hour1}}時の天気は{{weather1}}、温度は{{temperature1}}℃、湿度は{{humidity1}}%</p>
+      <p>{{datetime_hour2}}時の天気は{{weather2}}、温度は{{temperature2}}℃、湿度は{{humidity2}}%</p>
+    {% else %}
+    {% endif %}
+  </div>
+</main>
+
+{% endblock %}

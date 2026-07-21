@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}駅から〇分サーチ！トイレ検索結果{% endblock %}
+{% block body %}
+  {% if subscribed=="YES" %}
+    <dialog open>
+      <p>登録しました。</p>
+      <p>{{ title }}</p>
+      <p>{{departtime}}</p>
+      <p>{{arrivaltime}}</p>
+      <p>{{preparetime}}</p>
+      <p>{{depart_pos}}</p>
+      <p>{{toilet}}</p>
+      <p>{{amenity}}</p>
+      <p>{{traveltime}}</p>
+      <form method="dialog">
+      <button>OK</button>
+      </form>
+    </dialog>
+  {% else %}
+  {% endif %}
+  <div id="wrap"><font size="6px">
+    {{ title }}
+    {{ message }}
+    <input type="button" value="駅から〇分サーチ検索画面へ" onClick="location.href='/#station_research_detail';">
+    <br>
+    <input type="button" value="Homeへ" onClick="location.href='/';">
+    <iframe id ="frametarget1" src = "{{url_for('static', filename='station_research_result.html')}}" width="700" height="85%"></iframe>
+    <br>
+    <a href="{{url_for('static', filename='station_research_result.html')}}" target="_blank">クリックで拡大(更新ボタンを押して最新情報に更新)</a>
+    {% if m0 %}
+      {{o_name}}（オレンジ色）から
+      {{transport_choice}}で
+      <strong>{{minutes}}</strong>分で着く
+      {% if wheel_baby_ost %}
+        <strong>車椅子・乳幼児用・オストメイト対応</strong>のトイレ分布図です。
+      {% elif wheel_baby %}
+        <strong>車椅子・乳幼児対応</strong>のトイレ分布図です。
+      {% elif wheel_ost %}
+        <strong>車椅子・オストメイト対応</strong>のトイレ分布図です。
+      {% elif baby_ost %}
+        <strong>乳幼児用・オストメイト対応</strong>のトイレ分布図です。
+      {% elif wheel %}
+        <strong>車椅子対応</strong>のトイレ分布図です。
+      {% elif baby %}
+        <strong>乳幼児対応</strong>のトイレ分布図です。
+      {% elif ost %}
+        <strong>オストメイト対応</strong>のトイレ分布図です。
+      {% elif multi_wheel_baby_ost %}
+        <strong>多機能・車椅子・乳幼児・オストメイト対応</strong>のトイレ分布図です。
+      {% elif multi_wheel_baby %}
+        <strong>多機能・車椅子・乳幼児対応</strong>のトイレ分布図です。
+      {% elif multi_wheel_ost %}
+        <strong>多機能・車椅子・乳幼児対応</strong>のトイレ分布図です。
+      {% elif multi_baby_ost %}
+        <strong>多機能・乳幼児用・オストメイト対応</strong>のトイレ分布図です。
+      {% elif multi_wheel %}
+        <strong>多機能・車椅子対応</strong>のトイレ分布図です。
+      {% elif multi_baby %}
+        <strong>多機能・乳幼児対応</strong>のトイレ分布図です。
+      {% elif multi_ost %}
+        <strong>多機能・オストメイト対応</strong>のトイレ分布図です。
+      {% elif multi %}
+        <strong>多機能トイレ</strong>分布図です。
+      {% else %}
+        <strong>トイレ</strong>分布図です。
+      {% endif %}
+      <br>
+      <p>※最初に表示された地点は現在地ですので<br>地図内の<img src="{{url_for('static', filename='current_on_off.jpg')}}"/>をクリックしてご指定駅まで動かしてください</p>
+      <br>
+      <iframe id ="frametarget1" src = "{{url_for('static', filename='station_research_result.html')}}" width="700" height="700"></iframe>
+      <br>
+      <a href= "{{url_for('static', filename='traveltimezone_result.html')}}" download>ダウンロード</a>
+      <br>
+      <p>アイコンの色は以下の施設を示しています。（クリックで拡大）</p>
+      <p><a href="{{url_for('static', filename='icon.png')}}" target="_blank"><img src="{{url_for('static', filename='icon.png')}}" alt="" align="left" border="0"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      {% else %}
+    {% endif %}
+    {% if commit %}
+      <p>いつもの経路に追加する</p>
+      <form method="post" action="/my_traveltime">
+        <strong>タイトル</strong>
+        <input type="text" class="title" name="title" required>
+        <Label>詳細</Label>
+        <textarea id="story" name="story" rows="5" cols="33">
+            It was a dark and stormy night...
+        </textarea>
+        <label><font color="orange">準備時間</font></label>
+        <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:orange"><font color="orange">
+        <Label>到着余裕時間</Label>
+        <input type="number" min="0" max="100" id="dairy_allow_time" name="dairy_allow_time" value="0" style="color:orange"><font color="orange"></font>
+        
+        <Label>出発時間</Label>
+        <input type="date" id="after_arrival_date"
+            name="after_arrival_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+        <Label>到着時間</Label>
+        <input type="date" id="after_arrival_date"
+            name="after_arrival_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+          
+        <strong>出発地</strong>
+        <input type="text" class="preparetime" name="preparetime" placeholder="入力もしくは「現在地」と入力" required>
+      </form>
+    {% else %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}subscribed-station_research toilet search result{% endblock %}
+{% block body %}
+  <input type="button" value="To toliet search in the nearest station" onClick="location.href='/english#my_eng_station_research';">
+  <div id="wrap"><font size="6px">
+    
+    <p>登録しました。</p>
+    <p>{{ title }}</p>
+    <p>{{goouttime}}</p>
+    <p>{{departtime}}</p>
+    <p>{{arrivaltime}}</p>
+    <p>{{preparetime}}</p>
+    <p>{{depart_pos}}</p>
+    <p>{{toilet}}</p>
+    <p>{{amenity}}</p>
+    <p>{{traveltime}}</p>
+  </font></div>
+{% endblock %}

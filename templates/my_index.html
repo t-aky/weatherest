@@ -1,0 +1,843 @@
+{% extends "base.html" %}
+{% block title %}マイホーム{% endblock %}
+{% block body %}
+    {% if subscribed=="YES" %}
+      <p>定期プラン中の検索ページです。</p>
+    {% else %}
+      <a href="{{ url_for('plan') }}"><font color="orange">定期プラン(鋭意開発中。近日公開)はこちら</font></a>
+      <br>
+      <p><font color="red">広告なしの無料会員です。(保存やタイマー機能は月100円の定期プランより可能です。)</font></p>
+      <br>
+    {% endif %}
+    <div>
+      <form method="post" action="/closest_municipal"> 
+        <p>最寄りの検索可能な市町村を調べますか？</p>
+        <input type="submit" value="はい" id="closest_municipal" onclick="Form">
+        
+      </form>
+    </div>
+    <div class="menu">
+      <font size="6px">
+        <details>
+          <summary>
+            <font color="green"><strong>バリアフリーマップ配布場所の地図</strong></font>
+          </summary>
+          <div id="my_map_distribute" class="flush-collapseOne">
+            <br>
+
+            <iframe class="iframe" src="{{url_for('static', filename='map.html')}}" id="frametarget" height="700px" width="700px" allow="geolocation" reload="true" scrolling="no"></iframe>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <font color="green"><strong>周辺トイレ地図</strong></font>
+          </summary>
+          <div id="my_map_city" class="flush-collapseOne">
+            <font size="4px">
+              <table>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_網走市.html')}}">北海道網走市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_登別市.html')}}">北海道登別市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_函館市.html')}}">北海道函館市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_青森市.html')}}">青森県青森市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_盛岡市.html')}}">岩手県盛岡市</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_仙台市.html')}}">宮城県仙台市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_山形市.html')}}">山形県山形市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_郡山市.html')}}">福島県郡山市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_川口市.html')}}">埼玉県川口市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_江東区.html')}}">東京都江東区</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_青梅市.html')}}">東京都青梅市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_多摩市.html')}}">東京都多摩市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_中野区.html')}}">東京都中野区</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_八王子市.html')}}">東京都八王子市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_板橋区.html')}}">東京都板橋区</a></td> 
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_世田谷区.html')}}">東京都世田谷区</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_渋谷区.html')}}">東京都渋谷区</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_藤沢市.html')}}">神奈川県藤沢市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_平塚市.html')}}">神奈川県平塚市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_茅野市.html')}}">長野県茅野市</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_茅野市ー公園.html')}}">長野県茅野市－公園</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_松本市.html')}}">長野県松本市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_伊東市.html')}}">静岡県伊東市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_静岡県小山町.html')}}">静岡県小山町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_刈谷市.html')}}">愛知県刈谷市</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_瀬戸市.html')}}">愛知県瀬戸市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_愛知県日進市.html')}}">愛知県日進市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_尾張旭市.html')}}">愛知県尾張旭市</a></td> 
+                  <td><a href="{{url_for('static', filename='toilet_鈴鹿市.html')}}">三重県鈴鹿市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_和歌山市.html')}}">和歌山県和歌山市</a></td>
+                <tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_野々市市.html')}}">石川県野々市市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_珠洲市.html')}}">石川県珠洲市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_小浜市.html')}}">福井県小浜市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_あわら市.html')}}">福井県あわら市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_おおい町.html')}}">福井県おおい町</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_高浜町.html')}}">福井県高浜町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_永平寺町.html')}}">福井県永平寺町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_越前市.html')}}">福井県越前市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_越前町.html')}}">福井県越前町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_坂井市.html')}}">福井県坂井市</a></td>
+                </tr>
+                
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_若狭町.html')}}">福井県若狭町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_勝山市.html')}}">福井県勝山市</a></td> 
+                  <td><a href="{{url_for('static', filename='toilet_鯖江市.html')}}">福井県鯖江市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_敦賀市.html')}}">福井県敦賀市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_南越前町.html')}}">福井県南越前町</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_美浜町.html')}}">福井県美浜町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_福井県大野市.html')}}">福井県大野市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_福井県池田町.html')}}">福井県池田町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_福井市.html')}}">福井県福井市</a></td> 
+                  <td><a href="{{url_for('static', filename='toilet_堺市.html')}}">大阪府堺市</a></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_大阪市.html')}}">大阪府大阪市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_豊川市.html')}}">大阪府豊川市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_枚方市.html')}}">大阪府枚方市</a></td> 
+                  <td><a href="{{url_for('static', filename='toilet_神戸市.html')}}">兵庫県神戸市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_川西市.html')}}">兵庫県川西市</a></td> 
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('static', filename='toilet_丹波市.html')}}">兵庫県丹波市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_たつの市.html')}}">兵庫県たつの市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_明石市.html')}}">兵庫県明石市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_岡山市.html')}}">岡山県岡山市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_山口県柳井市.html')}}">山口県柳井市</a></td>
+                </tr>
+                <tr>   
+                  <td><a href="{{url_for('static', filename='toilet_宿毛市.html')}}">高知県宿毛市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_東温市.html')}}">愛媛県東温市</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_徳島県美波町.html')}}">徳島県美波町</a></td>
+                  <td><a href="{{url_for('static', filename='toilet_福岡県飯塚市.html')}}">福岡県飯塚市</a></td>
+                </tr>
+              </table>
+            </font>
+          </div>
+        </details>
+        <p><font color="red" size="3px">下の機能は検索結果が出る速さを優先しておりますため、入力値によっては検索結果がうまく出ない場合は<b>周辺トイレ地図</b>をご覧ください</font></p>
+        <details>
+          <summary>
+            <font color="green"><strong>最寄りのトイレ案内</strong></font>
+          </summary>
+            <div id="my_closest_detail" class="closest">
+            <p><font size="4px">ご注意・・・選択ボタンを押すと下線が引かれて選択状態になります。</font></p>
+
+            <form method="post" action="/closest">
+              <label for="tx1"><strong>出発地</strong>
+                <input type="text" id="orig_0" class="orig_0" name="orig_0" placeholder="入力もしくは「現在地」と入力" list="orig" autocomplete="on" required="">
+                <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              </label>
+              <hr>
+              <strong>お求めの機能</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="wheel" id="a01" class="m-1 btn btn-primary">
+                  <font size="4px">車いす対応</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="baby" id="a02" class="m-1 btn btn-primary">
+                  <font size="4px">乳幼児用</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="ost" id="a03" class="m-1 btn btn-primary">
+                  <font size="4px">オストメイト</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="multi" id="a04" class="m-1 btn btn-primary">
+                  <font size="4px">多目的トイレ※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">(スキップできます。)</font>
+              </p>
+              <p>
+                <font size="4px">※京都市、四日市市、福井県内、渋谷区は多目的トイレのみ表記</font>
+              </p>
+              <hr>
+              <strong>目安の所要時間</strong>
+              <select name="num0_closest" value="num0_closest">
+                <option value="5分">5分</option>
+                <option value="10分">10分</option>
+                <option value="15分">15分</option>
+                <option value="20分">20分</option>
+              </select>
+              <hr>
+              <strong>施設指定</strong>
+              <p>
+                <font size="4px">(スキップできます。)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="park" id="a01_closest" class="m-1 btn btn-primary">
+                  <font size="4px">公園、広場</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="hall" id="a021_closest" class="m-1 btn btn-primary">
+                  <font size="4px">庁舎、公民館、ホール、図書館</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="amuse" id="a031_closest" class="m-1 btn btn-primary">
+                  <font size="4px">遊園地</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="transport" id="a041_closest" class="m-1 btn btn-primary">
+                  <font size="4px">駅、電停、バス停</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="hospital" id="a051_closest" class="m-1 btn btn-primary">
+                  <font size="4px">病院</font>
+                </label>
+              </div>
+              <hr>
+              <strong>交通手段</strong>
+              <br>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">自動車</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">徒歩</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">自転車</font>
+                </label>
+              </div>
+
+              {% if subscribed == "YES" %}
+                <details>
+                  <summary>外出予定</summary>
+                  <div id="depart_set">
+                    <Label>タイトル</Label>
+                    <input type="text" class="title" id="title" name="title" placeholder="入力必須">
+                    <br>
+                    <Label>詳細</Label>
+                    <textarea id="story" name="desc" rows="5" cols="33">
+                    </textarea>
+                    <h1>出発か到着どちらかご入力ください</h1>
+                    <div id="before">
+                      <h2>いつ出発？</h2>
+                      <hr>
+                      <Label>出発日</Label>
+                      <input type="date" id="departdate"
+                      name="departdate" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30">に
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('departdate').value = now.toISOString().slice(0, 10);
+                          });
+                      </script>
+                      <br>
+                      <label><font color="blue">出発時刻</font></label>
+                      <input type="time" id="before_depart_time"
+                          name="before_depart_time" value="2018-06-12"
+                          min="2023-03-22" max="2033-03-30" style="color:blue">
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('before_depart_time').value = now.toISOString().slice(11, -8);
+                          });
+                      </script>
+                      <p>外出する</p>
+                    </div>
+                    <hr>
+                    <div id="after">
+                      <h2>いつまでに到着？</h2>
+                      <hr>
+                      <Label>到着日</Label>
+                      <input type="date" id="arrivaldate"
+                      name="arrivaldate" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30">に
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('arrivaldate').value = document.getElementById('arrivaldate').value
+                          document.getElementById('arrivaldate').value = now.toISOString().slice(0, 10);
+                          });
+                      </script>
+                      <br>
+                      <Label>到着時刻</Label>
+                      <input type="time" id="after_arrival_time"
+                      name="after_arrival_time" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30" style="color:red"><font color="red">に</font>
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('after_arrival_time').value = now.toISOString().slice(11, -8);
+                          });
+                      </script>
+                      <br>
+                      <p>外出する</p>
+                    </div>
+                </details>
+              {% else %}
+              {% endif %}
+              <br>
+              <font size="6px"><input type="submit" value="検索" onclick="Form" name="my_closest"></font>
+            </form>
+          </div>
+        </details>
+        <details>
+          <summary>
+            <font color="green"><strong>トイレを通る最短経路案内</strong></font>
+          </summary>
+          <div id="my_drop_on_detail" class="drop_on" style="width:90%;">
+            <p>
+              <font size="4px">ご注意・・・選択ボタンを押すと下線が引かれて選択状態になります。</font>
+            </p>
+            <form method="post" action="/via_toilet">
+            <strong>出発地</strong>
+            <input type="text" id="orig" class="orig" name="orig" placeholder="入力もしくは「現在地」と入力" list="orig" autocomplete="on" required="">
+            <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+            <hr>
+            <strong>目的地</strong>
+            <input type="text" id="dest" class="dest" name="dest" placeholder="入力必須" required="">
+            <hr>
+            <strong>お求めの機能</strong>
+            <p>
+              <font size="4px">(スキップできます。)</font>
+            </p>
+            <div>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check" value="wheel" id="a01" class="m-1 btn btn-primary">
+                <font size="4px">車いす対応</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check" value="baby" id="a02" class="m-1 btn btn-primary">
+                <font size="4px">乳幼児用</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check" value="ost" id="a03" class="m-1 btn btn-primary">
+                <font size="4px">オストメイト</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check" value="multi" id="a04" class="m-1 btn btn-primary">
+                <font size="4px">多目的トイレ※</font>
+              </label>
+            </div>
+            <p>
+              <font size="4px">※京都市、四日市市、福井県内、渋谷区は多目的トイレのみ表記</font>
+            </p>
+            <hr>
+            <strong>交通手段</strong>
+            <div>
+              <label class="btn btn-primary btn-xs avtive" id="radio">
+                <input type="radio" name="check_via" value="drive" id="a011" class="m-1 btn btn-primary">
+                <font size="4px">自動車</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="radio">
+                <input type="radio" name="check_via" value="walk" id="a021" class="m-1 btn btn-primary">
+                <font size="4px">徒歩</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="radio">
+                <input type="radio" name="check_via" value="cycle" id="a021" class="m-1 btn btn-primary">
+                <font size="4px">自転車</font>
+              </label>
+            </div>
+            <hr>
+            <strong>施設指定</strong>
+            <p>
+              <font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(スキップできます。)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+            </p>
+            <div>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check01" value="park" id="a0111" class="m-1 btn btn-primary">
+                <font size="4px">公園、広場</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check01" value="hall" id="a0211" class="m-1 btn btn-primary">
+                <font size="4px">庁舎、公民館、ホール、図書館</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check01" value="amuse" id="a0311" class="m-1 btn btn-primary">
+                <font size="4px">遊園地</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check01" value="transport" id="a0411" class="m-1 btn btn-primary">
+                <font size="4px">駅、電停、バス停</font>
+              </label>
+              <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                <input type="checkbox" name="check01" value="hospital" id="a0511" class="m-1 btn btn-primary">
+                <font size="4px">病院</font>
+              </label>
+            </div>
+            
+            <label><strong>ご希望の経路を通るトイレ</strong>
+              <p>
+                <font size="4px">目的地にお望みのトイレがある場合はトイレから「目的地まで0分」と表示されます。</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="radio" value="all_short" id="r1" class="m-1 btn btn-primary">
+                  <font size="4px">目的地までの最短経路を通るトイレ</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="radio" value="orig_short" id="r2" class="m-1 btn btn-primary">
+                  <font size="4px">出発地最寄りのトイレ</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="radio" value="dest_short" id="r3" class="m-1 btn btn-primary">
+                  <font size="4px">目的地最寄りのトイレ</font>
+                </label>
+              </div>
+            </label>
+            <hr>
+            <font size="6px"><input type="submit" value="検索" onclick="Form" name="my_dropon"></font>
+            <div class="attention" style="text-align:center;">
+              <div class="amenity"><span class="title-amenity"><strong>検索および検索結果のご注意</strong></span>
+                <br>
+                <p3>
+                  <font size="4px">※駐車場のないトイレも検索結果に含まれることがありますので、<br class="br-sp">付近の駐車場は地図などよりご確認お願い致します。</font>
+                </p3>
+                <br>
+                <p3>
+                  <font size="4px">・・・自治体様より収集した施設情報は下の現在の対応状況にて<br class="br-sp">記載された日時においてのものです。随時更新していく予定ですが、更新および公開状況によっては変更となる可能性がありますのでご了承ください。・・・</font>
+                </p3>
+                <br>
+                <p3>
+                  <font size="4px">※同名施設の重複を避けるため、「所在市町村　目的or出発地」<br class="br-sp">もしくは住所（例：山形市　山形県庁）でご検索ください。</font>
+                </p3>
+                <br>
+                <p3>
+                  <font size="4px">※多目的トイレの有無のみを公開している自治体(対応状況の☆)<br class="br-sp">のデータも公開しておりますので、「多目的トイレ」のみを選択の上、ご検索ください。</font>
+                </p3>
+                <br>
+                <p3>
+                  <font size="4px">※福井県内(鯖江市除く)は車いす・乳幼児用・オストメイト対応が<br class="br-sp">分類されていない「多機能トイレ」で表示されることがありますので「多機能トイレ」も合わせてチェックしてください。</font>
+                </p3>
+                <br>
+                <p3>
+                  <font size="4px">※郡山市はオストメイト対応が明示されている<br class="br-sp">「多機能トイレ」で表示されております。</font>
+                </p3>
+                <br>
+              </div>
+            </div>
+            <br>
+            {% if subscribed == "YES" %}
+              <details>
+                <summary>外出予定</summary>
+                <div id="depart_set">
+                  <Label>タイトル</Label>
+                  <input type="text" class="title" id="title" name="title" placeholder="入力必須">
+                  <br>
+                  <Label>詳細</Label>
+                  <textarea id="story" name="desc" rows="5" cols="33">
+                  </textarea>
+                  <h1>出発か到着どちらかご入力ください</h1>
+                  <div id="before">
+                    <h2>いつ出発？</h2>
+                    <hr>
+                    <Label>出発日</Label>
+                    <input type="date" id="departdate"
+                    name="departdate" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30">に
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('departdate').value = now.toISOString().slice(0, 10);
+                        });
+                    </script>
+                    <br>
+                    <label><font color="blue">出発時刻</font></label>
+                    <input type="time" id="before_depart_time"
+                        name="before_depart_time" value="2018-06-12"
+                        min="2023-03-22" max="2033-03-30" style="color:blue">
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('before_depart_time').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <p>外出する</p>
+                  </div>
+                  <hr>
+                  <div id="after">
+                    <h2>いつまでに到着？</h2>
+                    <hr>
+                    <Label>到着日</Label>
+                    <input type="date" id="arrivaldate"
+                    name="arrivaldate" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30">に
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('arrivaldate').value = document.getElementById('arrivaldate').value
+                        document.getElementById('arrivaldate').value = now.toISOString().slice(0, 10);
+                        });
+                    </script>
+                    <br>
+                    <Label>到着時刻</Label>
+                    <input type="time" id="after_arrival_time"
+                    name="after_arrival_time" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30" style="color:red"><font color="red">に</font>
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('after_arrival_time').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <br>
+                    <p>外出する</p>
+                  </div>
+                </details>
+              {% else %}
+              {% endif %}
+            </details>
+          </form>
+        </details>
+        
+        <details>
+          <summary>
+            <strong>所要時間内のトイレ分布図</strong>
+          </summary>
+          <div id="my_time_detail" class="time" style="width:90%;">
+            <p>
+              <font size="4px">ご注意・・・選択ボタンを押すと下線が引かれて選択状態になります。</font>
+            </p>
+            <form method="post" action="/traveltimezone">
+              <strong>出発地</strong>
+              <input type="text" id="orig0" class="orig0" name="orig0" placeholder="入力もしくは「現在地」と入力" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <hr>
+              <strong>所要時間</strong>
+              <select name="num0" value="num0">
+                <option value="5分">5分</option>
+                <option value="10分">10分</option>
+                <option value="15分">15分</option>
+                <option value="20分">20分</option>
+              </select>
+              <hr>
+              <strong>お求めの機能</strong>
+              <p>
+                <font size="4px">(スキップできます。)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="wheel00" id="a001" class="m-1 btn btn-primary">
+                  <font size="4px">車いす対応</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="baby00" id="a002" class="m-1 btn btn-primary">
+                  <font size="4px">乳幼児用</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="ost00" id="a003" class="m-1 btn btn-primary">
+                  <font size="4px">オストメイト</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="multi00" id="a004" class="m-1 btn btn-primary">
+                  <font size="4px">多目的トイレ※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※京都市、四日市市、福井県内、渋谷区は多目的トイレのみ表記</font>
+              </p>
+              <hr>
+              <strong>交通手段</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">自動車</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">徒歩</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">自転車</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="検索" onclick="Form" name="my_traveltime"></font>
+            </form>
+          </div>
+        
+        </details>
+        
+        <details>
+          <summary>
+            <font color="green"><strong>生活圏内のトイレ分布図</strong></font>
+          </summary>
+          <div id="my_live_detail" class="live" style="width:90%;">
+            <p>
+              <font size="4px">ご注意・・・選択ボタンを押すと下線が引かれて選択状態になります。</font>
+            </p>
+            <form method="post" action="/livingarea">
+              <strong>施設①</strong>
+              <input type="text" class="orig1" name="orig1" placeholder="入力もしくは「現在地」と入力" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <hr>
+              <strong>施設②</strong>
+              <input type="text" class="dest1" name="dest1" placeholder="入力必須" required="">
+              <hr>
+              <strong>お求めの機能</strong>
+              <br>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="wheel1" id="a0011" class="m-1 btn btn-primary">
+                  <font size="4px">車いす対応</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="baby1" id="a0021" class="m-1 btn btn-primary">
+                  <font size="4px">乳幼児用</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="ost1" id="a0031" class="m-1 btn btn-primary">
+                  <font size="4px">オストメイト</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="multi1" id="a0041" class="m-1 btn btn-primary">
+                  <font size="4px">多目的トイレ※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※京都市、四日市市、福井県内、渋谷区は多目的トイレのみ表記</font>
+                <br>
+              </p>
+              <hr>
+              <strong>主な施設</strong>
+              <br>
+              <p>
+                <font size="4px">(スキップできます。)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="park" id="a00111" class="m-1 btn btn-primary">
+                  <font size="4px">公園、広場</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="hall" id="a00211" class="m-1 btn btn-primary">
+                  <font size="4px">庁舎、公民館、ホール、図書館</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="amuse" id="a00311" class="m-1 btn btn-primary">
+                  <font size="4px">遊園地</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="transport" id="a00411" class="m-1 btn btn-primary">
+                  <font size="4px">駅、電停、バス停</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="hospital" id="a00511" class="m-1 btn btn-primary">
+                  <font size="4px">病院</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="検索" onclick="Form" name="my_live"></font>
+              
+            </form>
+          </div>
+        </details>
+        
+        <details>
+          <summary>
+            <font color="green"><strong>経由地最寄りのトイレ案内</strong></font>
+          </summary>
+          <div id="my_cruise_detail" class="cruise" style="width:90%;">
+            <p>
+              <font size="4px">ご注意・・・選択ボタンを押すと下線が引かれて選択状態になります。</font>
+            </p>
+            <form method="post" action="/cruise">
+              <br>
+              <strong>出発地</strong>
+              <input type="text" class="orig2" name="orig2" placeholder="入力もしくは「現在地」と入力" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <hr>
+              <strong>経由地</strong>
+              <input type="text" class="via_0" id="via_0" name="via_0" placeholder="入力必須" required="">
+              <br>
+              <input type="text" class="via_1" id="via_1" name="via_1" placeholder="経由地1">
+              <br>
+              <input type="text" class="via_2" id="via_2" name="via_2" placeholder="経由地2">
+              <br>
+              <input type="text" class="via_3" id="via_3" name="via_3" placeholder="経由地3">
+              <br>
+              <input type="text" class="via_4" id="via_4" name="via_4" placeholder="経由地4">
+              <br>
+              <input type="text" class="via_5" id="via_5" name="via_5" placeholder="経由地5">
+              <br>
+              <strong>目的地</strong>
+              <input type="text" class="dest2" name="dest2" placeholder="入力必須" required="">
+              <br>
+              <strong>お求めの機能</strong>
+              <p>
+                <font size="4px">(スキップできます。)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="wheel" id="a00011" class="m-1 btn btn-primary">
+                  <font size="4px">車いす対応</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="baby" id="a00021" class="m-1 btn btn-primary">
+                  <font size="4px">乳幼児用</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="ost" id="a00031" class="m-1 btn btn-primary">
+                  <font size="4px">オストメイト</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="multi" id="a00041" class="m-1 btn btn-primary">
+                  <font size="4px">多目的トイレ※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※京都市、四日市市、福井県内、渋谷区は多目的トイレのみ表記</font>
+              </p>
+              <strong>交通手段</strong>
+              <div>
+                <input type="radio" name="check_cruise" value="drive" id="a011" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">自動車</font>
+                </label>
+                <input type="radio" name="check_cruise" value="walk" id="a021" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">徒歩</font>
+                </label>
+                <input type="radio" name="check_cruise" value="cycle" id="a021" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">自転車</font>
+                </label>
+              </div>
+              <strong>主な施設</strong>
+              <p>
+                <font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(スキップできます。)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="park" id="a000511" class="m-1 btn btn-primary">
+                  <font size="4px">公園、広場</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="hall" id="a000611" class="m-1 btn btn-primary">
+                  <font size="4px">庁舎、公民館、ホール、図書館</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="amuse" id="a000711" class="m-1 btn btn-primary">
+                  <font size="4px">遊園地</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="transport" id="a000811" class="m-1 btn btn-primary">
+                  <font size="4px">駅、電停、バス</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="hospital" id="a000911" class="m-1 btn btn-primary">
+                  <font size="4px">病院</font>
+                </label>
+              </div>
+              {% if subscribed == "YES" %}
+                <details>
+                  <<summary>>外出予定</summary>
+                  <div id="depart_set">
+                    <Label>タイトル</Label>
+                    <input type="text" class="title" id="title" name="title" placeholder="入力必須">
+                    <br>
+                    <Label>詳細</Label>
+                    <textarea id="story" name="desc" rows="5" cols="33">
+                    </textarea>
+                    <h1>出発か到着どちらかご入力ください</h1>
+                    <div id="before">
+                      <h2>いつ出発？</h2>
+                      <hr>
+                      <Label>出発日</Label>
+                      <input type="date" id="departdate"
+                      name="departdate" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30">に
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('departdate').value = now.toISOString().slice(0, 10);
+                          });
+                      </script>
+                      <br>
+                      <label><font color="blue">出発時刻</font></label>
+                      <input type="time" id="before_depart_time"
+                          name="before_depart_time" value="2018-06-12"
+                          min="2023-03-22" max="2033-03-30" style="color:blue">
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('before_depart_time').value = now.toISOString().slice(11, -8);
+                          });
+                      </script>
+                      <p>外出する</p>
+                    </div>
+                    <hr>
+                    <div id="after">
+                      <h2>いつまでに到着？</h2>
+                      <hr>
+                      <Label>到着日</Label>
+                      <input type="date" id="arrivaldate"
+                      name="arrivaldate" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30">に
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('arrivaldate').value = document.getElementById('arrivaldate').value
+                          document.getElementById('arrivaldate').value = now.toISOString().slice(0, 10);
+                          });
+                      </script>
+                      <br>
+                      <Label>到着時刻</Label>
+                      <input type="time" id="after_arrival_time"
+                      name="after_arrival_time" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30" style="color:red"><font color="red">に</font>
+                      <script type="text/javascript">
+                          window.addEventListener('load', () => {
+                          const now = new Date();
+                          now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                          document.getElementById('after_arrival_time').value = now.toISOString().slice(11, -8);
+                          });
+                      </script>
+                      <br>
+                      <p>外出する</p>
+                    </div>
+                </details>
+              {% else %}
+              {% endif %}
+              <font size="6px"><input type="submit" value="検索" onclick="Form" name="my_cruise"></font>
+              <div>
+                <script type="text/javascript">
+                  function Form() {
+                    var parent = document.getElementById('via_1');
+                    console.log(parent.value);
+                  }
+                </script>
+              </div>
+            </form>
+          </div>
+        </details>
+      </font>
+    </div>
+{% endblock %}

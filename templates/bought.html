@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}定期プラン購入ページ{% endblock %}
+{% block body %}
+    <p>{{ amount }}円のお支払いが完了しました。</p>
+    <p><b>ご購入ありがとうございました。</b></p>
+    <a class="nav-item nav-link" href="{{ url_for('mypage') }}">
+        マイページへ
+    </a>
+{% endblock %}

@@ -1,0 +1,542 @@
+{% extends "base.html" %}
+{% block title %}ホーム-{% endblock %}
+{% block body %}
+  <div class="main" align="center">
+    <h1><big><b>天気もわかる休憩所検索マップ-WeatheRest</b></big></h1>
+    <img src="{{url_for('static', filename='rest.jpg')}}" heght="200", width="200"></img>
+    <img src="{{url_for('static', filename='water.jpg')}}" heght="200", width="200"></img>
+    <br>
+    <br>
+    <p>行きたいところに休憩できるところはありますか？目的地の気温や湿度と一緒に給水や日差しを防げて座れる場所（四阿）を探してくれます。</p>
+    <p><font color="red">※熱中症や低体温等、天候変化による体調悪化には十分お気を付けください。</font></p>
+    <p>-----現在地最寄り検索-----</p>
+    <p>※ご使用のwifiによっては取得した現在地が異なる可能性があるのでオフにして再度お試し下さい。</p>
+    <div id="tomorrow_weather_detail">
+      <form method="post" action="/tomorrow_weather"> 
+        <input type="submit" value="明日の日中の天気と最寄り休憩所検索" id="tomorrow_weather" onclick="Form">
+        
+      </form>
+    </div>
+    <br>
+    <div id="today_weather_detail" style="display:block;">
+      <form method="post" action="/today_weather"> 
+        
+        <input type="submit" value="今日の直近3時間の天気と最寄り休憩所検索" id="today_weather" onclick="Form">
+        <p><small>22時以降の検索は対応しておりません。(エラーページに移ります。)</small></p>
+      </form>
+    </div>
+
+    <br>
+    <div id="current" style="display: block">
+      {% if muni %}
+        <p>現在地({{pref}},{{city}})の公園地図はこちらです。</p>
+        {% for m in municipality_map %}
+          <a href="{{url_for('static', filename='{h1}'.format(h1=m[0]))}}">{{m[2]}}</a>
+          <br>
+        {% endfor %}
+      {% else %}
+        {% if m0 %}
+          <p>ご利用者様の位置情報を取得できませんでした。</p>
+        {% else %}
+          <p>現在地の({{pref}},{{city}})の公園地図はございません。データを頂き次第、整備していきます。</p>
+        {% endif %}
+      {% endif %}
+    </div>
+    <p>---------------------------------</p>
+    <p>※+-下のピン押下で現在地にフォーカスできます。</p>
+    <iframe src="{{url_for('static',filename='park_muni.html')}}" width="300" height="300"></iframe>
+    <br>
+    <br>
+    <details id="result_detatils">
+      <summary>
+        <strong><font color="orange">目的地の天気予報と付近の公園(水飲み場等)検索</font></strong>
+      </summary>
+      <form method="POST" action="/result" >
+        <!--<input type="button" id="currentlocation" value="現在地">-->
+        <label for="text"><font color="red">目的地</font></label>
+        <input type="text" id="dest" name="dest" value="">
+        <div>
+          <label class="btn btn-primary btn-xs avtive" id="checkbox">
+            <input type="checkbox" name="check_current" value="check_current" id="a01_closest" class="m-1 btn btn-primary">
+            <font size="4px">現在地</font>
+          </label>
+        </div>
+        <br>
+        <label for="text"><font color="red">日にち</font></label>
+        <br>
+        <select name="day" id ="day">
+          
+          <option value="今日" id="today">今日</option>
+          <option value="明日" id="tomorrow">明日</option>
+          <option value="明後日" id="dayaftertomorrow">明後日</option>
+        </select>の
+        <select name="hour" id ="hour">
+          <option value="9">9：00</option>
+          <option value="10">10：00</option>
+          <option value="11">11：00</option>
+          <option value="12">12：00</option>
+          <option value="13">13：00</option>
+          <option value="14">14：00</option>
+          <option value="15">15：00</option>
+          <option value="16">16：00</option>
+          <option value="17">17：00</option>
+          <option value="18">18：00</option>
+          <option value="19">19：00</option>
+          <option value="20">20：00</option>
+          <option value="21">21：00</option>
+          <option value="22">22：00</option>
+          <option value="23">23：00</option>
+          <option value="24">24：00</option>
+        </select>
+        <br>
+        <input type="submit" value="検索" id="submit">
+      </form>
+    </details>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/ichiba/3d383b93.aa4b3ddd.3d383b94.3e81104f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsoukaidrink%2F4987035576402%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/3d383b93.aa4b3ddd.3d383b94.3e81104f/?me_id=1306273&item_id=10002505&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fsoukaidrink%2Fcabinet%2F402%2F4987035576402.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;display: block;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/3d383b93.aa4b3ddd.3d383b94.3e81104f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsoukaidrink%2F4987035576402%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;">オーエスワン OS-1(500ml*24本入)【オーエスワン(OS-1)】[経口補水液 大塚製薬]</a><br><span >価格：4,091円（税込、送料別)</span> <span style="color:#BBB">(2024/6/17時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/ichiba/3d383b93.aa4b3ddd.3d383b94.3e81104f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsoukaidrink%2F4987035576402%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0" ></a><a href="https://hb.afl.rakuten.co.jp/ichiba/3d383b93.aa4b3ddd.3d383b94.3e81104f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsoukaidrink%2F4987035576402%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff!important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+    <script type="text/javascript">
+      let submit = document.getElementById("submit");
+      submit.addEventListener('click', () => {
+        const Date_now = new Date();
+        const nowhour = Date_now.getHours();
+        const nowminutes = Date_now.getMinutes();
+        const today = Date_now.getDay();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate()+1);
+        const dayaftertomorrow = new Date(today);
+        dayaftertomorrow.setDate(dayaftertomorrow.getDate()+2);
+        document.getElementById("today").innerHTML = String(today);
+        document.getElementById("tomorrow").innerHTML = String(tomorrow);
+        document.getElementById("dayaftertomorrow").innerHTML = String(dayaftertomorrow);
+      });
+    </script>
+    <details id="station_research_detatils">
+      <summary>
+        <strong><font color="orange">駅から〇分サーチ</font></strong>
+      </summary>
+      <div id="station_research_detail" class="station_research" style="width:90%;">
+
+        <form method="post" action="/station_research">
+          <div id="orig_station"><strong><font color="red">出発駅</font></strong></div>
+          <script>
+            function convertCSVtoArray(){ // 読み込んだCSVデータが文字列として渡される
+                var result = []; // 最終的な二次元配列を入れるための配列
+                const select = document.createElement('select');
+                select.setAttribute("id","station");
+                select.setAttribute("name","station");
+                select.setAttribute("value","station");
+                // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+                var res = {{ lst | tojson}};
+                
+                for(var i=0;i<res.length;++i){
+                  var res1 = res.slice(0,27);
+                  var res2 = res.slice(26,38);
+                  var res3 = res.slice(37,46);
+                  var res4 = res.slice(45,53);
+                  var res5 = res.slice(52,73);
+                  var res6 = res.slice(72,87);
+                  var res11 = res.slice(86,98);
+                  var res12 = res.slice(97,111);
+                  var res13 = res.slice(110,126);
+                  var res14 = res.slice(125,133);
+                  var res15 = res.slice(132,145);
+                  var res16 = res.slice(144,152);
+                  var res17 = res.slice(151,158);
+                  var res18 = res.slice(157,164);
+                  var res19 = res.slice(163,195);
+                  var res20 = res.slice(194,198);
+                  var res21 = res.slice(197,203);
+                  var res22 = res.slice(202,207);
+                  var res23 = res.slice(206,211);
+                  var res24 = res.slice(210,213);
+                  var res25 = res.slice(212,223);
+                  var res26 = res.slice(222,232);
+                  var res27 = res.slice(231,240);
+                  var res28 = res.slice(239,256);
+                  var res29 = res.slice(255,259);
+                  var res30 = res.slice(258,266);
+                  var res31 = res.slice(265,273);
+                  var res32 = res.slice(272,281);
+                  var res33 = res.slice(280,292);
+                  var res34 = res.slice(291,295);
+                  var res35 = res.slice(294,301);
+                  var res36 = res.slice(300,308);
+                  var res37 = res.slice(307,319);
+                  var res38 = res.slice(318,323);
+                  var res39 = res.slice(322,337);
+                  var res40 = res.slice(336,348);
+                  var res41 = res.slice(347,356);
+                  var res42 = res.slice(355,364);
+                  var res43 = res.slice(363,374);
+                  var res44 = res.slice(373,390);
+                  var res45 = res.slice(389,403);
+                  var res46 = res.slice(402,408);
+                  var res47 = res.slice(407,416);
+                  var res48 = res.slice(415,424);
+                  var res49 = res.slice(423,436);
+                  var res50 = res.slice(435,445);
+                  var res51 = res.slice(444,457);
+                  var res52 = res.slice(456,469);
+                  var res53 = res.slice(468,478);
+                  var res54 = res.slice(477,482);
+                  var res55 = res.slice(481,488);
+                  var res56 = res.slice(487,502);
+                  var res57 = res.slice(501,517);
+                  var res58 = res.slice(516,527);
+                  var res59 = res.slice(526,535);
+                  var res60 = res.slice(534,547);
+                  var res61 = res.slice(546,557);
+                  var res62 = res.slice(556,579);
+                  var res63 = res.slice(578,613);
+                  var res0 = [res1,res2,res3,res4,res5,res6,res11,res12,res13,res14,res15,res16,res17,res18,res19,res20,res21,res22,res23,res24,res25,res26,res27,res28,res29,res30,res31,res32,res33,res34,res35,res36,res37,res38,res39,res40,res41,res42,res43,res44,res45,res46,res47,res48,res49,res50,res51,res52,res53,res54,res55,res56,res57,res58,res59,res60,res61,res62,res63];
+                  
+                  
+
+                }
+                for(var i=0;i<res0.length;++i){
+                  var optiongroup = document.createElement("optgroup");
+                  optiongroup.setAttribute("id","station");
+                  optiongroup.setAttribute("name","station");
+                  optiongroup.setAttribute("value","station");
+                  optiongroup.setAttribute("label",res0[i][0][0]);
+                  select.add(optiongroup);
+                    
+                  for(var j=0;j<res0[i].length-1;++j){
+                    // option要素を生成
+                    let option = document.createElement('option');
+                    // option要素のテキストを設定
+                    option.text = res0[i][j][1];
+                    // option要素の値を設定
+                    option.value = res0[i][j][1];
+                    
+                    // 生成したoption要素をselect要素に追加
+                    optiongroup.appendChild(option);
+                    
+                  }
+                }
+                
+                // select要素をbody要素の末尾に追加
+                document.getElementById("orig_station").after(select);
+            }
+            window.onload=convertCSVtoArray();
+          </script>
+          <br>
+          <strong><font color="red">所要時間</font></strong>
+          <select name="num0s_station" value="num0s">
+            <option value="5" selected>5分</option>
+            <option value="10">10分</option>
+            <option value="15">15分</option>
+            <option value="20">20分</option>
+          </select>
+          <br>
+          <strong><font color="red">交通手段</font></strong>
+          <div>
+            <label class="btn btn-primary btn-xs avtive">
+              <input type="radio" name="check_station" value="drive" id="a011" class="m-1 btn btn-primary" checked="checked">
+              <font size="4px">自動車</font>
+            </label>
+            <label class="btn btn-primary btn-xs avtive">
+              <input type="radio" name="check_station" value="walk" id="a021" class="m-1 btn btn-primary">
+              <font size="4px">徒歩</font>
+            </label>
+            <label class="btn btn-primary btn-xs avtive">
+              <input type="radio" name="check_station" value="cycle" id="a021" class="m-1 btn btn-primary">
+              <font size="4px">自転車</font>
+            </label>
+          </div>
+          <br>
+          <label for="text"><font color="red">日にち</font></label>
+          <br>
+          <select name="day" id ="day">
+            <option value="今日" id="today">今日</option>
+            <option value="明日" id="tomorrow">明日</option>
+            <option value="明後日" id="dayaftertomorrow">明後日</option>
+          </select>の
+          <select name="hour" id ="hour">
+            <option value="9">9：00</option>
+            <option value="10">10：00</option>
+            <option value="11">11：00</option>
+            <option value="12">12：00</option>
+            <option value="13">13：00</option>
+            <option value="14">14：00</option>
+            <option value="15">15：00</option>
+            <option value="16">16：00</option>
+            <option value="17">17：00</option>
+            <option value="18">18：00</option>
+            <option value="19">19：00</option>
+            <option value="20">20：00</option>
+            <option value="21">21：00</option>
+            <option value="22">22：00</option>
+            <option value="23">23：00</option>
+            <option value="24">24：00</option>
+          </select>
+          <br>
+          <input type="submit" value="検索" onclick="Form">
+        </form>
+      </div>
+    </details>       
+    <br>
+    <details id="tomorrow_rank_details">
+      
+      <summary>
+        <strong><font color="orange">公園付近の明日の気温ランキング</font></strong>
+      </summary>
+      <p><font color="red">数十か所の公園の気温を調べるので数分ほどお時間をいただきます。ご了承ください。</font></p>
+      <label for="city-rank0">知りたい自治体と時刻を選んでください</label>
+      <form method="POST" action="/rank" >
+        <div id="city-rank"><strong><font color="red">市町村</font></strong></div>
+        <script>
+          function convertCSVtoArray(){ // 読み込んだCSVデータが文字列として渡される
+              var result = []; // 最終的な二次元配列を入れるための配列
+              const select = document.createElement('select');
+              select.setAttribute("id","city_rank1");
+              select.setAttribute("name","city_rank1");
+              select.setAttribute("value","city_rank1");
+              select.required = true;
+              console.log(select.required);
+              // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+              var res = {{ lst_map | tojson}};
+              
+              var res1 = res.slice(0,10);
+              console.log(res1);
+              var res2 = res.slice(10,11);
+              var res2_1 = res.slice(11,16);
+              console.log(res2);
+              var res3 = res.slice(16,22);
+              var res4 = res.slice(22,30);
+              var res5 = res.slice(30,35);
+              var res5_1 = res.slice(35,89);
+              var res9 = res.slice(89,91);
+              console.log(res9);
+              var res10 = res.slice(91,102);
+              var res11 = res.slice(102,110);
+              var res0 = [res1,res2,res2_1,res3,res4,res5,res5_1,res9,res10,res11];
+              let option0 = document.createElement('option');
+              option0.text = "--選んでください--";
+                  // option要素の値を設定
+              option0.value = "--選んでください--";
+              option0.appendChild(select)
+              for(var i=0;i<res0.length;++i){
+                var optiongroup = document.createElement("optgroup");
+                select.add(optiongroup);
+                console.log(i);
+                for(var j=0;j<res0[i].length;++j){
+                  optiongroup.setAttribute("id","map_rank");
+                  optiongroup.setAttribute("name","map_rank");
+                  optiongroup.setAttribute("value","map_rank");
+                  optiongroup.setAttribute("label",res0[i][j][0]);
+                  // option要素を生成
+                  let option = document.createElement('option');
+                  // option要素のテキストを設定
+                  option.text = res0[i][j][1];
+                  // option要素の値を設定
+                  option.value = res0[i][j][1];
+                  // 生成したoption要素をselect要素に追加
+                  optiongroup.appendChild(option);
+                  
+                }
+              }
+              // select要素をbody要素の末尾に追加
+              document.getElementById("city-rank").after(select);
+          }
+          window.onload=convertCSVtoArray();
+        </script>
+        <br>
+        <label for="text"><font color="red">時刻</font></label>
+        <br>
+        <select name="hour" id ="hour">
+          <option value="9">9：00</option>
+          <option value="10">10：00</option>
+          <option value="11">11：00</option>
+          <option value="12">12：00</option>
+          <option value="13">13：00</option>
+          <option value="14">14：00</option>
+          <option value="15">15：00</option>
+          <option value="16">16：00</option>
+          <option value="17">17：00</option>
+          <option value="18">18：00</option>
+          <option value="19">19：00</option>
+          <option value="20">20：00</option>
+          <option value="21">21：00</option>
+          <option value="22">22：00</option>
+          <option value="23">23：00</option>
+          <option value="24">24：00</option>
+        </select>
+        <br>
+        <input type="submit" value="検索" id="submit">
+      </form>
+    </details>
+    <br>
+    <details id="tomorrow_upper">
+      <summary>
+        <strong><font color="orange">明日の25℃以上の公園ランキング</font></strong>
+      </summary>
+      <p><font color="red">数十か所の公園の気温を調べるので数分ほどお時間をいただきます。ご了承ください。</font></p>
+      <label for="city-upper0">知りたい自治体と時刻を選んでください</label>
+      <form method="POST" action="/upper" >
+        <div id="city-upper"><strong><font color="red">市町村</font></strong></div>
+        <script>
+          function convertCSVtoArray(){ // 読み込んだCSVデータが文字列として渡される
+              var result = []; // 最終的な二次元配列を入れるための配列
+              const select = document.createElement('select');
+              select.setAttribute("id","city_map1");
+              select.setAttribute("name","city_map1");
+              select.setAttribute("value","city_map1");
+              select.required = true;
+              console.log(select.required);
+              // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+              var res = {{ lst_map | tojson}};
+              
+              var res1 = res.slice(0,10);
+              console.log(res1);
+              var res2 = res.slice(10,11);
+              var res2_1 = res.slice(11,16);
+              console.log(res2);
+              var res3 = res.slice(16,22);
+              var res4 = res.slice(22,30);
+              var res5 = res.slice(30,35);
+              var res5_1 = res.slice(35,89);
+              var res9 = res.slice(89,91);
+              console.log(res9);
+              var res10 = res.slice(91,102);
+              var res11 = res.slice(102,110);
+              var res0 = [res1,res2,res2_1,res3,res4,res5,res5_1,res9,res10,res11];
+              for(var i=0;i<res0.length;++i){
+                var optiongroup = document.createElement("optgroup");
+                select.add(optiongroup);
+                console.log(i);
+                for(var j=0;j<res0[i].length;++j){
+                  optiongroup.setAttribute("id","map_select1");
+                  optiongroup.setAttribute("name","map_select1");
+                  optiongroup.setAttribute("value","map_select1");
+                  optiongroup.setAttribute("label",res0[i][j][0]);
+                  // option要素を生成
+                  let option = document.createElement('option');
+                  // option要素のテキストを設定
+                  option.text = res0[i][j][1];
+                  // option要素の値を設定
+                  option.value = res0[i][j][1];
+                  // 生成したoption要素をselect要素に追加
+                  optiongroup.appendChild(option);
+                  
+                }
+              }
+              // select要素をbody要素の末尾に追加
+              document.getElementById("city-upper").after(select);
+          }
+          window.onload=convertCSVtoArray();
+        </script>
+        <br>
+        <label for="text"><font color="red">時刻</font></label>
+        <select name="hour" id ="hour">
+          <option value="9">9：00</option>
+          <option value="10">10：00</option>
+          <option value="11">11：00</option>
+          <option value="12">12：00</option>
+          <option value="13">13：00</option>
+          <option value="14">14：00</option>
+          <option value="15">15：00</option>
+          <option value="16">16：00</option>
+          <option value="17">17：00</option>
+          <option value="18">18：00</option>
+          <option value="19">19：00</option>
+          <option value="20">20：00</option>
+          <option value="21">21：00</option>
+          <option value="22">22：00</option>
+          <option value="23">23：00</option>
+          <option value="24">24：00</option>
+        </select>
+        <br>
+        <input type="submit" value="検索" id="submit">
+      </form>
+    </details>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/39939b8e.d3f0cef1.39939b8f.3fb35412/?me_id=1212232&item_id=10018748&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fnetbaby%2Fcabinet%2F049%2F402049.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;display: block;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;">【2/19 10:00~2/21 9:59 エントリーでP7倍】パンパース オムツ はじめての肌へのいちばん テープ 新生児 S M L(3個)【パンパース 肌へのいちばん】[肌へのいちばん]</a><br><span >価格：6,890円（税込、送料別)</span> <span style="color:#BBB">(2024/2/20時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0" ></a><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff!important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+    <details id="map_select_details">
+      <summary>
+        <strong><font color="orange">市区町村別公園分布図</font></strong>
+      </summary>
+      <label for="city-select">知りたい自治体と時刻を選んでください</label>
+      <br>
+      <form method="POST" action="/map_select" >
+        <div id="city_map02"><strong><font color="red">市町村</font></strong></div>
+          <script>
+            function convertCSVtoArray(){ // 読み込んだCSVデータが文字列として渡される
+                var result = []; // 最終的な二次元配列を入れるための配列
+                const select = document.createElement('select');
+                select.setAttribute("id","city_map2");
+                select.setAttribute("name","city_map2");
+                select.setAttribute("value","city_map2");
+                select.required = true;
+                console.log(select.required);
+                // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+                var res = {{ lst_map | tojson}};
+                
+                var res1 = res.slice(0,10);
+                console.log(res1);
+                var res2 = res.slice(10,11);
+                var res2_1 = res.slice(11,16);
+                console.log(res2);
+                var res3 = res.slice(16,22);
+                var res4 = res.slice(22,30);
+                var res5 = res.slice(30,35);
+                var res5_1 = res.slice(35,89);
+                var res9 = res.slice(89,91);
+                console.log(res9);
+                var res10 = res.slice(91,102);
+                var res11 = res.slice(102,110);
+                var res0 = [res1,res2,res2_1,res3,res4,res5,res5_1,res9,res10,res11];
+                for(var i=0;i<res0.length;++i){
+                  var optiongroup = document.createElement("optgroup");
+                  select.add(optiongroup);
+                  console.log(i);
+                  for(var j=0;j<res0[i].length;++j){
+                    optiongroup.setAttribute("id","map_select2");
+                    optiongroup.setAttribute("name","map_select2");
+                    optiongroup.setAttribute("value","map_select2");
+                    optiongroup.setAttribute("label",res0[i][j][0]);
+                    // option要素を生成
+                    let option = document.createElement('option');
+                    // option要素のテキストを設定
+                    option.text = res0[i][j][1];
+                    // option要素の値を設定
+                    option.value = res0[i][j][1];
+                    // 生成したoption要素をselect要素に追加
+                    optiongroup.appendChild(option);
+                    
+                  }
+                }
+                // select要素をbody要素の末尾に追加
+                document.getElementById("city_map02").after(select);
+            }
+            window.onload=convertCSVtoArray();
+          </script>
+          <input type="submit" value="検索" id="submit">
+        </form>
+    </details>
+    <br>
+    <p>※本業の都市計画コンサルタントの合間にやっているので、エラーやお問い合わせ対応については基本的に夜間・休日となります。ご了承ください。</p>
+    
+    <p>【募集】休憩所をご所有、または近隣施設の情報を募集しております。少しでもご興味がございましたら下記のURLよりご連絡ください</p>
+    <p>
+      こんな機能が欲しいといったご要望は<a class="link" href="mailto:u-rib@u-rib.com">こちら</a>までお問い合わせください。<br>
+    </p>
+    <a href="https://linktr.ee/takrib">他にもいろんなアプリや活動をしております</a>
+    <!--<form method="post" action="/Recruitment">
+      <div>
+          <button onclick="location.href='Recruitment.html'">👆本サイトに関心をお持ちの<br>方はこちらをクリック下さい</button>
+          <br>
+      </div>
+    </form>-->
+    <br>
+    <div class="info">
+      <div class="info-wrap">
+        <h1>新着情報</h1>
+        <iframe src="{{url_for('static',filename='whatsnew.html')}}" width="90%" height="300" scrolling="yes"></iframe>
+        <h4>データを公開及びご提供いただいた自治体・企業様</h4>
+        <iframe src="{{url_for('static', filename='referrence.html')}}" width="90%" height="300" scrolling="yes"></iframe>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

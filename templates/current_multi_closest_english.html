@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block title %}closest_result{% endblock %}
+{% block body %}
+  <div id="wrap">
+    <br>
+    <input type="button" value="To closest toliet search" onClick="location.href='/english#multi_current_closest_english_detail';">
+    <br>
+    <input type="button" value="Homeへ" onClick="location.href='/english';">
+    {% if subscribed=="YES" %}
+      <dialog open>
+        <p>Registered</p>
+        <p>{{ title }}</p>
+        <p>{{departtime}}</p>
+        <p>{{arrivaltime}}</p>
+        <p>{{preparetime}}</p>
+        <p>{{depart_pos}}</p>
+        <p>{{toilet}}</p>
+        <p>{{amenity}}</p>
+        <p>{{traveltime}}</p>
+      </dialog>
+    <!--
+    <dialog>
+      {% for item in db %}
+        <div>
+            {% if item[4] != None %}
+                <h1>スケジュールの名前：{{item[3]}}</h1>
+                <p>スケジュールの内容：{{item[4]}}</p>
+                <p>外出時刻：{{item[5]}}</p>
+                <p>準備時刻：{{item[6]}}</p>
+                <p>案内図：{{item[10]}}</p>
+            {% else %}
+            {% endif %}
+        </div>
+          
+      {% endfor %}
+    </dialog>-->
+    {% else %}
+    {% endif %}
+    <br>
+    From your current position to, by {{transport_choice}}
+    <br>
+    {% if result %}
+      {% if ame_close_n %}
+        In <strong>{{orig_time}} minutes,
+        <br>
+        You can arrival at {{ame_close_n}}</strong>
+      {% else %}
+        <strong>No accessible toilet.</strong>
+      {% endif %}
+      
+      <iframe id ="frametarget1" src = "{{url_for('static', filename='closest_result.html')}}"  id ="frametarget1" width="700" height="85%" allow="geolocation"></iframe>
+      
+    {% else %}
+      <strong>No accessible toilet.</strong>
+    {% endif %}
+    <br>
+    {% if commit %}
+      <p>いつもの経路に追加する</p>
+      <form method="post" action="/my_closest_english">
+        <strong>タイトル</strong>
+        <input type="text" class="title" name="title" required>
+        <br>
+        <Label>詳細</Label>
+        <textarea id="story" name="story" rows="5" cols="33">
+        </textarea>
+        <br>
+        <label><font color="orange">準備時間</font></label>
+        <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:orange"><font color="orange">
+        <Label>到着余裕時間</Label>
+        <input type="number" min="0" max="100" id="dairy_allow_time" name="dairy_allow_time" value="0" style="color:orange"><font color="orange"></font>
+        
+        <Label>出発時間</Label>
+        <input type="date" id="depart_date"
+            name="depart_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('depart_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+        <input type="time" id="depart_time"
+        name="depart_time" value="2018-06-12"
+        min="2023-03-22" max="2033-03-30" style="color:red"><font color="red">に</font>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('depart_time').value = now.toISOString().slice(11, -8);
+            });
+        </script>
+        <Label>到着時刻</Label>
+        <input type="date" id="arrival_date"
+            name="arrival_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('arrival_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+        <input type="time" id="arrival_time"
+        name="arrival_time" value="2018-06-12"
+        min="2023-03-22" max="2033-03-30" style="color:red"><font color="red">に</font>
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('arrival_time').value = now.toISOString().slice(11, -8);
+            });
+        </script>
+        <input type="submit" value="スケジュール設定">
+      </form>
+    {% else %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}市町村-{% endblock %}
+{% block body %}
+  <input type="button" value="公園分布図検索画面へ" onClick="location.href='/#map_select_details';">
+  <br>
+  <input type="button" value="Homeへ" onClick="location.href='/';">
+  <p><font color="green"><a id="designated">{{designated}}の公園分布図です。</font></a></p>
+  <iframe src="{{url_for('static', filename='{h1}'.format(h1=designated_map))}}" width="100%" height="500px"></iframe>
+{% endblock %}

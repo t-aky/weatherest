@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}決済カード情報削除完了{% endblock %}
+{% block body %}
+    <h1>カード情報が削除されました</h1>
+    <font size="6px">
+        <form action = "/mypage" method="post" name="my_index">
+            <button type="submit" name="mypage" value="my_index">マイページへ</button>
+        </form>
+    </font>
+{% endblock %}

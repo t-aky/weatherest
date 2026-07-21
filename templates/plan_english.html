@@ -1,0 +1,41 @@
+{% extends "base_english.html" %}
+{% block title %}Content of the Subscription plan{% endblock %}
+{% block body %}
+    <script>
+        document.getElementById("plan_explain").hidden = true;
+    </script>
+    <p>Available content at 1 $ per month</p>
+            <!--<li style="color: rgb(233, 11, 55)"><b>googleカレンダーとの連携</b></li>
+            <ul>
+                <li><b style="color: rgb(233, 11, 55)">出発準備時刻</b>をgoogleカレンダーに登録→自動通知</li>
+                <li><b style="color: rgb(233, 11, 55)">いつも乗る便を登録</b>して繰り返し(毎週月曜日など)イベントとして登録</li>
+            </ul>-->
+            <li style="color: rgb(11, 89, 233)"><b>You can save the navi to mypage and only one-click can show hisitorical navi</b></li>
+            <li style="color: rgb(11, 89, 233)"><b>You can add the goout memo describing timer, bringing and detail with navi👉To do list on mypage</b></li>
+            <div class="delivery">
+                <ol>
+                    <li><b style="color: rgb(11, 89, 233)">You can classify the work or private on the kind of memo</b></li>
+                    <li><b style="color: rgb(11, 89, 233)">You can set priority and alarmed interval</b></li>
+                </ol>
+
+            </div>
+            
+            <li style="color: rgba(42, 137, 13, 0.911)"><b>You can set alerm to the memo with navi as favorite on mypage</b></li>
+            
+            <li style="color: rgba(233, 11, 66, 0.911)"><b>When the alerm ring, the screen change to the navi screen automatically</b></li>
+                
+        </ul>
+
+    </div>
+    <details>
+      <summary>Additionally 1 $ (Developing)</summary>
+      <h2>Furture contents</h2>
+      <div class="delivery_list1">
+        <ul>
+            <li style="color: rgba(28, 179, 164, 0.911)"><b>You can save your favorite toilet and spot(near to the station)<br>👉If you visit the first place, the application show the toilet saved as your favorites!</b></li>
+            <li style="color: rgba(28, 179, 164, 0.911)"><b>You can input errand and buying place and buyings on the memo<br>👉You can see the navi with the described spots (shopping at convenience store before going to the toilet) nearest the orignation and destination!</b></li>
+        </ul>
+      </div>
+    </details>
+    <button type="button" onclick="history.back()">戻る</button>
+{% endblock %}

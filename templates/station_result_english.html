@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title %}minutes search from the station Result{% endblock %}
+{% block body %}
+  {% if subscribed=="YES" %}
+    <dialog open>
+      <p>登録しました。</p>
+      <p>{{ title }}</p>
+      <p>{{departtime}}</p>
+      <p>{{arrivaltime}}</p>
+      <p>{{preparetime}}</p>
+      <p>{{depart_pos}}</p>
+      <p>{{toilet}}</p>
+      <p>{{amenity}}</p>
+      <p>{{traveltime}}</p>
+      <form method="dialog">
+      <button>OK</button>
+      </form>
+    </dialog>
+  {% else %}
+  {% endif %}
+  <div id="wrap"><font size="6px">
+    {{ title }}
+    {{ message }}
+    <input type="button" value="To station_research" onClick="location.href='/english#station_research';">
+    <br>
+    <input type="button" value="Homeへ" onClick="location.href='/english';">
+    <br>
+    <a href="{{url_for('static', filename='station_research_english.html')}}" target="_blank">Update and magnify by clicking</a>
+    <br>
+    {% if m0 %}
+      From {{o_name}}（orange）
+      by {{transport_choice}}
+      Arrival in <strong>{{minutes}}</strong>
+      {% if wheel_baby_ost %}
+        <strong>wheelchair, baby, ostmate</strong>toilet map
+      {% elif wheel_baby %}
+        <strong>wheelchair, baby</strong>toilet map
+      {% elif wheel_ost %}
+        <strong>wheelchair, ostmate</strong>toilet map
+      {% elif baby_ost %}
+        <strong>baby, ostmate</strong>toilet map
+      {% elif wheel %}
+        <strong>wheelchair</strong>toilet map
+      {% elif baby %}
+        <strong>baby</strong>toilet map
+      {% elif ost %}
+        <strong>ostmate</strong>toilet map
+      {% elif multi_wheel_baby_ost %}
+        <strong>barrier-free, wheelchair, baby, ostmate</strong>toilet map
+      {% elif multi_wheel_baby %}
+        <strong>barrier-free, wheelchair, baby</strong>toilet map
+      {% elif multi_wheel_ost %}
+        <strong>barrier-free, wheelchair, baby</strong>toilet map
+      {% elif multi_baby_ost %}
+        <strong>barrier-free, baby, ostmate</strong>toilet map
+      {% elif multi_wheel %}
+        <strong>barrier-free, wheelchair</strong>toilet map
+      {% elif multi_baby %}
+        <strong>barrier-free, baby</strong>toilet map
+      {% elif multi_ost %}
+        <strong>barrier-free, ostmate</strong>toilet map
+      {% elif multi %}
+        <strong>barrier-free</strong>toilet map
+      {% else %}
+        toilet map
+      {% endif %}
+      <br>
+      <a>※Blank or "nan" in the icon means no named facility</a>
+      <br>
+      <iframe id ="frametarget1" src = "{{url_for('static', filename='station_research_result.html')}}" width="700" height="700"></iframe>
+      <br>
+      <a href= "{{url_for('static', filename='traveltimezone_result.html')}}" download>Download</a>
+      <br>
+      <p>The color of icon mean the bellow facility (magnify by click)</p>
+      <p><a href="{{url_for('static', filename='icon.png')}}" target="_blank"><img src="{{url_for('static', filename='icon.png')}}" alt="" align="left" border="0"></a>
+      <br>
+      <br>
+      <br>
+      <br>
+      {% else %}
+    {% endif %}
+    {% if commit %}
+      <p>Do you add your ordinally route?</p>
+      <form method="post" action="/my_traveltime">
+        <strong>title</strong>
+        <input type="text" class="title" name="title" required>
+        <Label>detail</Label>
+        <textarea id="story" name="story" rows="5" cols="33">
+            It was a dark and stormy night...
+        </textarea>
+        <label><font color="orange">preparetime</font></label>
+        <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:orange"><font color="orange">
+        <Label>allow time before scheduled arrival</Label>
+        <input type="number" min="0" max="100" id="dairy_allow_time" name="dairy_allow_time" value="0" style="color:orange"><font color="orange"></font>
+        
+        <Label>departtime</Label>
+        <input type="date" id="after_arrival_date"
+            name="after_arrival_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+        <Label>arrivaltime</Label>
+        <input type="date" id="after_arrival_date"
+            name="after_arrival_date" value="2018-06-12"
+            min="2023-03-22" max="2033-03-30">
+        <script type="text/javascript">
+            window.addEventListener('load', () => {
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+            });
+        </script>
+          
+        <strong>origination</strong>
+        <input type="text" class="preparetime" name="preparetime" placeholder="input freely or 現在地" required>
+      </form>
+    {% else %}
+    {% endif %}
+{% endblock %}

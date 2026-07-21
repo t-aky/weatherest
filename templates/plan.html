@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}定期プランの内容{% endblock %}
+{% block body %}
+    <script>
+        document.getElementById("plan_explain").hidden = true;
+    </script>
+    <p>月100円で以下の定期プランをご利用できます。</p>
+    <!--<li style="color: rgb(233, 11, 55)"><b>googleカレンダーとの連携</b></li>
+    <ul>
+        <li><b style="color: rgb(233, 11, 55)">出発準備時刻</b>をgoogleカレンダーに登録→自動通知</li>
+        <li><b style="color: rgb(233, 11, 55)">いつも乗る便を登録</b>して繰り返し(毎週月曜日など)イベントとして登録</li>
+    </ul>-->
+    <div class="delivery_list">
+        <ul>
+            
+            <li style="color: rgb(11, 89, 233)"><b>ナビを保存して、マイページからワンクリックでいつでも過去のナビを表示できます！</b></li>
+            <li style="color: rgb(11, 89, 233)"><b>メモを追加してナビ表示するときにやるべきことが一目で分かります！</b></li>
+            <div class="delivery">
+                <ol>
+                    <li><b style="color: rgb(11, 89, 233)">仕事やプライベート用、優先度</b>など自由に登録、表示</li>
+                    <li><b style="color: rgb(11, 89, 233)">タイトルや内容、アラーム付き</b>も設定可能</li>
+                </ol>
+
+            </div>
+            
+            <li style="color: rgba(40, 136, 11, 0.911)"><b>お気に入りのナビをタイマー付きで保存すれば設定した外出準備時刻にアラームで通知！</b></li>
+            
+            <li style="color: rgba(233, 11, 66, 0.911)"><b>アラームが鳴ると、自動的に案内画面に切り替わり、自分の位置とルートを確認しながら到着できます！</b></li>
+            
+        </ul>
+
+    </div>
+    <details>
+      <summary>さらに100円プラスのプレミアムプラン(現在作成中)</summary>
+      <h2>以下の機能を追加予定です。</h2>
+      <div class="delivery_list1">
+        <ul>
+            <li style="color: rgba(28, 179, 164, 0.911)"><b>お気に入りのトイレやお気に入りポイント(駅に近いなど)を保存<br>👉初めて来た町で検索するときに、お気に入りに似たトイレを表示します！</b></li>
+            <li style="color: rgba(28, 179, 164, 0.911)"><b>メモに用事と済ませる時間、場所を記入<br>👉出発地や目的地付近の該当場所(トイレに行く前にコンビニで買い物⇒トイレ付近のコンビニ表示)付きのナビ表示</b></li>
+        </ul>
+      </div>
+
+    </details>
+    <button type="button" onclick="history.back()">戻る</button>
+{% endblock %}

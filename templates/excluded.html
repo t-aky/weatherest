@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yutra-早めにアラームで悠々お出かけ！時刻表連携タイマー</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <script type="text/javascript" src="https://js.pay.jp/v2/"></script>
+    <!-- for IE11 -->
+    <script>
+      window.MSInputMethodContext
+      && document.documentMode
+      && document.write(
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"><\/script>'
+      )
+    </script>
+    <!-- end: for IE11 -->
+    <!-- material design library -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <!-- end: material design library -->
+    <link rel="manifest" href="static/manifest.json" />
+    <script>
+        window.addEventListener('load', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register("static/sw.js")
+                    .then(function (registration) {
+                        console.log("serviceWorker registed.");
+                    }).catch(function (error) {
+                        console.warn("serviceWorker error.", error);
+                    });
+            }
+        });
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q2HM91D5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3Q2HM91D5L');
+</script>
+<body>
+    <header class="center">
+        <span style='font-weight: bold;'>Yutra-準備時刻にセット！<br>時刻表連携タイマー</span>
+    </header>
+    <nav class="navbar-end">
+        <div class="container" style="background-color: rgb(235, 208, 58)">
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ url_for('login') }}">
+                        ログイン
+                    </a>
+                    <a class="nav-item nav-link" href="{{ url_for('signup') }}">
+                        登録
+                    </a>
+                    <a class="nav-item nav-link" href="{{ url_for('logout') }}">
+                        ログアウト
+                    </a>
+                    {% if logined == True %}
+                        <a class="nav-item nav-link" href="{{ url_for('mypage') }}">
+                            マイページ
+                        </a>
+                    {% else %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% if excluded %}
+        {{msg}}
+    {% else %}
+    {% endif %}
+    <br>
+    <a class="nav-item nav-link" href="{{ url_for('index') }}">
+        ＴＯＰに
+    </a>
+    <footer style="background-color: rgb(228, 238, 236)" class ="footer_content">
+        <a href="{{ url_for('business_law') }}">特定商取引法に基づく表記</a>
+        <a href="{{ url_for('privacypolicy') }}">プライバシーポリシー（または個人情報保護方針）</a>
+        <a href="{{ url_for('usage_rule') }}">利用規約</a>
+        <a href="mailto:u-rib@u-rib.com"><font-color="white">お問い合わせ</font-color></a>
+    </footer>
+
+</body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/static/sw.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+</html>

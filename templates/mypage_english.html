@@ -1,0 +1,487 @@
+{% extends "base_english.html" %}
+{% block title %}Mypage{% endblock %}
+{% block body %}
+  {% if subscribed == "YES" %}
+    <h1>定期購入済の専用ページ</h1>
+    <p>購入日：{{checked_date}}</p>
+    <p>現在：{{date_now}}</p>
+    <p>期限日：{{expired_date}}</p>
+  {% else %}
+    <h1>定期購入していません</h1>
+    <a href="{{ url_for('subscribe_english') }}">
+    定期購入
+    </a>
+  {% endif %}
+  {% if named %}
+      Welcome, {{ username }}さん!
+  {% else %}
+      <p id ="name">設定されていません</p>
+  {% endif %}
+  <form action = "/mypage_english" method="post" name="name">
+      <input type="text" name="username" placeholder="ユーザー名設定" autofocus="">
+      <button type="submit" name="username">ユーザー名登録</button>
+  </form>
+  <hr>
+  <h1>登録済みの外出内容</h1>
+  
+  {% if subscribed == "YES" %}
+    <font size="6px">
+        <form action = "/my_index_english" method="post" name="my_index">
+            <button type="submit" name="my_index" value="my_index">マイタイマーセット</button>
+        </form>
+    </font>
+    <br>
+    <iframe src="{{ url_for('schedule_english') }}" width="1000" height="500">
+    </iframe>
+  {% else %}
+    <font size="6px">
+        <form action = "/english" method="post" name="index_english">
+            <button type="submit" name="index_english" value="index_english">タイマーセット</button>
+        </form>
+    </font>
+  {% endif %}
+  {% if routeset == "YES" %}
+  
+    {% for item in myroute %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[3]}}</h1>
+        <p>{{item[6]}}分余裕を見て</p>
+        <p>{{item[4]}}に出発して{{item[5]}}に到着</p>
+        <p>詳細{{item[7]}}</p>
+      </div>
+    {% endfor %}
+    
+    <label id="arrival_year">{{arrival_year}}年{{arrival_month}}月{{arrival_day}}日の</label>
+    <label id="arrival_hour">{{arrival_hour}}時{{arrival_minute}}分に到着するために、</label>
+    <br>
+    <label id="prepare_year">{{prepare_year}}年{{prepare_month}}月{{prepare_day}}日の</label>
+    <label id="prepare_hour"><b></b>{{prepare_hour}}時{{prepare_minute}}分に準備を始めて、</b></label>
+    <br>
+    <label id="depart_year">{{depart_year}}年{{depart_month}}月{{depart_day}}日の</label>
+    <label id="depart_hour"><b>{{depart_hour}}時{{depart_minute}}分に出発する</b></label>
+    <br>
+    <input type="button" value="タイマーセット" onclick="timer1()"/>
+    <p>残り時間は</p>
+    <div class="countdown">
+        <span class="countdown__time js-countdown-day">0</span>
+        <span class="countdown__unit">日</span>
+        <span class="countdown__time js-countdown-hour">00</span>
+        <span class="countdown__unit">時間</span>
+        <span class="countdown__time js-countdown-min">00</span>
+        <span class="countdown__unit">分</span>
+        <span class="countdown__time js-countdown-sec">00</span>
+        <span class="countdown__unit">秒</span>
+        <span class="countdown__time js-countdown-ms">00</span>
+        <form action="/sound" method="post">
+          <button type="submit" id="sound">0秒になったらブザーが鳴ります。</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+      const depart_year1 = parseInt(document.getElementById("prepare_year").innerText.substring(0,4));
+      const depart_month1 = parseInt(document.getElementById("prepare_year").innerText.substring(5,7)-1);
+      const depart_day1 = parseInt(document.getElementById("prepare_year").innerText.substring(8,10));
+      const depart_hour1 = parseInt(document.getElementById("prepare_hour").innerText.substring(0,2));
+      const depart_minute1 = parseInt(document.getElementById("prepare_hour").innerText.substring(3,5));
+      console.log(depart_year1);
+      console.log(depart_month1);
+      var form = document.getElementById("sound");
+      function isSmartPhone() {
+        if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+          window.navigator.vibrate(200); // vibrate for 200ms
+        } else {
+          var form = document.getElementById("sound");
+          form.click();
+        }
+      }
+      function timer1() {
+        let countdown1 =setInterval (function(){
+            const now1 = new Date(); //現在日時
+
+            const target1 = new Date(depart_year1,depart_month1,depart_day1,depart_hour1,depart_minute1,0); //対象日時
+            const differ1 = target1.getTime() - now1.getTime(); //残り日時
+            console.log(differ1);
+            if(differ1 < 0) isSmartPhone()
+            const ms1 = Math.floor(differ1); //ミリ秒
+            const sec1 = Math.floor(differ1 / 1000 % 60); //秒
+            const min1 = Math.floor(differ1 / 1000 / 60 % 60); //分
+            const hour1 = Math.floor(differ1 / 1000 / 60 / 60 % 24); //時
+            const day1 = Math.floor(differ1 / (1000 * 60 * 60 * 24)); //日
+
+            document.querySelector('.js-countdown-ms').textContent = String(ms1).slice(-3, -1);
+            document.querySelector('.js-countdown-sec').textContent = String(sec1).padStart(2, '0');
+            document.querySelector('.js-countdown-min').textContent = String(min1).padStart(2, '0');
+            document.querySelector('.js-countdown-hour').textContent = String(hour1).padStart(2, '0');
+            document.querySelector('.js-countdown-day').textContent = String(day1);
+        },1000)
+      }
+      console.log("time");
+    </script>
+    {% if via %}
+      {% for item in myroute_via %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[4]}}</h1>
+        <p>内容{{item[5]}}</p>
+        <p>{{item[8]}}に準備して</p>
+        <p>{{item[6]}}に{{item[9]}}を出発して</p>
+
+        
+        <p>{{item[12]}}分で</p>
+        <p>{{item[11]}}の</p>
+        <p>トイレ{{item[10]}}を経由して</p>
+        <p>{{item[13]}}分で</p>
+        <p>{{item[14]}}に到着する</p>
+        <iframe src="{{item[15]}}">ナビ画面</iframe>
+        
+      </div>
+        
+      {% endfor %}
+    {% else %}
+    {% endif %}
+    <label id="arrival_year">{{arrival_year}}年{{arrival_month}}月{{arrival_day}}日の</label>
+    <label id="arrival_hour">{{arrival_hour}}時{{arrival_minute}}分に到着するために、</label>
+    <br>
+    <label id="prepare_year">{{prepare_year}}年{{prepare_month}}月{{prepare_day}}日の</label>
+    <label id="prepare_hour"><b></b>{{prepare_hour}}時{{prepare_minute}}分に準備を始めて、</b></label>
+    <br>
+    <label id="depart_year">{{depart_year}}年{{depart_month}}月{{depart_day}}日の</label>
+    <label id="depart_hour"><b>{{depart_hour}}時{{depart_minute}}分に出発する</b></label>
+    <br>
+    <input type="button" value="タイマーセット" onclick="timer2()"/>
+    <p>残り時間は</p>
+    <div class="countdown">
+        <span class="countdown__time js-countdown-day">0</span>
+        <span class="countdown__unit">日</span>
+        <span class="countdown__time js-countdown-hour">00</span>
+        <span class="countdown__unit">時間</span>
+        <span class="countdown__time js-countdown-min">00</span>
+        <span class="countdown__unit">分</span>
+        <span class="countdown__time js-countdown-sec">00</span>
+        <span class="countdown__unit">秒</span>
+        <span class="countdown__time js-countdown-ms">00</span>
+        <form action="/sound" method="post">
+          <button type="submit" id="sound">0秒になったらブザーが鳴ります。</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+      const depart_year2 = parseInt(document.getElementById("prepare_year").innerText.substring(0,4));
+      const depart_month2 = parseInt(document.getElementById("prepare_year").innerText.substring(5,7)-1);
+      const depart_day2 = parseInt(document.getElementById("prepare_year").innerText.substring(8,10));
+      const depart_hour2 = parseInt(document.getElementById("prepare_hour").innerText.substring(0,2));
+      const depart_minute2 = parseInt(document.getElementById("prepare_hour").innerText.substring(3,5));
+      console.log(depart_year2);
+      console.log(depart_month2);
+      var form = document.getElementById("sound");
+      function isSmartPhone() {
+        if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+          window.navigator.vibrate(200); // vibrate for 200ms
+        } else {
+          var form2 = document.getElementById("sound");
+          form2.click();
+        }
+      }
+      function timer() {
+        let countdown2 =setInterval (function(){
+            const now2 = new Date(); //現在日時
+
+            const target2 = new Date(depart_year2,depart_month2,depart_day2,depart_hour2,depart_minute2,0); //対象日時
+            const differ2 = target2.getTime() - now2.getTime(); //残り日時
+            console.log(differ);
+            if(differ < 0) isSmartPhone()
+            const ms2 = Math.floor(differ2); //ミリ秒
+            const sec2 = Math.floor(differ2 / 1000 % 60); //秒
+            const min2 = Math.floor(differ2 / 1000 / 60 % 60); //分
+            const hour2 = Math.floor(differ2 / 1000 / 60 / 60 % 24); //時
+            const day2 = Math.floor(differ2 / (1000 * 60 * 60 * 24)); //日
+
+            document.querySelector('.js-countdown-ms').textContent = String(ms2).slice(-3, -1);
+            document.querySelector('.js-countdown-sec').textContent = String(sec2).padStart(2, '0');
+            document.querySelector('.js-countdown-min').textContent = String(min2).padStart(2, '0');
+            document.querySelector('.js-countdown-hour').textContent = String(hour2).padStart(2, '0');
+            document.querySelector('.js-countdown-day').textContent = String(day2);
+        },1000)
+      }
+      console.log("time");
+    </script>
+    {% if closest %}
+      {% for item in myroute_closest %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[4]}}</h1>
+        <p>内容{{item[5]}}</p>
+        <p>{{item[7]}}に準備して</p>
+        <p>{{item[6]}}に{{item[8]}}を出発して</p>
+
+        <p>{{item[9]}}の</p>
+        <p>{{item[10]}}分で</p>
+        <p>トイレ{{item[11]}}に到着する</p>
+        <iframe src="{{item[12]}}">ナビ画面</iframe>
+        
+      </div>
+      {% endfor %}
+    {% else %}
+    {% endif %}
+    <label id="arrival_year">{{arrival_year}}年{{arrival_month}}月{{arrival_day}}日の</label>
+    <label id="arrival_hour">{{arrival_hour}}時{{arrival_minute}}分に到着するために、</label>
+    <br>
+    <label id="prepare_year">{{prepare_year}}年{{prepare_month}}月{{prepare_day}}日の</label>
+    <label id="prepare_hour"><b></b>{{prepare_hour}}時{{prepare_minute}}分に準備を始めて、</b></label>
+    <br>
+    <label id="depart_year">{{depart_year}}年{{depart_month}}月{{depart_day}}日の</label>
+    <label id="depart_hour"><b>{{depart_hour}}時{{depart_minute}}分に出発する</b></label>
+    <br>
+    <input type="button" value="タイマーセット" onclick="timer3()"/>
+    <p>残り時間は</p>
+    <div class="countdown">
+        <span class="countdown__time js-countdown-day">0</span>
+        <span class="countdown__unit">日</span>
+        <span class="countdown__time js-countdown-hour">00</span>
+        <span class="countdown__unit">時間</span>
+        <span class="countdown__time js-countdown-min">00</span>
+        <span class="countdown__unit">分</span>
+        <span class="countdown__time js-countdown-sec">00</span>
+        <span class="countdown__unit">秒</span>
+        <span class="countdown__time js-countdown-ms">00</span>
+        <form action="/sound" method="post">
+          <button type="submit" id="sound">0秒になったらブザーが鳴ります。</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+      const depart_year3 = parseInt(document.getElementById("prepare_year").innerText.substring(0,4));
+      const depart_month3 = parseInt(document.getElementById("prepare_year").innerText.substring(5,7)-1);
+      const depart_day3 = parseInt(document.getElementById("prepare_year").innerText.substring(8,10));
+      const depart_hour3 = parseInt(document.getElementById("prepare_hour").innerText.substring(0,2));
+      const depart_minute3 = parseInt(document.getElementById("prepare_hour").innerText.substring(3,5));
+      console.log(depart_year3);
+      console.log(depart_month3);
+      var form3 = document.getElementById("sound");
+      function isSmartPhone() {
+        if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+          window.navigator.vibrate(200); // vibrate for 200ms
+        } else {
+          var form3 = document.getElementById("sound");
+          form3.click();
+        }
+      }
+      function timer3() {
+        let countdown3 =setInterval (function(){
+            const now3 = new Date(); //現在日時
+
+            const target3 = new Date(depart_year3,depart_month3,depart_day3,depart_hour3,depart_minute3,0); //対象日時
+            const differ3 = target3.getTime() - now3.getTime(); //残り日時
+            console.log(differ3);
+            if(differ3 < 0) isSmartPhone()
+            const ms3 = Math.floor(differ3); //ミリ秒
+            const sec3 = Math.floor(differ3 / 1000 % 60); //秒
+            const min3 = Math.floor(differ3 / 1000 / 60 % 60); //分
+            const hour3 = Math.floor(differ3 / 1000 / 60 / 60 % 24); //時
+            const day3 = Math.floor(differ3 / (1000 * 60 * 60 * 24)); //日
+
+            document.querySelector('.js-countdown-ms').textContent = String(ms3).slice(-3, -1);
+            document.querySelector('.js-countdown-sec').textContent = String(sec3).padStart(2, '0');
+            document.querySelector('.js-countdown-min').textContent = String(min3).padStart(2, '0');
+            document.querySelector('.js-countdown-hour').textContent = String(hour3).padStart(2, '0');
+            document.querySelector('.js-countdown-day').textContent = String(day3);
+        },1000)
+      }
+      console.log("time");
+    </script>
+    {% if traveltime %}
+      {% for item in myroute_traveltime %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[4]}}</h1>
+        <p>内容{{item[5]}}</p>
+        <p>{{item[8]}}に準備して</p>
+        <p>{{item[7]}}に{{item[6]}}を出発して</p>
+        <p>{{item[10]}}の{{item[9]}}に</p>
+        <p>{{item[11]}}分で到着する</p>
+        <iframe src="{{item[12]}}">ナビ画面</iframe>
+        
+      </div>
+        
+      {% endfor %}
+    {% else %}
+    {% endif %}
+    <label id="arrival_year">{{arrival_year}}年{{arrival_month}}月{{arrival_day}}日の</label>
+    <label id="arrival_hour">{{arrival_hour}}時{{arrival_minute}}分に到着するために、</label>
+    <br>
+    <label id="prepare_year">{{prepare_year}}年{{prepare_month}}月{{prepare_day}}日の</label>
+    <label id="prepare_hour"><b></b>{{prepare_hour}}時{{prepare_minute}}分に準備を始めて、</b></label>
+    <br>
+    <label id="depart_year">{{depart_year}}年{{depart_month}}月{{depart_day}}日の</label>
+    <label id="depart_hour"><b>{{depart_hour}}時{{depart_minute}}分に出発する</b></label>
+    <br>
+    <input type="button" value="タイマーセット" onclick="timer4()"/>
+    <p>残り時間は</p>
+    <div class="countdown">
+        <span class="countdown__time js-countdown-day">0</span>
+        <span class="countdown__unit">日</span>
+        <span class="countdown__time js-countdown-hour">00</span>
+        <span class="countdown__unit">時間</span>
+        <span class="countdown__time js-countdown-min">00</span>
+        <span class="countdown__unit">分</span>
+        <span class="countdown__time js-countdown-sec">00</span>
+        <span class="countdown__unit">秒</span>
+        <span class="countdown__time js-countdown-ms">00</span>
+        <form action="/sound" method="post">
+          <button type="submit" id="sound">0秒になったらブザーが鳴ります。</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+      const depart_year4 = parseInt(document.getElementById("prepare_year").innerText.substring(0,4));
+      const depart_month4 = parseInt(document.getElementById("prepare_year").innerText.substring(5,7)-1);
+      const depart_day4 = parseInt(document.getElementById("prepare_year").innerText.substring(8,10));
+      const depart_hour4 = parseInt(document.getElementById("prepare_hour").innerText.substring(0,2));
+      const depart_minute4 = parseInt(document.getElementById("prepare_hour").innerText.substring(3,5));
+      console.log(depart_year4);
+      console.log(depart_month4);
+      var form4 = document.getElementById("sound");
+      function isSmartPhone() {
+        if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+          window.navigator.vibrate(200); // vibrate for 200ms
+        } else {
+          var form4 = document.getElementById("sound");
+          form4.click();
+        }
+      }
+      function timer4() {
+        let countdown4 =setInterval (function(){
+            const now4 = new Date(); //現在日時
+
+            const target4 = new Date(depart_year4,depart_month4,depart_day4,depart_hour4,depart_minute4,0); //対象日時
+            const differ4 = target4.getTime() - now4.getTime(); //残り日時
+            console.log(differ4);
+            if(differ4 < 0) isSmartPhone()
+            const ms4 = Math.floor(differ4); //ミリ秒
+            const sec4 = Math.floor(differ4 / 1000 % 60); //秒
+            const min4 = Math.floor(differ4 / 1000 / 60 % 60); //分
+            const hour4 = Math.floor(differ4 / 1000 / 60 / 60 % 24); //時
+            const day4 = Math.floor(differ4 / (1000 * 60 * 60 * 24)); //日
+
+            document.querySelector('.js-countdown-ms').textContent = String(ms4).slice(-3, -1);
+            document.querySelector('.js-countdown-sec').textContent = String(sec4).padStart(2, '0');
+            document.querySelector('.js-countdown-min').textContent = String(min4).padStart(2, '0');
+            document.querySelector('.js-countdown-hour').textContent = String(hour4).padStart(2, '0');
+            document.querySelector('.js-countdown-day').textContent = String(day4);
+        },1000)
+      }
+      console.log("time");
+    </script>
+    {% if livingarea %}
+      {% for item in myroute_livingarea %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[4]}}</h1>
+        <p>内容{{item[5]}}</p>
+        <p>{{item[8]}}に準備して</p>
+        <p>{{item[6]}}に{{item[9]}}を出発して</p>
+        <p>{{item[11]}}に到着する</p>
+        <p>{{item[10]}}の分布図</p>
+        <iframe src="{{item[12]}}">ナビ画面</iframe>
+      </div>
+        
+      {% endfor %}
+    {% else %}
+    {% endif %}
+    <label id="arrival_year">{{arrival_year}}年{{arrival_month}}月{{arrival_day}}日の</label>
+    <label id="arrival_hour">{{arrival_hour}}時{{arrival_minute}}分に到着するために、</label>
+    <br>
+    <label id="prepare_year">{{prepare_year}}年{{prepare_month}}月{{prepare_day}}日の</label>
+    <label id="prepare_hour"><b></b>{{prepare_hour}}時{{prepare_minute}}分に準備を始めて、</b></label>
+    <br>
+    <label id="depart_year">{{depart_year}}年{{depart_month}}月{{depart_day}}日の</label>
+    <label id="depart_hour"><b>{{depart_hour}}時{{depart_minute}}分に出発する</b></label>
+    <br>
+    <input type="button" value="タイマーセット" onclick="timer5()"/>
+    <p>残り時間は</p>
+    <div class="countdown">
+        <span class="countdown__time js-countdown-day">0</span>
+        <span class="countdown__unit">日</span>
+        <span class="countdown__time js-countdown-hour">00</span>
+        <span class="countdown__unit">時間</span>
+        <span class="countdown__time js-countdown-min">00</span>
+        <span class="countdown__unit">分</span>
+        <span class="countdown__time js-countdown-sec">00</span>
+        <span class="countdown__unit">秒</span>
+        <span class="countdown__time js-countdown-ms">00</span>
+        <form action="/sound" method="post">
+          <button type="submit" id="sound">0秒になったらブザーが鳴ります。</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+      const depart_year5 = parseInt(document.getElementById("prepare_year").innerText.substring(0,4));
+      const depart_month5 = parseInt(document.getElementById("prepare_year").innerText.substring(5,7)-1);
+      const depart_day5 = parseInt(document.getElementById("prepare_year").innerText.substring(8,10));
+      const depart_hour5 = parseInt(document.getElementById("prepare_hour").innerText.substring(0,2));
+      const depart_minute5 = parseInt(document.getElementById("prepare_hour").innerText.substring(3,5));
+      console.log(depart_year5);
+      console.log(depart_month5);
+      var form5 = document.getElementById("sound");
+      function isSmartPhone() {
+        if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+          window.navigator.vibrate(200); // vibrate for 200ms
+        } else {
+          var form5 = document.getElementById("sound");
+          form5.click();
+        }
+      }
+      function timer5() {
+        let countdown5 =setInterval (function(){
+            const now5 = new Date(); //現在日時
+
+            const target5 = new Date(depart_year5,depart_month5,depart_day5,depart_hour5,depart_minute5,0); //対象日時
+            const differ5 = target5.getTime() - now5.getTime(); //残り日時
+            console.log(differ5);
+            if(differ5 < 0) isSmartPhone()
+            const ms5 = Math.floor(differ5); //ミリ秒
+            const sec5 = Math.floor(differ5 / 1000 % 60); //秒
+            const min5 = Math.floor(differ5 / 1000 / 60 % 60); //分
+            const hour5 = Math.floor(differ5 / 1000 / 60 / 60 % 24); //時
+            const day5 = Math.floor(differ5 / (1000 * 60 * 60 * 24)); //日
+
+            document.querySelector('.js-countdown-ms').textContent = String(ms5).slice(-3, -1);
+            document.querySelector('.js-countdown-sec').textContent = String(sec5).padStart(2, '0');
+            document.querySelector('.js-countdown-min').textContent = String(min5).padStart(2, '0');
+            document.querySelector('.js-countdown-hour').textContent = String(hour5).padStart(2, '0');
+            document.querySelector('.js-countdown-day').textContent = String(day5);
+        },1000)
+      }
+      console.log("time");
+    </script>
+    {% if cruise %}
+      {% for item in myroute_cruise %}
+      <div style = "border: solid 3px cadetblue" draggable="true">
+        <h1>件名：{{item[4]}}</h1>
+        <p>内容{{item[5]}}</p>
+        <p>{{item[8]}}に準備して</p>
+        <p>{{item[6]}}に{{item[9]}}を出発して({{item[26]}}分で到着)</p>
+        {% if num == 1 %}
+          <p>{{item[11]}}の{{item[10]}}を経由して({{item[12]}}分で到着)</p>
+        {% elif num == 2 %}
+          <p>{{item[11]}}の{{item[10]}}を経由して({{item[12]}}分で到着)</p>
+          <p>{{item[14]}}の{{item[13]}}を経由して({{item[15]}}分で到着)</p>
+        {% elif num == 3 %}
+          <p>{{item[11]}}の{{item[10]}}を経由して({{item[12]}}分で到着)</p>
+          <p>{{item[14]}}の{{item[13]}}を経由して({{item[15]}}分で到着)</p>
+          <p>{{item[17]}}の{{item[16]}}を経由して({{item[18]}}分で到着)</p>
+        {% elif num == 4 %}
+          <p>{{item[11]}}の{{item[10]}}を経由して({{item[12]}}分で到着)</p>
+          <p>{{item[14]}}の{{item[13]}}を経由して({{item[15]}}分で到着)</p>
+          <p>{{item[17]}}の{{item[16]}}を経由して({{item[18]}}分で到着)</p>
+          <p>{{item[20]}}の{{item[19]}}を経由して({{item[21]}}分で到着)</p>
+        {% elif num == 5 %}
+          <p>{{item[11]}}の{{item[10]}}を経由して({{item[12]}}分で到着)</p>
+          <p>{{item[14]}}の{{item[13]}}を経由して({{item[15]}}分で到着)</p>
+          <p>{{item[17]}}の{{item[16]}}を経由して({{item[18]}}分で到着)</p>
+          <p>{{item[20]}}の{{item[19]}}を経由して({{item[21]}}分で到着)</p>
+          <p>{{item[23]}}の{{item[22]}}を経由して({{item[24]}}分で到着)</p>
+        {% else %}
+        {% endif %}
+        <p>{{item[7]}}に{{item[25]}}に到着する({{item[27]}}分で到着)</p>
+        <iframe src="{{item[28]}}">ナビ画面</iframe>
+      </div>
+      {% endfor %}
+    {% else %}
+    {% endif %}
+  {% else %}
+    <p>設定されていません</p>
+
+  {% endif %}
+{% endblock %}

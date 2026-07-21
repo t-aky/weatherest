@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% block title %}検索結果-{% endblock %}
+{% block body %}
+<main>
+  <div class="main">
+    <input type="button" value="天気予報と休憩所検索画面へ" onClick="location.href='/#result_detatils';">
+    <!--<p>※お詫び・・・地図の表示速度向上のために、地図上の公園の詳細表示を一時取りやめます。ご迷惑をおかけしますがご理解の程よろしくお願いいたします。</p>--> 
+    <br>
+    <div style="display: none;">
+      <p id="dest_lat">{{ dest_lat | tojson }}</p>
+      <p id="dest_lng">{{ dest_lng | tojson }}</p>
+    </div>
+    {% if bool_current %}
+      <p id="result">現在地({{ pref }},{{city}})における{{ day }}の{{ hour0 }}時の天気は{{ weather0 }}、気温は{{ temperature0 }}度、湿度は{{ humidity0 }}%です。</p>
+      <p id="result">現在地({{ pref }},{{city}})における{{ day }}の{{ hour1 }}時の天気は{{ weather1 }}、気温は{{ temperature1 }}度、湿度は{{ humidity1 }}%です。</p>
+      <p id="result">現在地({{ pref }},{{city}})における{{ day }}の{{ hour2 }}時の天気は{{ weather2 }}、気温は{{ temperature2 }}度、湿度は{{ humidity2 }}%です。</p>
+    {% else %}
+      <p id="result">{{ dest }}における{{ day }}の{{ hour0 }}時の天気は{{ weather0 }}、気温は{{ temperature0 }}度、湿度は{{ humidity0 }}%です。</p>
+      <p id="result">{{ dest }}における{{ day }}の{{ hour1 }}時の天気は{{ weather1 }}、気温は{{ temperature1 }}度、湿度は{{ humidity1 }}%です。</p>
+      <p id="result">{{ dest }}における{{ day }}の{{ hour2 }}時の天気は{{ weather2 }}、気温は{{ temperature2 }}度、湿度は{{ humidity2 }}%です。</p>
+    {% endif %}  
+    <iframe id="park" height="400px" width= "85%" src="{{ url_for('static', filename='park.html') }}" loading="eager" alt="My image" allow="geolocation" scrolling="no" async></iframe>
+    
+  </div>
+</main>
+
+{% endblock %}

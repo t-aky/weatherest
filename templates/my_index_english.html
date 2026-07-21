@@ -1,0 +1,1127 @@
+{% extends "base_english.html" %}
+{% block title %}MyHome{% endblock %}
+{% block body %}
+
+    {% if subscribed=="NO" %}
+        <a href="{{ url_for('plan') }}"><font color="orange">Subscription Plan(Developin Coming soon)</font></a>
+        <!--{{freecontent}}
+        <br>
+        {{premiumcontent}}-->
+    {% else %}
+    {% endif %}
+    <details>
+      <summary><font color="red">Attention on the inquiry and current service</font></summary>
+        <p><b>Please contact to <a href="mailto:u-rib@u-rib.com">this address</a> if you have the request</b></p>
+        <p>The response and fix of the error is on the hoiday and weekday night because of my incumbent programmer</p>
+        <p>【Comming Soon!】Login, Registration to the subscribe plan</p>
+        <p>Please wait a minutes!</p>
+        <br>
+    </details>
+    <p><font color="blue">For various goout scene(Click the bellow bold literature<a href="#map"><font color="orange">※available municipality</font></a>)<br><b>(<a href="#closest">nearest to the destination</a>、<a href="#drop_on">via from the origination to the destination</a>、<a href="#time">traveltimezone</a>、<a href="#live">livingarea</a>、<a href="#cruise">nearest toilet to viable spots in the tour</a>)</b><br>, you can find the optimal Barrier-free toilet!</font></p>
+    <p style="font-weight:bold"><font color="green">By adding to the home screen at the device, you can easily find the toilet!</font></p>
+    <details>
+      <summary>How to adding!</summary>
+      <img src="{{url_for('static', filename='home3.jpg')}}" alt="ホーム画面に追加1" width="25%" height="25%" border="0"><font size="12pt">→</font><img src="{{url_for('static', filename='home1.jpg')}}" alt="ホーム画面に追加2" width="25%" height="25%" border="0"><font size="12pt">→</font><img src="{{url_for('static', filename='home2.jpg')}}" alt="ホーム画面に追加3" width="24%" height="24%" border="0">
+    </details>
+
+    <br>
+    <!--<div style="text-align:center">
+      <p><font size="4px">このサイトは、現在、周辺のトイレ(多機能含め)地図の他に、主に以下の機能を有しております。</font></p>
+      <a><font size="4px">{{ message1 }}</font></a>
+      <br>
+      <a><font size="4px">{{ message2 }}</font></a>
+    </div-->
+    <div class= "img_introduce" style="text-align:center;">
+      <img loading="lazy" id="mypic" src="{{url_for('static', filename='via_toilet_etc.jpg')}}" height="300px">
+
+      <br>
+      <p>👆The image of how to navigate!</p>
+      <br>
+      <script type="text/javascript">
+        const pics_src= ["{{url_for('static', filename='closest_etc.jpg')}}","{{url_for('static', filename='via_toilet_etc.jpg')}}","{{url_for('static', filename='traveltimezone_etc.jpg')}}","{{url_for('static', filename='livingarea_etc.jpg')}}","{{url_for('static', filename='cruise_etc.jpg')}}"];
+        let num = -1;
+        function slideshow_timer(){
+          if (num == 4){
+            num = 0;
+          }
+          else {
+          num ++;
+          }
+          document.getElementById("mypic").src = pics_src[num];
+        }
+        setInterval(slideshow_timer, 5000);
+      </script>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="image"><font size="4px"><span class="title-image0" style="text-align:center">Use case</span></font>
+      <br>
+      <p>Jump to the search page by clicking bellow cases!</p>
+      <br>
+      <h><font size="4px">・・・①Drop on toilet navi・・・</font></h>
+      <br>
+      <font size="4px"><a href="#closest">・Do you find the nearest toilet to the destination?</a></font>
+      <br>
+      <font size="4px"><a href="#drop_on">・Do you find the viable toilet which can reach the destination from the origination?</a></font>
+      <br>
+      <br>
+      <h><font size="4px">・・・②トイレMap・・・</font></h>
+      <br>
+      <font size="4px"><a href="#station_research">・Do you find the toilet in the certain minutes from the station?</a></font>
+      <br>
+      <font size="4px"><a href="#time">・How many of the toilet in the certain minutes from the designated spot?</a></font>
+      <br>
+      <font size="4px"><a href="#live">・How many of the toilet in the livingarea?</a></font>
+      <br>
+      <font size="4px"><a href="#cruise">・Do you want to publish the map about the nearest toilet when your shop have not the Barrier-free toilet?</a></font>
+    </div>
+    <script>
+      var rel = document.getElementById('advertise');
+      var href = advertise.getAttribute('href');
+      var src = document.getElementById('advertise1');
+      var img = advertise1.getAttribute('src');
+      var src1 = document.getElementById('advertise2');
+      var img1 = advertise2.getAttribute('src');
+    </script>
+    <script>
+      let installPromptEvent;
+
+        window.addEventListener('beforeinstallprompt', (event) => {
+          // Chrome67以前で自動的にプロンプトを表示しないようにする?
+          event.preventDefault();
+
+          // イベントを変数に保存する
+          installPromptEvent = event;
+
+          // #btnを活性に
+          document.getElementById('btn').disabled = false;
+        });
+      document.getElementById('btn').addEventListener('click', () => {
+        // #btnを非活性に
+        document.getElementById('btn').disabled = false;
+
+        // 　ホーム画面に追加のダイアログを表示させる
+        installPromptEvent.prompt();
+
+        // ダイアログの結果をプロミスで受け取る
+        installPromptEvent.userChoice.then((choice) => {
+          if (choice.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          // Update the install UI to notify the user app can be installed
+          installPromptEvent = null;
+        });
+      });
+    </script>
+    <br>
+    <div class="menu">
+        <details>
+          <summary>
+            <strong><font color="blue">Map of the distributed spot of the Barrier-free Map</font></strong>
+          </summary>
+          <div id="map_distribute" class="flush-collapseOne">
+            <br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<iframe class="iframe" src="{{url_for('static', filename='map.html')}}" id="frametarget" height="700px" width="700px" allow="geolocation" reload="true" scrolling="no"></iframe>
+          </div>
+        </details>
+        <details open id="my_eng_map">
+          <summary>
+            <strong></strong><font color="orange">Toilet map</font></strong>
+          </summary>
+
+            <div id="map_city" class="flush-collapseOne">
+
+            <a href="{{url_for('static', filename='toilet_あわら市.html')}}">Awara city</a>
+
+            <a href="{{url_for('static', filename='toilet_おおい町.html')}}">Ooi town</a>
+
+            <a href="{{url_for('static', filename='toilet_たつの市.html')}}">Tatsuno city</a>
+
+            <a href="{{url_for('static', filename='toilet_愛知県瀬戸市.html')}}">Seto city</a>
+
+            <a href="{{url_for('static', filename='toilet_愛知県日進市.html')}}">Nisshin city</a>
+
+            <a href="{{url_for('static', filename='toilet_伊東市.html')}}">Ito city</a>
+
+            <a href="{{url_for('static', filename='toilet_永平寺町.html')}}">Eiheiji town</a>
+
+            <a href="{{url_for('static', filename='toilet_越前市.html')}}">Echizen city</a>
+
+            <a href="{{url_for('static', filename='toilet_越前町.html')}}">Echizen town</a>
+
+            <a href="{{url_for('static', filename='toilet_岡山市.html')}}">Okayama city</a>
+
+            <a href="{{url_for('static', filename='toilet_茅野市.html')}}">Chino city</a>
+
+            <a href="{{url_for('static', filename='toilet_茅野市ー公園.html')}}">Chino city-park</a>
+
+            <a href="{{url_for('static', filename='toilet_刈谷市.html')}}">Kariya city</a>
+
+            <a href="{{url_for('static', filename='toilet_江東区.html')}}">Koto ward</a>
+
+            <a href="{{url_for('static', filename='toilet_高浜町.html')}}">Takahama town</a>
+
+            <a href="{{url_for('static', filename='toilet_坂井市.html')}}">Fukui Pref, Sakai city</a>
+
+            <a href="{{url_for('static', filename='toilet_堺市.html')}}">Osaka Pref, Sakai city</a>
+
+            <a href="{{url_for('static', filename='toilet_鯖江市.html')}}">Sabae city</a>
+
+            <a href="{{url_for('static', filename='toilet_山形市.html')}}">Yamagata city</a>
+
+            <a href="{{url_for('static', filename='toilet_山口県柳井市.html')}}">Yanai city</a>
+
+            <a href="{{url_for('static', filename='toilet_若狭町.html')}}">Wakasa city</a>
+
+            <a href="{{url_for('static', filename='toilet_珠洲市.html')}}">Suzu city</a>
+
+            <a href="{{url_for('static', filename='toilet_渋谷区.html')}}">Shibuya ward</a>
+
+            <a href="{{url_for('static', filename='toilet_宿毛市.html')}}">Sukumo city</a>
+
+            <a href="{{url_for('static', filename='toilet_勝山市.html')}}">Katsuyama city</a>
+
+            <a href="{{url_for('static', filename='toilet_小浜市.html')}}">Obama city</a>
+
+            <a href="{{url_for('static', filename='toilet_神戸市.html')}}">Kobe city</a>
+
+            <a href="{{url_for('static', filename='toilet_盛岡市.html')}}">Morioka city</a>
+
+            <a href="{{url_for('static', filename='toilet_世田谷区.html')}}">Setagaya ward</a>
+
+            <a href="{{url_for('static', filename='toilet_青森市.html')}}">Aomori city</a>
+
+            <a href="{{url_for('static', filename='toilet_青梅市.html')}}">Oume city</a>
+
+            <a href="{{url_for('static', filename='toilet_静岡県小山町.html')}}">Shizuoka Pref, Oyama city</a>
+
+            <a href="{{url_for('static', filename='toilet_仙台市.html')}}">Miyagi Pref, Sendai city</a>
+
+            <a href="{{url_for('static', filename='toilet_川口市.html')}}">Kawaguchi city</a>
+
+            <a href="{{url_for('static', filename='toilet_川西市.html')}}">Kawanishi city</a>
+
+            <a href="{{url_for('static', filename='toilet_多摩市.html')}}">Tama city</a>
+
+            <a href="{{url_for('static', filename='toilet_大阪市.html')}}">Osaka city</a>
+
+            <a href="{{url_for('static', filename='toilet_大阪府貝塚市.html')}}">Kaiduka city</a>
+
+            <a href="{{url_for('static', filename='toilet_丹波市.html')}}">Tamba city</a>
+
+            <a href="{{url_for('static', filename='toilet_中野区.html')}}">Nakano ward</a>
+
+            <a href="{{url_for('static', filename='toilet_登別市.html')}}">Noboribetsu city</a>
+
+            <a href="{{url_for('static', filename='toilet_東温市.html')}}">Toon city</a>
+
+            <a href="{{url_for('static', filename='toilet_藤沢市.html')}}">Fuzisawa city</a>
+
+            <a href="{{url_for('static', filename='toilet_徳島県美波町.html')}}">Tokushima Pref, Minami town</a>
+
+            <a href="{{url_for('static', filename='toilet_敦賀市.html')}}">Tsuruga city</a>
+
+            <a href="{{url_for('static', filename='toilet_南越前町.html')}}">MinamiEchizen town</a>
+
+            <a href="{{url_for('static', filename='toilet_函館市.html')}}">Hakodate city</a>
+
+            <a href="{{url_for('static', filename='toilet_八王子市.html')}}">Hachioji city</a>
+
+            <a href="{{url_for('static', filename='toilet_板橋区.html')}}">Itabashi ward</a>
+
+            <a href="{{url_for('static', filename='toilet_尾張旭市.html')}}">OwariAsahi city</a>
+
+            <a href="{{url_for('static', filename='toilet_美浜町.html')}}">Mihama town</a>
+            <a href="{{url_for('static', filename='toilet_福井県大野市.html')}}">Oono city</a>
+
+            <a href="{{url_for('static', filename='toilet_福井県池田町.html')}}">Fukui Pref, Ikeda town</a>
+
+            <a href="{{url_for('static', filename='toilet_福井市.html')}}">Fukui city</a>
+            <a href="{{url_for('static', filename='toilet_福岡県飯塚市.html')}}">Iizuka city</a>
+
+            <a href="{{url_for('static', filename='toilet_郡山市.html')}}">Fukushima Pref, Kooriyama city</a>
+            <a href="{{url_for('static', filename='toilet_平塚市.html')}}">Hiratsuka city</a>
+
+            <a href="{{url_for('static', filename='toilet_豊川市.html')}}">Toyokawa city</a>
+
+            <a href="{{url_for('static', filename='toilet_枚方市.html')}}">Hirakata city</a>
+            <a href="{{url_for('static', filename='toilet_明石市.html')}}">Akashi city</a>
+
+            <a href="{{url_for('static', filename='toilet_網走市.html')}}">Abashiri city</a>
+            <a href="{{url_for('static', filename='toilet_野々市市.html')}}">Nonoichi city</a>
+
+            <a href="{{url_for('static', filename='toilet_鈴鹿市.html')}}">Suzuka city</a>
+
+            <a href="{{url_for('static', filename='toilet_和歌山市.html')}}">Wakayama city</a>
+          </div>
+
+        </details>
+        <details open id="my_eng_closest">
+          <summary>
+            <strong><font color="blue">Nearest Toilet</font></strong>
+          </summary>
+            <div id="closest_detail" class="closest">
+            <p><font size="4px">By clicking the select button, button become underlined</font></p>
+            <p>※Because of the speed outputed is prior than detailed output,<br><b>Please go to Toiilet map</b></p>
+            <form method="post" action="/my_closest_english">
+              {% if subscribed == "YES" %}
+                <details>
+                  <summary>外出予定をセット</summary>
+                  <div id="depart_set">
+                    <Label>タイトル</Label>
+                    <br>
+                    <input type="text" class="title" id="title" name="title" placeholder="must" required="">
+                    <br>
+                    <Label>詳細</Label>
+                    <br>
+                    <textarea id="story" name="story" rows="5" cols="33" required>
+                    </textarea>
+                    <br>
+                    <p>出発時刻</p>
+                    <input type="date" id="depart_date"
+                        name="depart_date" value="2018-06-12"
+                        min="2023-03-22" max="2033-03-30" style="color:green">
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('depart_date').value = now.toISOString().slice(0, 10);
+                        });
+                    </script>
+                    <input type="time" id="depart_time"
+                    name="depart_time" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30" style="color:green"><p>に</p>
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('depart_time').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <p>準備時間を</p>
+                    <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:orangered">
+                    <p>分だけ余裕見て出発して、</p>
+                  </div>
+                </details>
+              {% else %}
+              {% endif %}
+              <label for="tx1"><strong>Origination</strong>
+                <input type="text" size="40" id="orig_0" class="orig_0" name="orig_0" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+                <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              </label>
+              <br>
+              <strong>Amenity</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="wheel" id="a01" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="baby" id="a02" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="ost" id="a03" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check_closest_amenity" value="multi" id="a04" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+              </p>
+              <br>
+              <strong>traveltime</strong>
+              <select name="num0_closest" value="num0_closest" required>
+                <option value="5分" selected>5minutes</option>
+                <option value="10分">10minutes</option>
+                <option value="15分">15minutes</option>
+                <option value="20分">20minutes</option>
+              </select>
+              <br>
+              <strong>Facility</strong>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="park" id="a01_closest" class="m-1 btn btn-primary">
+                  <font size="4px">Park, Plaza</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="hall" id="a021_closest" class="m-1 btn btn-primary">
+                  <font size="4px">City hall, Community center, Concert hall, Library</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="amuse" id="a031_closest" class="m-1 btn btn-primary">
+                  <font size="4px">Amusement park</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="transport" id="a041_closest" class="m-1 btn btn-primary">
+                  <font size="4px">Station, Tram stop, Bus stop</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01_closest_amenity" value="hospital" id="a051_closest" class="m-1 btn btn-primary">
+                  <font size="4px">Hospital</font>
+                </label>
+              </div>
+              <br>
+              <strong>Transport choice</strong>
+              <br>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">Automobile</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Walking</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_closest_transport" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Bycicle</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+            </form>
+          </div>
+        </details>
+        <hr size="5" noshade="">
+
+        <details open id="my_eng_drop_on">
+          <summary>
+            <strong><font color="blue">Viable toilet</font></strong>
+          </summary>
+          <div id="drop_on_detail" class="drop_on" style="width:90%;">
+            <p>
+              <font size="4px">By clicking the select button, button become underlined</font>
+            </p>
+            <form method="post" action="/my_via_toilet_english">
+              {% if subscribed == "YES" %}
+                <details>
+                  <summary>外出予定をセット</summary>
+                  <Label>タイトル</Label>
+                  <input type="text" class="title" id="title" name="title" placeholder="must" required="">
+                  <br>
+                  <Label>詳細</Label>
+                  <textarea id="story" name="story" rows="5" cols="33" required>
+                  </textarea>
+                  <p>出発時刻</p>
+                  <div id="depart_set">
+                    <style>
+                    div#depart_set {
+                      background-color: cadetblue;
+                    }
+                    </style>
+                    <p>Origination</p>
+                    <input type="text" size="40" class="orig2" name="orig2" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+                    <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+                    <br>
+                    <p>または
+                    <button name="now" style="color:green">現在地</button>
+                    <p>を</p>
+                    <p>出発時刻</p>
+                    <input type="date" id="after_arrival_date"
+                        name="after_arrival_date" value="2018-06-12"
+                        min="2023-03-22" max="2033-03-30" style="color:green">
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+                        });
+                    </script>
+                    <input type="time" id="after_arrival_time"
+                    name="after_arrival_time" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30" style="color:green">に
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('after_arrival_time').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <p>準備時間を</p>
+                    <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:green">
+                    <p>分だけ余裕見て出発して、</p>
+                    <p>到着時刻</p>
+                    <input type="date" id="after_depart_date"
+                        name="after_depart_date" value="2018-06-12"
+                        min="2023-03-22" max="2033-03-30" style="color:red">
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('after_depart_date').value = now.toISOString().slice(0, 10);
+                        });
+                    </script>
+                    <input type="time" id="after_depart_time"
+                    name="after_depart_time" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30" style="color:red">
+                    <font color="red">の
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('after_depart_time').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <br>
+                    <input type="number" min="0" max="100" id="arrival_allow_time" name="arrival_allow_time" value="0" style="color:red" width = "50%">
+                    <p>分前に到着するために、</p></font>
+
+                  </div>
+                </details>
+              {% else %}
+              {% endif %}
+              <br>
+              <strong>Origination</strong>
+              <input type="text" size="40" id="orig" class="orig" name="orig" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+              <p>*住所入力は現在対応中です。ご了承ください</p>
+              <br>
+              <strong>Destination</strong>
+              <input type="text" id="dest" class="dest" name="dest" placeholder="must" required="">
+              <br>
+              <strong>Amenity</strong>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check" value="wheel" id="a01" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check" value="baby" id="a02" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check" value="ost" id="a03" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check" value="multi" id="a04" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+              </p>
+              <br>
+              <strong>Transport choice</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_via" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">Automobile</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_via" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Walking</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="radio">
+                  <input type="radio" name="check_via" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Bycicle</font>
+                </label>
+              </div>
+              <br>
+              <strong>Facility</strong>
+              <p>
+                <font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(You can skip it)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01" value="park" id="a0111" class="m-1 btn btn-primary">
+                  <font size="4px">Park, Plaza</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01" value="hall" id="a0211" class="m-1 btn btn-primary">
+                  <font size="4px">City hall, Community center, Concert hall, Library</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01" value="amuse" id="a0311" class="m-1 btn btn-primary">
+                  <font size="4px">Amusement park</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01" value="transport" id="a0411" class="m-1 btn btn-primary">
+                  <font size="4px">Station, Tram stop, Bus stop</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check01" value="hospital" id="a0511" class="m-1 btn btn-primary">
+                  <font size="4px">Hospital</font>
+                </label>
+              </div>
+              <br>
+              <label><strong>Drop on toilet</strong>
+                <div>
+                  <label class="btn btn-primary btn-xs avtive">
+                    <input type="radio" name="radio" value="all_short" id="r1" class="m-1 btn btn-primary">
+                    <font size="4px">Toilet nearest via to destination from origination</font>
+                  </label>
+                  <label class="btn btn-primary btn-xs avtive">
+                    <input type="radio" name="radio" value="orig_short" id="r2" class="m-1 btn btn-primary">
+                    <font size="4px">Nearest to Origination</font>
+                  </label>
+                  <label class="btn btn-primary btn-xs avtive">
+                    <input type="radio" name="radio" value="dest_short" id="r3" class="m-1 btn btn-primary">
+                    <font size="4px">Nearest to Destination</font>
+                  </label>
+                </div>
+              </label>
+              <br>
+              <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+              <details>
+                <summary><font color="red">Attention to find</font></summary>
+                <div class="attention" style="text-align:center;">
+                  <br>
+                  <p3>
+                    <font size="4px">※Because of finding toilet which doesn't have parking,<br class="br-sp">Please confirm the accessible parking from the map</font>
+                  </p3>
+                  <br>
+                  <p3>
+                    <font size="4px">・・・Collected data iis not always currently updated.<br class="br-sp">I will updated・・・</font>
+                  </p3>
+                  <br>
+                  <p3>
+                    <font size="4px">※Because of preventing finding doubled facility, please input "city facility"<br class="br-sp">or address (Ex. Yamagata, Pref hall)</font>
+                  </p3>
+                  <br>
+                  <p3>
+                    <font size="4px">※Municipalities which show barrier-free toilet(☆ in current situation)<br class="br-sp">if so, please select "Barrier-free"</font>
+                  </p3>
+                  <br>
+                  <p3>
+                    <font size="4px">※Fukui pref(excluded Sabae city)<br class="br-sp">Please check "barrier-free" becasuse of toilet which is classified Wheelchair, baby and Ostmate.</font>
+                  </p3>
+                  <br>
+                  <p3>
+                    <font size="4px">※Fukushima Pref, Kooriyama city is showed barrier-free toilet showing "ostmate"</font>
+                  </p3>
+                  <br>
+                </div>
+              </details>
+              <br>
+            </form>
+          </div>
+        </details>
+        <hr size="5" noshade="">
+        <details open id="my_eng_station_research">
+          <summary>
+            <strong><font color="blue">Research in ～minutes from the station</font></strong>
+          </summary>
+          <div id="station_research" class="station_research" style="width:90%;">
+
+            <p>
+              <font size="4px">By clicking the select button, button become underlined</font>
+            </p>
+            <form method="post" action="/my_station_research_english">
+              <div id="orig_station"><strong>Depart station</strong></div>
+              <script>
+                function convertCSVtoArray(){ // 読み込んだCSVデータが文字列として渡される
+                    var result = []; // 最終的な二次元配列を入れるための配列
+                    const select = document.createElement('select');
+                    select.setAttribute("id","station");
+                    select.setAttribute("name","station");
+                    select.setAttribute("value","station");
+                    // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+                    var res = {{ lst | tojson}};
+                    var optiongroup = document.createElement("optgroup");
+                    
+                    optiongroup.setAttribute("id","station");
+                    optiongroup.setAttribute("name","station");
+                    optiongroup.setAttribute("value","station");
+                    optiongroup.setAttribute("label",res[0][0]);
+                    console.log(res.length);
+                    for(var i=0;i<res.length-1;++i){
+                      let option = document.createElement('option');
+                      for(var j=0;j<2;++j){
+                        
+                        // option要素を生成
+                        
+                        // option要素のテキストを設定
+                        option.text = res[i][1];
+                        // option要素の値を設定
+                        option.value = res[i][1];
+                        console.log(res[i][j]);
+                        
+                        // 生成したoption要素をselect要素に追加
+                      }
+                      if (res[i][0]==res[i+1][0]) {
+                        select.add(optiongroup);
+                        optiongroup.appendChild(option);
+                      }
+                    }
+
+                    // select要素をbody要素の末尾に追加
+                    document.getElementById("orig_station").after(select);
+                }
+                window.onload=convertCSVtoArray();
+              </script>
+              <hr>
+              <strong>traveltime</strong>
+              <select name="num0s" value="num0s">
+                <option value="5分" selected>5minutes</option>
+                <option value="10分">10minutes</option>
+                <option value="15分">15minutes</option>
+                <option value="20分">20minutes</option>
+              </select>
+              <hr>
+              <strong>Amenity</strong>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00s" value="wheel00s" id="a001" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00s" value="baby00s" id="a002" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00s" value="ost00s" id="a003" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00s" value="multi00s" id="a004" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+              </p>
+              <br>
+              <strong>Transport choice</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_station" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">Automobile</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_station" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Walking</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_station" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Bycicle</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+            </form>
+          </div>
+        </details>
+        <hr size="5" noshade="">
+        <table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/ichiba/398c969d.a2e615c6.398c969e.e5aa7c20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ff022039-hachinohe%2Fb-33%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/398c969d.a2e615c6.398c969e.e5aa7c20/?me_id=1389480&item_id=10000097&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Ff022039-hachinohe%2Fcabinet%2F07959584%2Fb-33_00.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;display: block;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/398c969d.a2e615c6.398c969e.e5aa7c20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ff022039-hachinohe%2Fb-33%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;">【ふるさと納税】八戸毬姫牛 切り落とし 700g 牛肉 お肉 和牛 うす切り 冷凍 青森県産 国産 送料無料</a><br><span >価格：22,000円（税込、送料無料)</span> <span style="color:#BBB">(2024/2/19時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/ichiba/398c969d.a2e615c6.398c969e.e5aa7c20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ff022039-hachinohe%2Fb-33%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0" ></a><a href="https://hb.afl.rakuten.co.jp/ichiba/398c969d.a2e615c6.398c969e.e5aa7c20/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ff022039-hachinohe%2Fb-33%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff!important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+        <details open id="my_eng_time">
+          <summary>
+            <strong><font color="blue">Toilet map in the traveltime</font></strong>
+          </summary>
+          <div id="time_detail" class="time" style="width:90%;">
+
+            <p>
+              <font size="4px">By clicking the select button, button become underlined</font>
+            </p>
+            <form method="post" action="/my_traveltimezone_english">
+              <strong>Origination</strong>
+              <input type="text" size="40" id="orig0" class="orig0" name="orig0" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <hr>
+              <strong>traveltime</strong>
+              <select name="num0" value="num0">
+                <option value="5分" selected>5minutes</option>
+                <option value="10分">10minutes</option>
+                <option value="15分">15minutes</option>
+                <option value="20分">20minutes</option>
+              </select>
+              <hr>
+              <strong>Amenity</strong>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="wheel00" id="a001" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="baby00" id="a002" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="ost00" id="a003" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check00" value="multi00" id="a004" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+              </p>
+              <br>
+              <strong>Transport choice</strong>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="drive" id="a011" class="m-1 btn btn-primary">
+                  <font size="4px">Automobile</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="walk" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Walking</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="radio" name="check_time" value="cycle" id="a021" class="m-1 btn btn-primary">
+                  <font size="4px">Bycicle</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+            </form>
+          </div>
+        </details>
+        <hr size="5" noshade="">
+        <details id="my_eng_live">
+          <summary>
+            <strong><font color="blue">Toilet map in the living area</font></strong>
+          </summary>
+          <div id="live_detail" class="live" style="width:90%;">
+            <p>
+              <font size="4px">By clicking the select button, button become underlined<</font>
+            </p>
+            <form method="post" action="/my_livingarea_english">
+              {% if subscribed == "YES" %}
+                <details>
+                  <summary>外出予定をセット</summary>
+                  <div id="depart_set">
+                    <Label>タイトル</Label>
+                    <input type="text" class="title" id="title" name="title" placeholder="must" required="">
+                    <br>
+                    <Label>詳細</Label>
+                    <textarea id="story" name="story" rows="5" cols="33" required>
+                    </textarea>
+                    <br>
+                    <Label>出発日にち</Label>
+                    <input type="date" id="departdate"
+                    name="departdate" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30">に
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('departdate').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <br>
+                    <Label>到着日にち</Label>
+                    <input type="date" id="arrivaldate"
+                    name="arrivaldate" value="2018-06-12"
+                    min="2023-03-22" max="2033-03-30">に
+                    <script type="text/javascript">
+                        window.addEventListener('load', () => {
+                        const now = new Date();
+                        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                        document.getElementById('arrivaldate').value = document.getElementById('departdate').value
+                        document.getElementById('arrivaldate').value = now.toISOString().slice(11, -8);
+                        });
+                    </script>
+                    <br>
+                    <p>外出する</p>
+                  </div>
+
+                </details>
+
+              {% else %}
+              {% endif %}
+              <strong>facility①</strong>
+              <input type="text" size="40" class="orig1" name="orig1" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <br>
+              <strong>facility②</strong>
+              <input type="text" class="dest1" name="dest1" placeholder="must" required="">
+              <br>
+              <strong>Amenity</strong>
+              <br>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="wheel1" id="a0011" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="baby1" id="a0021" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="ost1" id="a0031" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check0" value="multi1" id="a0041" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+                <br>
+              </p>
+              <hr>
+              <strong>facility</strong>
+              <br>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="park" id="a00111" class="m-1 btn btn-primary">
+                  <font size="4px">Park, Plaza</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="hall" id="a00211" class="m-1 btn btn-primary">
+                  <font size="4px">City hall, Community center, Concert hall, Library</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="amuse" id="a00311" class="m-1 btn btn-primary">
+                  <font size="4px">Amusement park</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="transport" id="a00411" class="m-1 btn btn-primary">
+                  <font size="4px">Station, Tram stop, Bus stop</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check1" value="hospital" id="a00511" class="m-1 btn btn-primary">
+                  <font size="4px">Hospital</font>
+                </label>
+              </div>
+              <br>
+              <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+            </form>
+          </div>
+        </details>
+        <hr size="5" noshade="">
+        <table border="0" cellpadding="0" cellspacing="0"><tr><td><div style="border:1px solid #95a5a6;border-radius:.75rem;background-color:#FFFFFF;width:504px;margin:0px;padding:5px;text-align:center;overflow:hidden;"><table><tr><td style="width:240px"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://hbb.afl.rakuten.co.jp/hgb/39939b8e.d3f0cef1.39939b8f.3fb35412/?me_id=1212232&item_id=10018748&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fnetbaby%2Fcabinet%2F049%2F402049.jpg%3F_ex%3D240x240&s=240x240&t=picttext" border="0" style="margin:2px" alt="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]" title="[商品価格に関しましては、リンクが作成された時点と現時点で情報が変更されている場合がございます。]"></a></td><td style="vertical-align:top;width:248px;display: block;"><p style="font-size:12px;line-height:1.4em;text-align:left;margin:0px;padding:2px 6px;word-wrap:break-word"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;">【2/19 10:00~2/21 9:59 エントリーでP7倍】パンパース オムツ はじめての肌へのいちばん テープ 新生児 S M L(3個)【パンパース 肌へのいちばん】[肌へのいちばん]</a><br><span >価格：6,890円（税込、送料別)</span> <span style="color:#BBB">(2024/2/20時点)</span></p><div style="margin:10px;"><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><img src="https://static.affiliate.rakuten.co.jp/makelink/rl.svg" style="float:left;max-height:27px;width:auto;margin-top:0" ></a><a href="https://hb.afl.rakuten.co.jp/ichiba/39939b8e.d3f0cef1.39939b8f.3fb35412/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnetbaby%2Fa62067xxx%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" style="word-wrap:break-word;"><div style="float:right;width:41%;height:27px;background-color:#bf0000;color:#fff!important;font-size:12px;font-weight:500;line-height:27px;margin-left:1px;padding: 0 12px;border-radius:16px;cursor:pointer;text-align:center;"> 楽天で購入 </div></a></div></td></tr></table></div><br><p style="color:#000000;font-size:12px;line-height:1.4em;margin:5px;word-wrap:break-word"></p></td></tr></table>
+        <details open id="my_eng_cruise">
+          <summary>
+            <strong><font color="blue">viable toilet navi</font></strong>
+          </summary>
+          <div id="cruise_detail" class="cruise_english" style="width:90%;">
+            <p>
+              <font size="4px">By clicking the select button, button become underlined<</font>
+            </p>
+            <form method="post" action="/my_cruise_english">
+              {% if subscribed == "YES" %}
+              <details>
+                <summary>外出予定をセット</summary>
+                <div id="depart_set">
+                  <Label>タイトル</Label>
+                  <br>
+                  <input type="text" class="title" id="title" name="title" placeholder="must" required="">
+                  <br>
+                  <Label>詳細</Label>
+                  <br>
+                  <textarea id="story" name="story" rows="5" cols="33" required>
+                  </textarea>
+                  <br>
+                  <p>Origination</p>
+                  <input type="text" size="40" class="orig2" name="orig2" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+                  <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+                  <br>
+                  <p>または
+                  <button name="now" style="color:green">現在地</button>を
+                  <p>出発時刻</p>
+                  <input type="date" id="after_arrival_date"
+                      name="after_arrival_date" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30" style="color:green">
+                  <script type="text/javascript">
+                      window.addEventListener('load', () => {
+                      const now = new Date();
+                      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                      document.getElementById('after_arrival_date').value = now.toISOString().slice(0, 10);
+                      });
+                  </script>
+                  <input type="time" id="after_arrival_time"
+                  name="after_arrival_time" value="2018-06-12"
+                  min="2023-03-22" max="2033-03-30" style="color:green">に
+                  <script type="text/javascript">
+                      window.addEventListener('load', () => {
+                      const now = new Date();
+                      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                      document.getElementById('after_arrival_time').value = now.toISOString().slice(11, -8);
+                      });
+                  </script>
+                  <p>準備時間を</p>
+                  <input type="number" min="0" max="100" id="prepare_time" name="prepare_time" value="0" style="color:green">
+                  <p>分だけ余裕見て出発して、</p>
+                  <p>到着時刻</p>
+                  <input type="date" id="after_depart_date"
+                      name="after_depart_date" value="2018-06-12"
+                      min="2023-03-22" max="2033-03-30" style="color:red">
+                  <script type="text/javascript">
+                      window.addEventListener('load', () => {
+                      const now = new Date();
+                      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                      document.getElementById('after_depart_date').value = now.toISOString().slice(0, 10);
+                      });
+                  </script>
+                  <input type="time" id="after_depart_time"
+                  name="after_depart_time" value="2018-06-12"
+                  min="2023-03-22" max="2033-03-30" style="color:red">
+                  の
+                  <script type="text/javascript">
+                      window.addEventListener('load', () => {
+                      const now = new Date();
+                      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                      document.getElementById('after_depart_time').value = now.toISOString().slice(11, -8);
+                      });
+                  </script>
+                  <br>
+                  <input type="number" min="0" max="100" id="arrival_allow_time" name="arrival_allow_time" value="0" style="color:red" width = "50%">
+                  <p>分前に到着する</p>
+                </details>
+              {% else %}
+              {% endif %}
+              <br>
+              <strong>Origination</strong>
+              <input type="text" size="40" class="orig2" name="orig2" placeholder="input freely or input 現在地" list="orig" autocomplete="on" required="">
+              <!--<p>*住所入力は現在対応中です。ご了承ください</p>-->
+              <hr>
+              <strong>via_spot</strong>
+              <input type="text" class="via_0" id="via_0" name="via_0" placeholder="must" required="">
+              <br>
+              <input type="text" class="via_1" id="via_1" name="via_1" placeholder="via_spot1">
+              <br>
+              <input type="text" class="via_2" id="via_2" name="via_2" placeholder="via_spot2">
+              <br>
+              <input type="text" class="via_3" id="via_3" name="via_3" placeholder="via_spot3">
+              <br>
+              <input type="text" class="via_4" id="via_4" name="via_4" placeholder="via_spot4">
+              <br>
+              <input type="text" class="via_5" id="via_5" name="via_5" placeholder="via_spot5">
+              <br>
+              <strong>Destination</strong>
+              <input type="text" class="dest2" name="dest2" placeholder="must" required="">
+              <br>
+              <strong>Amenity</strong>
+              <p>
+                <font size="4px">(You can skip it)</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="wheel" id="a00011" class="m-1 btn btn-primary">
+                  <font size="4px">Wheelchair</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="baby" id="a00021" class="m-1 btn btn-primary">
+                  <font size="4px">Baby</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="ost" id="a00031" class="m-1 btn btn-primary">
+                  <font size="4px">Ostmate</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive">
+                  <input type="checkbox" name="check02" value="multi" id="a00041" class="m-1 btn btn-primary">
+                  <font size="4px">Barrier-free※</font>
+                </label>
+              </div>
+              <p>
+                <font size="4px">※Barrier-free is only available for Kyoto city, Yokkaichi city, Hukui Pref, Shibuya ward</font>
+              </p>
+              <strong>Transport choice</strong>
+              <div>
+                <input type="radio" name="check_cruise" value="drive" id="a011" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">Automobile</font>
+                </label>
+                <input type="radio" name="check_cruise" value="walk" id="a021" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">Walking</font>
+                </label>
+                <input type="radio" name="check_cruise" value="cycle" id="a021" class="m-1 btn btn-primary">
+                <label class="btn btn-primary btn-xs avtive">
+                  <font size="4px">Bycicle</font>
+                </label>
+              </div>
+              <strong>facility</strong>
+              <p>
+                <font size="4px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(You can skip it)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+              </p>
+              <div>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="park" id="a000511" class="m-1 btn btn-primary">
+                  <font size="4px">Park, Plaza</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="hall" id="a000611" class="m-1 btn btn-primary">
+                  <font size="4px">City hall, Community center, Concert hall, Library</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="amuse" id="a000711" class="m-1 btn btn-primary">
+                  <font size="4px">Amusement park</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="transport" id="a000811" class="m-1 btn btn-primary">
+                  <font size="4px">Station, Tram stop, Bus stop</font>
+                </label>
+                <label class="btn btn-primary btn-xs avtive" id="checkbox">
+                  <input type="checkbox" name="check2" value="hospital" id="a000911" class="m-1 btn btn-primary">
+                  <font size="4px">Hospital</font>
+                </label>
+              </div>
+              <div>
+                <font size="6px"><input type="submit" value="Find" onclick="Form"></font>
+                <script type="text/javascript">
+                  function Form() {
+                    var parent = document.getElementById('via_1');
+                    console.log(parent.value);
+                  }
+                </script>
+              </div>
+            </form>
+          </div>
+        </details>
+    </div>
+    <hr size="5" noshade="">
+    <br>
+
+    <script type="text/javascript">
+      $(function() {
+        $('input[type=checkbox]').filter(":checked").each(function() {
+            $(this).closest('label').css('text-decoration', 'underline');
+          })
+          .end().on('change', function() {
+            $(this).prop('checked') ? $(this).closest('label').css('text-decoration', 'underline') : $(this).closest('label').css('text-decoration', 'none');
+          });
+      });
+    </script>
+    <br>
+    <p>【Recruit】Please tell me the barrier-free toilet information</p>
+    <form method="post" action="/Recruitment_english">
+      <div>
+          <button onclick="location.href='Recruitment_english.html'">👆Please Click!</button>
+          <br>
+          <a href="https://linktr.ee/takrib">My activity</a>
+      </div>
+    </form>
+    <h2>What's new</h2>
+    <iframe src="{{url_for('static',filename='whatsnew_english.html')}}" width="85%" height="300" scrolling="yes"></iframe>
+    <h2>Schedule</h2>
+    <iframe src="{{url_for('static', filename='whatsschedule_english.html')}}" width="85%" height="300" scrolling="yes"></iframe>
+    <h2>Current situation</h2>
+    <iframe src="{{url_for('static', filename='condition_english.html')}}" width="85%" height="300" scrolling="yes"></iframe>
+    <div id="reference_detail" class="reference">
+      <h2>Enterprise and municipality opening data</h2>
+      <iframe src="{{url_for('static', filename='reference_english.html')}}" width="85%" height="300" scrolling="yes"></iframe>
+    </div>
+{% endblock %}

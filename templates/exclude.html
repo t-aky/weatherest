@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}退会手続き{% endblock %}
+{% block body %}
+    <h1>退会前にご一読ください。</h1>
+    <hr>
+    <p>このまま押すと退会処理され、<br>保存したアラームやデータ、定期プランでの機能が使えなくなります。<br>また残り期間の返金処理はなされません<br>よろしいでしょうか<br>よろしければ、退会ボタンを押してください</p>
+    <h2>退会するユーザー</h2>
+    <p>{{email}}</p>
+    <p>{{name}}</p>
+    <a href ="{{ url_for('excluded') }}">退会</button>
+    <a href ="{{ url_for('mypage') }}">戻る</button>
+{% endblock %}

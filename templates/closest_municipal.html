@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}トイレ検索可能な最寄りの市町村-{% endblock %}
+{% block body %}
+  <input type="button" value="現在地のトイレ検索画面へ" onClick="location.href='/#closest_municipal_detail';">
+  <br>
+  <input type="button" value="Homeへ" onClick="location.href='/';">
+  <div id="current" style="display: block">
+    {% if muni %}
+      <p>現在地の県内のトイレ地図はこちらです。</p>
+      {% for m in municipality_map %}
+        <iframe id="park" height="400px" width= "85%" src="{{url_for('static', filename='{h1}'.format(h1=m[1]))}}" loading="eager" alt="My image" allow="geolocation" scrolling="no" async></iframe>
+    
+        <a href="{{url_for('static', filename='{h1}'.format(h1=m[1]))}}">{{m[0]}}</a>
+      {% endfor %}
+    {% else %}
+      {% if m0 %}
+        <p>ご利用者様の位置情報を取得できませんでした。</p>
+      {% else %}
+        <p>現在地の県内のトイレ地図はございません。データを頂き次第、整備していきます。</p>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}

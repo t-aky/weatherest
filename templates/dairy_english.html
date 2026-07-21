@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yutra-早めにアラームで悠々お出かけ！時刻表連携タイマー</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="js/index.js" />
+    <script type="text/javascript" src="https://js.pay.jp/v2/"></script>
+    <!-- for IE11 -->
+    <script>
+      window.MSInputMethodContext
+      && document.documentMode
+      && document.write(
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js"><\/script>'
+      )
+    </script>
+    <!-- end: for IE11 -->
+    <!-- material design library -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <!-- end: material design library -->
+    <link rel="manifest" href="static/manifest.json" />
+    <script>
+        window.addEventListener('load', function () {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register("static/sw.js")
+                    .then(function (registration) {
+                        console.log("serviceWorker registed.");
+                    }).catch(function (error) {
+                        console.warn("serviceWorker error.", error);
+                    });
+            }
+        });
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q2HM91D5L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3Q2HM91D5L');
+</script>
+<body>
+    {% if updated %}
+        <p>予定が更新されました</p>
+    {% else %}
+    {% endif %}
+    {% if deleted %}
+        <p>予定が削除されました</p>
+    {% else %}
+    {% endif %}
+    <br>
+    {% for i in range(0,timer_data|length) %}
+
+        <p>件名:<font color={{backgoundcolor}}>{{timer_data[i][4]}}</font></p>
+        <hr>
+        <p>入力値</p>
+        {% if timer_data[i][12] != "" %}
+            <p>出発地:{{timer_data[i][12]}}</p>
+        {% elif timer_data[i][13] != "" %}
+            <p>出発駅(停留所):{{timer_data[i][13]}}</p>
+        {% else %}
+        {% endif %}
+        <p>到着地から到着駅までの所要時間:{{timer_data[i][19]}}分</p>
+        {% if timer_data[i][14] != "" %}
+            <p>目的地:{{timer_data[i][14]}}</p>
+        {% elif timer_data[i][15] != "" %}
+            <p>到着駅(停留所):{{timer_data[i][15]}}</p>
+        {% else %}
+        {% endif %}
+        <hr>
+        <p><bold>検索結果</bold></p>
+        <p>外出準備時刻:<font color="red">{{timer_data[i][7]}}</font></p>
+        <p>出発駅(停留所):{{timer_data[i][9]}}</p>
+        <p>到着駅(停留所):{{timer_data[i][10]}}</p>
+        <p>出発便乗車時刻:{{timer_data[i][6]}}</p>
+        <p>乗車便到着時刻:{{timer_data[i][5]}}</p>
+        <p>出発地から出発駅までの所要時間:{{timer_data[i][18]}}分</p>
+        <p>車椅子有無:{{timer_data[i][16]}}</p>
+        <p>乗車系統:{{timer_data[i][17]}}</p>
+        <a href="{{ url_for('my_o_navi', title=timer_data[i][4],email=email,prepare_date=timer_data[i][7]) }}">出発駅までのナビ</a>
+        <a href="{{ url_for('my_d_navi', title=timer_data[i][4],email=email,prepare_date=timer_data[i][7]) }}">到着駅からのナビ</a>
+        <hr>
+        {% for df in df_list %}
+            {% if df[i][5]==timer_data[i][4] %}
+                <p>{{df[i][6]}}</p>
+                <p>{{df[i][7]}}</p>
+            {% else %}
+            {% endif %}
+        {% endfor %}
+        {% if dairy_data[i][5]!="-" %}
+            <p>詳細:<font color="red">{{dairywithmail_data[i][5]}}</font></p>
+            <p>場所:<font color="red">{{dairywithmail_data[i][6]}}</font></p>
+            <p>時間:<font color="red">{{dairywithmail_data[i][7]}}</font></p>
+            <p>種類:<font color="red">{{dairywithmail_data[i][8]}}</font></p>
+            <p>優先度:<font color="red">{{dairy_data[i][9]}}</font></p>
+        {% else %}
+            <p>メモは設定されていません</p>
+        {% endif %}
+        <hr>
+        {% if dairywithmail_data[i][5]!="-" %}
+            <p>受信アドレス:<font color="red">{{dairywithmail_data[i][5]}}</font></p>
+            <p>メール件名:<font color="red">{{dairywithmail_data[i][6]}}</font></p>
+            <p>本体:<font color="red">{{dairywithmail_data[i][7]}}</font></p>
+            <p>受送信:<font color="red">{{dairywithmail_data[i][9]}}</font></p>
+            <p>フォルダ:<font color="red">{{dairywithmail_data[i][10]}}</font></p>
+            <p>検索キーワード:<font color="red">{{dairywithmail_data[i][11]}}</font></p>
+            <p>送信者:<font color="red">{{dairywithmail_data[i][12]}}</font></p>
+            <p>Cc:<font color="red">{{dairywithmail_data[i][13]}}</font></p>
+            <p>Bcc:<font color="red">{{dairywithmail_data[i][14]}}</font></p>
+        {% else %}
+            <p>メールは設定されていません</p>
+        {% endif %}
+    {% endfor %}
+        <dialog id ="update_dialog">
+            <form action = "/mypage" method="post" name="update">
+                {% if key == "title" %}
+                <p>件名:<font color="red">
+                <input type="text" id="title_before_renew" name="title_before_renew" value={{value|e}}/></font></p>
+                {% elif key == "prepare_time" %}
+                <p>外出準備時刻:<font color="red">
+                <input type="text" id="buyplace" name="buyplace" value={{value|e}}/></font></p>
+                {% elif key == "depart_time" %}
+                <p>外出時刻:</p>
+                <input type="text" id="depart_time" name="depart_time" value={{value|e}}/></font></p>
+                {% elif key == "ride_train_time" %}
+                <p>出発便乗車時刻:</p>
+                <input type="text" id="ride_train_time" name="ride_train_time" value={{value|e}}/></font></p>
+                {% elif key == "arrival_train_time" %}
+                <p>乗車便到着時刻:</p>
+                <input type="text" id="arrival_train_time" name="arrival_train_time" value={{value|e}}/></font></p>
+                {% elif key == "depart_pos" %}
+                <p>出発地:</p>
+                <input type="text" id="depart_pos" name="depart_pos" value={{value|e}}/></font></p>
+                {% elif key == "o_pos_to_stop_traveltime" %}
+                <p>出発地から出発駅までの所要時間:</p>
+                <input type="text" id="o_pos_to_stop_traveltime" name="o_pos_to_stop_traveltime" value={{value|e}}/></font></p>
+                
+                {% elif key == "o_stop" %}
+                <p>出発駅:</p>
+                <input type="text" id="o_stop" name="o_stop" value={{value|e}}/></font></p>
+                {% elif key == "d_stop" %}
+                <p>到着駅:</p>
+                <input type="text" id="d_stop" name="d_stop" value={{value|e}}/></font></p>
+                {% elif key == "d_stop_to_pos_traveltime" %}
+                <p>到着地から到着駅までの所要時間:</p>
+                <input type="text" id="d_stop_to_pos_traveltime" name="d_stop_to_pos_traveltime" value={{value|e}}/></font></p>
+                {% elif key == "arrival_pos" %}
+                <p>到着地:</p>
+                <input type="text" id="arrival_pos" name="arrival_pos" value={{value|e}}/></font></p>
+                {% elif key == "wheel" %}
+                <p>車椅子有無:</p>
+                <input type="text" id="wheel" name="wheel" value={{value|e}}/></font></p>
+                {% elif key == "ride_route" %}
+                <p>乗車系統:</p>
+                <input type="text" id="ride_route" name="ride_route" value={{value|e}}/></font></p>
+                <br>
+                <input type="submit" name="delete" value="削除" style="color:red"/>
+                {% else %}
+                {% endif %}
+                <button id="update_show">更新したい予定</button>
+                <script>
+                    var dialog = document.getElementById('update_dialog');
+                    var btn_show = document.getElementById('update_show');
+                    btn_show.addEventListener('click', function() {
+                    dialog.show();
+                    }, false);
+                </script>
+            </form>
+        </dialog>
+        
+        <dialog id ="delete_dialog">
+            <form action = "/mypage" method="post" name="delete">
+                {% if key == "prepare_time" %}
+                <p>外出準備時刻:<font color="red">
+                <input type="text" id="buyplace" name="buyplace" value={{value|e}}/></font></p>
+                {% elif key == "depart_time" %}
+                <p>外出時刻:</p>
+                <input type="text" id="depart_time" name="depart_time" value={{value|e}}/></font></p>
+                {% elif key == "ride_train_time" %}
+                <p>出発便乗車時刻:</p>
+                <input type="text" id="ride_train_time" name="ride_train_time" value={{value|e}}/></font></p>
+                {% elif key == "arrival_train_time" %}
+                <p>乗車便到着時刻:</p>
+                <input type="text" id="arrival_train_time" name="arrival_train_time" value={{value|e}}/></font></p>
+                {% elif key == "depart_pos" %}
+                <p>出発地:</p>
+                <input type="text" id="depart_pos" name="depart_pos" value={{value|e}}/></font></p>
+                {% elif key == "o_pos_to_stop_traveltime" %}
+                <p>出発地から出発駅までの所要時間:</p>
+                <input type="text" id="o_pos_to_stop_traveltime" name="o_pos_to_stop_traveltime" value={{value|e}}/></font></p>
+                
+                {% elif key == "o_stop" %}
+                <p>出発駅:</p>
+                <input type="text" id="o_stop" name="o_stop" value={{value|e}}/></font></p>
+                {% elif key == "d_stop" %}
+                <p>到着駅:</p>
+                <input type="text" id="d_stop" name="d_stop" value={{value|e}}/></font></p>
+                {% elif key == "d_stop_to_pos_traveltime" %}
+                <p>到着地から到着駅までの所要時間:</p>
+                <input type="text" id="d_stop_to_pos_traveltime" name="d_stop_to_pos_traveltime" value={{value|e}}/></font></p>
+                {% elif key == "arrival_pos" %}
+                <p>到着地:</p>
+                <input type="text" id="arrival_pos" name="arrival_pos" value={{value|e}}/></font></p>
+                {% elif key == "wheel" %}
+                <p>車椅子有無:</p>
+                <input type="text" id="wheel" name="wheel" value={{value|e}}/></font></p>
+                {% elif key == "ride_route" %}
+                <p>乗車系統:</p>
+                <input type="text" id="ride_route" name="ride_route" value={{value|e}}/></font></p>
+                <br>
+                <input type="submit" name="delete" value="削除" style="color:red"/>
+                {% else %}
+                {% endif %}
+                <button id="delete_show">削除したい予定</button>
+                <script>
+                    var dialog = document.getElementById('delete_dialog');
+                    var btn_show = document.getElementById('delete_show');
+                    btn_show.addEventListener('click', function() {
+                    dialog.show();
+                    }, false);
+                </script>
+            </form>
+        </dialog>
+        
+</body>
+</html>
